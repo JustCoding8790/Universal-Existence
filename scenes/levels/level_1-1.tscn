@@ -278,8 +278,9 @@ shadow_size = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
+offset_top = -2.0
 offset_right = 1152.0
-offset_bottom = 668.0
+offset_bottom = 666.0
 texture = ExtResource("1_x1swn")
 stretch_mode = 1
 
@@ -300,8 +301,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_vjwnv")
 animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 0.867057
+frame_progress = 0.888598
 
 [node name="Exit" type="Area2D" parent="."]
 

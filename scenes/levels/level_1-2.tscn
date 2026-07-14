@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_qptxp"]
 [ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_equtu"]
 [ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/melon.tscn" id="5_ui38i"]
-[ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="6_ylbki"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="6_gt5ex"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxbnw"]
 texture = ExtResource("2_ckh8k")
 0:0/0 = 0
 1:0/0 = 0
@@ -166,7 +166,7 @@ texture = ExtResource("2_ckh8k")
 
 [sub_resource type="TileSet" id="TileSet_q13hu"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_iurch")
+sources/0 = SubResource("TileSetAtlasSource_fxbnw")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06rio"]
 atlas = ExtResource("4_equtu")
@@ -280,7 +280,7 @@ tile_set = SubResource("TileSet_q13hu")
 [node name="SecretTileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAXABEAAAAHAAEAAAAXABIAAAAHAAEAAAAYABEAAAAHAAEAAAAYABIAAAAHAAEAAAAZABIAAAAHAAEAAAAaABIAAAAHAAEAAAAbABIAAAAHAAEAAAAcABIAAAAHAAEAAAAdABIAAAAHAAEAAAAeABIAAAAHAAEAAAAfABIAAAAHAAEAAAAgABIAAAAHAAEAAAAhABIAAAAHAAEAAAAWABIAAAAGAAEAAAAWABEAAAAGAAEAAAAZABEAAAAHAAEAAAAaABEAAAAHAAEAAAAbABEAAAAHAAEAAAAcABEAAAAHAAEAAAAdABEAAAAHAAEAAAAeABEAAAAHAAEAAAAfABEAAAAHAAEAAAAgABEAAAAHAAEAAAAhABEAAAAHAAEAAAA=")
+tile_map_data = PackedByteArray("AAAXABEAAAAHAAEAAAAXABIAAAAHAAEAAAAYABEAAAAHAAEAAAAYABIAAAAHAAEAAAAZABIAAAAHAAEAAAAaABIAAAAHAAEAAAAbABIAAAAHAAEAAAAcABIAAAAHAAEAAAAdABIAAAAHAAEAAAAeABIAAAAHAAEAAAAfABIAAAAHAAEAAAAWABIAAAAGAAEAAAAWABEAAAAGAAEAAAAZABEAAAAHAAEAAAAaABEAAAAHAAEAAAAbABEAAAAHAAEAAAAcABEAAAAHAAEAAAAdABEAAAAHAAEAAAAeABEAAAAHAAEAAAAfABEAAAAHAAEAAAAgABEAAAAHAAEAAAAhABEAAAAHAAEAAAAhABIAAAAHAAEAAAAgABIAAAAHAAEAAAA=")
 tile_set = SubResource("TileSet_q13hu")
 collision_enabled = false
 
@@ -323,8 +323,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qccdj")
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("6_ylbki")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("6_gt5ex")
+theme_override_font_sizes/font_size = 15
 text = "You can jump while
 falling, by the way."
 horizontal_alignment = 1

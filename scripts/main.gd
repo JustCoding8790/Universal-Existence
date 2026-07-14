@@ -9,6 +9,8 @@ var world: int = 1	# implement different worlds later
 var level: int = 1
 var current_level_root: Node = null
 
+signal reset_gravity
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fade.modulate.a = 1.0
@@ -40,7 +42,7 @@ func _load_level(world_number: int, level_number: int, first_load: bool, reset_s
 	add_child(current_level_root)
 	current_level_root.name = "LevelRoot"
 	_setup_level(current_level_root)
-	
+	reset_gravity.emit()
 	# Fade in
 	await _fade(0.0)
 
@@ -50,12 +52,18 @@ func _setup_level(level_root: Node) -> void:
 	if exit:
 		exit.body_entered.connect(_on_exit_body_entered)
 	
+	# Connect traps
+	var traps = level_root.get_node_or_null("Traps")
+	if traps:
+		for trap in traps.get_children():
+			trap.player_died.connect(_on_player_died)
+	
 	# Connect enemies
 	var enemies = level_root.get_node_or_null("Enemies")
 	if enemies:
 		for enemy in enemies.get_children():
 			enemy.player_died.connect(_on_player_died)
-
+	
 	# Connect collectibles
 	var apples = level_root.get_node_or_null("Apples")
 	if apples:
@@ -86,6 +94,7 @@ func _on_player_died(body) -> void:
 # --------------------
 
 func increase_score(amount: int) -> void:
+	# Amount depends on collectible
 	score += amount
 	print(score)
 	score_label.text = "SCORE\n%s" % score

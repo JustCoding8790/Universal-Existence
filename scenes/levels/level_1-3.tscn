@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_x1swn"]
 [ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="2_i0uw6"]
 [ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/apple.tscn" id="5_awfgg"]
-[ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="5_upqgd"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_fx7s0"]
 [ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="6_7nabr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
@@ -323,8 +323,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_woptx")
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_upqgd")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("5_fx7s0")
+theme_override_font_sizes/font_size = 15
 text = "Just collect the apples
 for points. Simple."
 horizontal_alignment = 1
@@ -341,8 +341,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm6ve")
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("5_upqgd")
-theme_override_font_sizes/font_size = 15
+theme_override_fonts/font = ExtResource("5_fx7s0")
+theme_override_font_sizes/font_size = 12
 text = "Not like there's any
 other fruits around..."
 horizontal_alignment = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fufifont2p3j"
-path="res://.godot/imported/Hit (32x32).png-87d7836b8c3f40eee42425bb00ab9a06.ctex"
+uid="uid://b5k0twyg583fc"
+path="res://.godot/imported/Double Jump (32x32).png-08f10e46bbd65ccc0de4a32d99036143.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/Hit (32x32).png"
-dest_files=["res://.godot/imported/Hit (32x32).png-87d7836b8c3f40eee42425bb00ab9a06.ctex"]
+source_file="res://assets/images/player/pink/Double Jump (32x32).png"
+dest_files=["res://.godot/imported/Double Jump (32x32).png-08f10e46bbd65ccc0de4a32d99036143.ctex"]
 
 [params]
 
