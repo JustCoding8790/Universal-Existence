@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/apple.gd" id="1_1ltgs"]
 [ext_resource type="Texture2D" uid="uid://ci8hrwxu8qtue" path="res://assets/images/collectibles/Apple.png" id="1_kp16n"]
 [ext_resource type="Texture2D" uid="uid://e3p2e757111f" path="res://assets/images/collectibles/Collected.png" id="2_q5gq5"]
-[ext_resource type="AudioStream" uid="uid://btvhjawtm863j" path="res://assets/sounds/collect_apple.wav" id="4_s1kp2"]
+[ext_resource type="AudioStream" uid="uid://btvhjawtm863j" path="res://assets/audio/sounds/collect.wav" id="4_1ussh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_323uq"]
 atlas = ExtResource("2_q5gq5")
@@ -199,7 +199,7 @@ position = Vector2(0, -1.66667)
 shape = SubResource("CircleShape2D_fa2ar")
 
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_s1kp2")
+stream = ExtResource("4_1ussh")
 pitch_scale = 1.5
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
