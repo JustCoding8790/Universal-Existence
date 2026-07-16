@@ -1,16 +1,16 @@
-[gd_scene load_steps=27 format=4 uid="uid://c808kr3xnff4l"]
+[gd_scene load_steps=27 format=4 uid="uid://cr66bs32ghpny"]
 
-[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_3edjp"]
-[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_roshm"]
-[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_krl77"]
-[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_mm1tn"]
-[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_0wnmb"]
-[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/spikes.tscn" id="6_3vwrx"]
-[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/apple.tscn" id="7_023py"]
-[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/melon.tscn" id="8_wxots"]
+[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_yruyl"]
+[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_k5qbj"]
+[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_u8umj"]
+[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_1g2ko"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_s8oy5"]
+[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/spikes.tscn" id="6_ekirt"]
+[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/apple.tscn" id="7_4kcwp"]
+[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/melon.tscn" id="8_voheo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
-texture = ExtResource("2_roshm")
+texture = ExtResource("2_k5qbj")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -313,7 +313,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ytfu4"]
-texture = ExtResource("2_roshm")
+texture = ExtResource("2_k5qbj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -474,43 +474,43 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ytfu4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06rio"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulilj"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upoao"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e47y4"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wiseb"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_junvf"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ghe7"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dtgi"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l047r"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw6ch"]
-atlas = ExtResource("4_mm1tn")
+atlas = ExtResource("4_1g2ko")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjwnv"]
@@ -588,7 +588,7 @@ texture_filter = 1
 offset_top = -2.0
 offset_right = 1152.0
 offset_bottom = 666.0
-texture = ExtResource("1_3edjp")
+texture = ExtResource("1_yruyl")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -604,7 +604,7 @@ tile_map_data = PackedByteArray("AAAFAA8AAAAGAAEAAAAFABAAAAAGAAEAAAAGAA8AAAAHAAE
 tile_set = SubResource("TileSet_kbbb4")
 collision_enabled = false
 
-[node name="Player" parent="." instance=ExtResource("3_krl77")]
+[node name="Player" parent="." instance=ExtResource("3_u8umj")]
 position = Vector2(85, 496)
 scale = Vector2(2, 2)
 
@@ -637,7 +637,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_0wnmb")
+theme_override_fonts/font = ExtResource("5_s8oy5")
 theme_override_font_sizes/font_size = 15
 text = "You know 'em. You love
 'em. They're spikes."
@@ -655,7 +655,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("5_0wnmb")
+theme_override_fonts/font = ExtResource("5_s8oy5")
 theme_override_font_sizes/font_size = 12
 text = "Or, well... the bane of a
 platformer's existence."
@@ -664,170 +664,186 @@ vertical_alignment = 1
 
 [node name="Traps" type="Node2D" parent="."]
 
-[node name="Spikes" parent="Traps" instance=ExtResource("6_3vwrx")]
-position = Vector2(274, 368)
+[node name="Spikes" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(225, 368)
 scale = Vector2(2, 2)
 
-[node name="Spikes2" parent="Traps" instance=ExtResource("6_3vwrx")]
-position = Vector2(304, 368)
+[node name="Spikes2" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(255, 368)
 scale = Vector2(2, 2)
 
-[node name="Spikes3" parent="Traps" instance=ExtResource("6_3vwrx")]
-position = Vector2(334, 368)
+[node name="Spikes3" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(285, 368)
 scale = Vector2(2, 2)
 
-[node name="Spikes4" parent="Traps" instance=ExtResource("6_3vwrx")]
-position = Vector2(529, 304)
+[node name="Spikes37" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(404, 368)
 scale = Vector2(2, 2)
 
-[node name="Spikes5" parent="Traps" instance=ExtResource("6_3vwrx")]
-position = Vector2(559, 304)
+[node name="Spikes38" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(434, 368)
 scale = Vector2(2, 2)
 
-[node name="Spikes6" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes4" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(514, 304)
+scale = Vector2(2, 2)
+
+[node name="Spikes5" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(544, 304)
+scale = Vector2(2, 2)
+
+[node name="Spikes40" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(574, 304)
+scale = Vector2(2, 2)
+
+[node name="Spikes6" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(689, 304)
 scale = Vector2(2, 2)
 
-[node name="Spikes7" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes7" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(719, 304)
 scale = Vector2(2, 2)
 
-[node name="Spikes8" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes39" parent="Traps" instance=ExtResource("6_ekirt")]
+position = Vector2(946, 240)
+scale = Vector2(2, 2)
+
+[node name="Spikes8" parent="Traps" instance=ExtResource("6_ekirt")]
 z_index = -1
 position = Vector2(732, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes9" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes9" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(762, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes10" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes10" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(792, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes11" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes11" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(822, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes12" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes12" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(852, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes13" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes13" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(882, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes14" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes14" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(912, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes15" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes15" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(942, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes16" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes16" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(972, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes17" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes17" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(1002, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes18" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes18" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(1032, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes19" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes19" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(1062, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes20" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes20" parent="Traps" instance=ExtResource("6_ekirt")]
 z_index = -1
 position = Vector2(1092, 560)
 scale = Vector2(2, 2)
 
-[node name="Spikes21" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes21" parent="Traps" instance=ExtResource("6_ekirt")]
 z_index = -1
 position = Vector2(232, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes22" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes22" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(262, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes23" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes23" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(292, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes24" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes24" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(322, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes25" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes25" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(352, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes26" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes26" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(382, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes27" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes27" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(412, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes28" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes28" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(442, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes29" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes29" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(472, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes30" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes30" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(502, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes31" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes31" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(532, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes32" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes32" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(562, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes33" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes33" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(592, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes34" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes34" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(622, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes35" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes35" parent="Traps" instance=ExtResource("6_ekirt")]
 position = Vector2(652, 592)
 scale = Vector2(2, 2)
 
-[node name="Spikes36" parent="Traps" instance=ExtResource("6_3vwrx")]
+[node name="Spikes36" parent="Traps" instance=ExtResource("6_ekirt")]
 z_index = -1
 position = Vector2(682, 592)
 scale = Vector2(2, 2)
 
 [node name="Apples" type="Node2D" parent="."]
 
-[node name="Apple" parent="Apples" instance=ExtResource("7_023py")]
-position = Vector2(304, 255)
+[node name="Apple" parent="Apples" instance=ExtResource("7_4kcwp")]
+position = Vector2(256, 255)
 scale = Vector2(2, 2)
 
-[node name="Apple2" parent="Apples" instance=ExtResource("7_023py")]
+[node name="Apple2" parent="Apples" instance=ExtResource("7_4kcwp")]
 position = Vector2(928, 127)
 scale = Vector2(2, 2)
 
-[node name="Apple3" parent="Apples" instance=ExtResource("7_023py")]
-position = Vector2(1057, 319)
+[node name="Apple3" parent="Apples" instance=ExtResource("7_4kcwp")]
+position = Vector2(1057, 255)
 scale = Vector2(2, 2)
 
 [node name="Melons" type="Node2D" parent="."]
 
-[node name="Melon" parent="Melons" instance=ExtResource("8_wxots")]
+[node name="Melon" parent="Melons" instance=ExtResource("8_voheo")]
 position = Vector2(640, 511)
 scale = Vector2(2, 2)

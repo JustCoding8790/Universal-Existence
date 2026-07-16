@@ -23,6 +23,7 @@ script = ExtResource("1_n6jyp")
 [node name="LevelRoot" parent="." instance=ExtResource("1_riavm")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 8
 
 [node name="Fade" type="ColorRect" parent="HUD"]
 modulate = Color(1, 1, 1, 0)

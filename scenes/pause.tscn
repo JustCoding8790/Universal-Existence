@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://puef5kxhww8y"]
+[gd_scene load_steps=24 format=3 uid="uid://puef5kxhww8y"]
 
 [ext_resource type="Script" path="res://scenes/pause.gd" id="1_6qymi"]
 [ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="2_wcveb"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="3_lvbp7"]
+[ext_resource type="FontFile" uid="uid://beygpdo3u8bl0" path="res://assets/fonts/Quantico-Regular.ttf" id="4_g4kpe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp4ig"]
 bg_color = Color(0, 0.65098, 0.894118, 1)
@@ -25,6 +26,13 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d68ua"]
+bg_color = Color(0.560784, 0.160784, 0.713726, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="Animation" id="Animation_1b48n"]
 length = 0.001
 tracks/0/type = "value"
@@ -41,7 +49,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_0kdiw"]
-resource_name = "move_left"
+resource_name = "diff_left"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,7 +60,53 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(406, 106), Vector2(203, 106)]
+"values": [Vector2(406, 53), Vector2(203, 53)]
+}
+
+[sub_resource type="Animation" id="Animation_birxt"]
+resource_name = "diff_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseLayer/PauseMain:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(203, 53), Vector2(406, 53)]
+}
+
+[sub_resource type="Animation" id="Animation_o511f"]
+resource_name = "move_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseLayer/PauseMain:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(406, 53), Vector2(406, 106)]
+}
+
+[sub_resource type="Animation" id="Animation_mofn5"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseLayer/PauseMain:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(406, 106), Vector2(406, 53)]
 }
 
 [sub_resource type="Animation" id="Animation_0fk6x"]
@@ -70,42 +124,14 @@ tracks/0/keys = {
 "values": [Vector2(406, -530), Vector2(406, 106)]
 }
 
-[sub_resource type="Animation" id="Animation_birxt"]
-resource_name = "move_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PauseLayer/PauseMain:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.733333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(203, 106), Vector2(406, 106)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6nfl"]
 _data = {
 "RESET": SubResource("Animation_1b48n"),
-"move_left": SubResource("Animation_0kdiw"),
-"move_right": SubResource("Animation_birxt"),
+"diff_left": SubResource("Animation_0kdiw"),
+"diff_right": SubResource("Animation_birxt"),
+"move_down": SubResource("Animation_o511f"),
+"move_up": SubResource("Animation_mofn5"),
 "open": SubResource("Animation_0fk6x")
-}
-
-[sub_resource type="Animation" id="Animation_3iqgc"]
-resource_name = "difficulties_reveal"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DifficultySelection:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.733333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(427.25, 133.25), Vector2(630.25, 133.25)]
 }
 
 [sub_resource type="Animation" id="Animation_ma8k2"]
@@ -135,7 +161,22 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.733333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(630.25, 133.25), Vector2(427.25, 133.25)]
+"values": [Vector2(630.25, 80.25), Vector2(427.25, 80.25)]
+}
+
+[sub_resource type="Animation" id="Animation_3iqgc"]
+resource_name = "difficulties_reveal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DifficultySelection:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(427.25, 80.25), Vector2(630.25, 80.25)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rqy78"]
@@ -143,6 +184,58 @@ _data = {
 "RESET": SubResource("Animation_ma8k2"),
 "difficulties_hide": SubResource("Animation_qyt0m"),
 "difficulties_reveal": SubResource("Animation_3iqgc")
+}
+
+[sub_resource type="Animation" id="Animation_suvi8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DifficultyDescription:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(251, 728)]
+}
+
+[sub_resource type="Animation" id="Animation_1bp18"]
+resource_name = "description_hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DifficultyDescription:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(251, 523), Vector2(251, 723)]
+}
+
+[sub_resource type="Animation" id="Animation_jb3x7"]
+resource_name = "description_reveal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DifficultyDescription:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(251, 723), Vector2(251, 523)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46wn0"]
+_data = {
+"RESET": SubResource("Animation_suvi8"),
+"description_hide": SubResource("Animation_1bp18"),
+"description_reveal": SubResource("Animation_jb3x7")
 }
 
 [node name="Pause" type="Control"]
@@ -159,6 +252,7 @@ script = ExtResource("1_6qymi")
 metadata/_edit_use_anchors_ = true
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 9
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PauseLayer"]
@@ -403,6 +497,49 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
 text = "Hard"
 
+[node name="DifficultyDescription" type="Panel" parent="PauseLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = 80.0
+offset_right = 325.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d68ua")
+
+[node name="DifficultyTitle" type="Label" parent="PauseLayer/DifficultyDescription"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -2.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 30
+text = "Extreme"
+horizontal_alignment = 1
+
+[node name="DifficultyText" type="Label" parent="PauseLayer/DifficultyDescription"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -18.5
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_g4kpe")
+theme_override_font_sizes/font_size = 22
+text = "For the most skilled jumpers of the universe.
+Not for the faint of heart."
+horizontal_alignment = 1
+
 [node name="MainPlayer" type="AnimationPlayer" parent="PauseLayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -412,6 +549,11 @@ libraries = {
 [node name="DifficultyPlayer" type="AnimationPlayer" parent="PauseLayer"]
 libraries = {
 "": SubResource("AnimationLibrary_rqy78")
+}
+
+[node name="DescriptionPlayer" type="AnimationPlayer" parent="PauseLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_46wn0")
 }
 
 [node name="SettingsPlayer" type="AnimationPlayer" parent="PauseLayer"]
@@ -433,7 +575,7 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="PauseLayer/PauseMain/MarginContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMain/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMain/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extreme" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Ultra Hard" to="." method="_on_difficulty_pressed"]
-[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extra Hard" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Hard" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extreme" to="." method="_on_extreme_selected"]
+[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Ultra Hard" to="." method="_on_ultra_hard_selected"]
+[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extra Hard" to="." method="_on_extra_hard_selected"]
+[connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Hard" to="." method="_on_hard_selected"]

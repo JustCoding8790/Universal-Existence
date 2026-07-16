@@ -824,15 +824,15 @@ position = Vector2(595, 254)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apple4" parent="Apples" instance=ExtResource("7_wy08y")]
-position = Vector2(608, 415)
+position = Vector2(725, 61)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apple5" parent="Apples" instance=ExtResource("7_wy08y")]
-position = Vector2(1024, 541)
+position = Vector2(608, 415)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apple6" parent="Apples" instance=ExtResource("7_wy08y")]
-position = Vector2(1024, 541)
+position = Vector2(1104, 287)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apple7" parent="Apples" instance=ExtResource("7_wy08y")]
