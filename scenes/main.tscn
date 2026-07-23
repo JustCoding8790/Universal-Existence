@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qyfn0w2jicd7"]
+[gd_scene load_steps=6 format=3 uid="uid://qyfn0w2jicd7"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_n6jyp"]
-[ext_resource type="PackedScene" uid="uid://cisqlv1o8irl" path="res://scenes/levels/level_1-7.tscn" id="1_riavm"]
+[ext_resource type="PackedScene" uid="uid://cisqlv1o8irl" path="res://scenes/levels/scrapped_1-7_3.tscn" id="1_riavm"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="3_1ubbr"]
+[ext_resource type="AudioStream" uid="uid://cb6ay61rtcmc" path="res://assets/audio/music/fields_main.ogg" id="4_vt1jn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg2fv"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
@@ -56,3 +57,7 @@ text = "SCORE
 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vt1jn")
+autoplay = true

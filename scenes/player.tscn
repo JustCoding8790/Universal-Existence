@@ -344,7 +344,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dryr8"]
-size = Vector2(21, 25)
+size = Vector2(15, 24)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(207, 283)
@@ -358,7 +358,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3.5)
+position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_dryr8")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]

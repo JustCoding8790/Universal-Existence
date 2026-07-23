@@ -11,7 +11,7 @@ var jump_buffer_timer = 0.0
 const JUMP_BUFFER_TIME = 0.2
 var coyote_timer = 0.0
 const COYOTE_TIME = 20
-var jump_multiplier = 1
+var jump_multiplier = 1.1
 
 var jump_count = 0
 var double_jump_anim_playing = false
@@ -21,6 +21,11 @@ var can_move = true
 func _ready() -> void:
 	# Connect main
 	main.reset_gravity.connect(_reset_vertical_gravity)
+
+func jump_boost() -> void:
+	velocity.y = JUMP_VELOCITY * self.scale.x * 1.35
+	jump_sound.play()
+	jump_count = 1
 
 func _physics_process(delta: float) -> void:
 	if !alive:
@@ -51,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and jump_count >= 1 and jump_count < MAX_JUMPS:
 			# jump adjustments (at scale 1.5, jump movement feels too heavy)
-			velocity.y = JUMP_VELOCITY * self.scale.x
+			velocity.y = JUMP_VELOCITY * self.scale.x * jump_multiplier
 			jump_sound.play()
 			jump_count += 1
 		elif Input.is_action_just_pressed("jump"):
