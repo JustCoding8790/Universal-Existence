@@ -1,9 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://puef5kxhww8y"]
+[gd_scene load_steps=41 format=3 uid="uid://puef5kxhww8y"]
 
 [ext_resource type="Script" path="res://scenes/pause.gd" id="1_6qymi"]
 [ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="2_wcveb"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="3_lvbp7"]
+[ext_resource type="Script" path="res://scenes/audio_options.gd" id="4_e66sq"]
 [ext_resource type="FontFile" uid="uid://beygpdo3u8bl0" path="res://assets/fonts/Quantico-Regular.ttf" id="4_g4kpe"]
+[ext_resource type="PackedScene" uid="uid://lrcebcgemmjq" path="res://controller_settings.tscn" id="5_t0eg1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp4ig"]
 bg_color = Color(0, 0.65098, 0.894118, 1)
@@ -18,6 +20,42 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g33q8"]
+bg_color = Color(0.588235, 0.588235, 0.588235, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mc3m"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh1y8"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se5qn"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqybx"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwhrk"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpgpn"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0e4a"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdx5j"]
+bg_color = Color(1, 0.380215, 0.449928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6cjr"]
+bg_color = Color(0, 0.404951, 0.155073, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hde62"]
 bg_color = Color(0.960784, 0.384314, 0.403922, 1)
@@ -46,6 +84,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(406, -530)]
+}
+
+[sub_resource type="Animation" id="Animation_gio2r"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseLayer/PauseMain:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(406, 106), Vector2(406, -530)]
 }
 
 [sub_resource type="Animation" id="Animation_0kdiw"]
@@ -127,6 +180,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6nfl"]
 _data = {
 "RESET": SubResource("Animation_1b48n"),
+"close": SubResource("Animation_gio2r"),
 "diff_left": SubResource("Animation_0kdiw"),
 "diff_right": SubResource("Animation_birxt"),
 "move_down": SubResource("Animation_o511f"),
@@ -236,6 +290,58 @@ _data = {
 "RESET": SubResource("Animation_suvi8"),
 "description_hide": SubResource("Animation_1bp18"),
 "description_reveal": SubResource("Animation_jb3x7")
+}
+
+[sub_resource type="Animation" id="Animation_6bvq5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Settings:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(151, 742)]
+}
+
+[sub_resource type="Animation" id="Animation_2qyve"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Settings:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(151, 51), Vector2(151, 742)]
+}
+
+[sub_resource type="Animation" id="Animation_2rfib"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Settings:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(151, 742), Vector2(151, 51)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eocwy"]
+_data = {
+"RESET": SubResource("Animation_6bvq5"),
+"close": SubResource("Animation_2qyve"),
+"open": SubResource("Animation_2rfib")
 }
 
 [node name="Pause" type="Control"]
@@ -379,6 +485,322 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
 text = "Exit"
+
+[node name="Settings" type="Panel" parent="PauseLayer"]
+visible = false
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = 418.0
+offset_right = 425.0
+offset_bottom = 963.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g33q8")
+
+[node name="LeftMarginContainer" type="MarginContainer" parent="PauseLayer/Settings"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -190.75
+offset_right = 425.0
+offset_bottom = 190.75
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/Settings/LeftMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="AudioVBox" type="VBoxContainer" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+script = ExtResource("4_e66sq")
+
+[node name="MasterVBox" type="VBoxContainer" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 24
+text = "MASTER"
+
+[node name="MasterSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox"]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0mc3m")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh1y8")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="MusicVBox" type="VBoxContainer" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 24
+text = "MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox"]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_se5qn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mqybx")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SoundVBox" type="VBoxContainer" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox"]
+layout_mode = 2
+
+[node name="Sound" type="Label" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 24
+text = "SOUND"
+
+[node name="SoundSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox"]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_dwhrk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jpgpn")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="VoiceVBox" type="VBoxContainer" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox"]
+layout_mode = 2
+
+[node name="Voice" type="Label" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 24
+text = "VOICE"
+
+[node name="VoiceSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox"]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_y0e4a")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_sdx5j")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="Credits" type="Button" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer"]
+z_index = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+text = "Credits"
+
+[node name="RightMarginContainer" type="MarginContainer" parent="PauseLayer/Settings"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -177.5
+offset_bottom = 204.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/Settings/RightMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="GameplayVBox" type="VBoxContainer" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Language" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
+z_index = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+disabled = true
+text = "[LANGUAGES COMING IN V2]"
+
+[node name="Rebinding" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
+z_index = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+text = "Key Rebinding"
+
+[node name="Controller" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
+z_index = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+text = "Controller Settings"
+
+[node name="Features" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
+z_index = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+text = "Speedrun/Assist Features"
+
+[node name="Credits" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer"]
+z_index = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+text = "Reset All Settings"
+
+[node name="SettingsTitle" type="Label" parent="PauseLayer/Settings"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 40.0
+offset_right = 145.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wcveb")
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="PauseLayer/Settings"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.5
+offset_top = -60.0
+offset_right = 187.5
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
+text = "Exit"
+
+[node name="VersionPanel" type="Panel" parent="PauseLayer/Settings"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6cjr")
+
+[node name="VersionLabel" type="Label" parent="PauseLayer/Settings/VersionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lvbp7")
+theme_override_font_sizes/font_size = 28
+text = "V1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControllerSettings" parent="PauseLayer" instance=ExtResource("5_t0eg1")]
+visible = false
+z_index = 20
 
 [node name="DifficultySelection" type="Panel" parent="PauseLayer"]
 visible = false
@@ -557,6 +979,9 @@ libraries = {
 }
 
 [node name="SettingsPlayer" type="AnimationPlayer" parent="PauseLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_eocwy")
+}
 
 [node name="ExitPlayer" type="AnimationPlayer" parent="PauseLayer"]
 
@@ -575,6 +1000,12 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="PauseLayer/PauseMain/MarginContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMain/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMain/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox/MasterSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox/MusicSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox/SoundSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox/VoiceSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_voice_slider_value_changed"]
+[connection signal="pressed" from="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Controller" to="." method="_on_controller_pressed"]
+[connection signal="pressed" from="PauseLayer/Settings/Exit" to="." method="_on_settings_exit_pressed"]
 [connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extreme" to="." method="_on_extreme_selected"]
 [connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Ultra Hard" to="." method="_on_ultra_hard_selected"]
 [connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extra Hard" to="." method="_on_extra_hard_selected"]
