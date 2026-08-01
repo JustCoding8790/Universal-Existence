@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
 @onready var main: Node2D = $"../.."
+# @onready var floor_cast: ShapeCast2D = $FloorShapeCast2D
 
 var SPEED = 150.0
 var JUMP_VELOCITY = -350.0
@@ -30,7 +31,6 @@ func jump_boost() -> void:
 func _physics_process(delta: float) -> void:
 	if !alive:
 		return
-
 	# Add animation
 	if not double_jump_anim_playing:
 		if velocity.x > 1 or velocity.x < -1:
@@ -79,10 +79,9 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("left", "right")
 		if direction:
-			velocity.x = direction * SPEED * self.scale.x
+			velocity.x = min(direction * SPEED * self.scale.x, direction * SPEED * self.scale.x * Global.sensitivity_multi)
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED * self.scale.x)
-
 		move_and_slide()
 		
 		if direction == 1.0:

@@ -1,11 +1,12 @@
-[gd_scene load_steps=41 format=3 uid="uid://puef5kxhww8y"]
+[gd_scene load_steps=42 format=3 uid="uid://puef5kxhww8y"]
 
-[ext_resource type="Script" path="res://scenes/pause.gd" id="1_6qymi"]
+[ext_resource type="Script" path="res://scripts/interface/pause.gd" id="1_6qymi"]
 [ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="2_wcveb"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="3_lvbp7"]
-[ext_resource type="Script" path="res://scenes/audio_options.gd" id="4_e66sq"]
+[ext_resource type="Script" path="res://scripts/interface/audio_options.gd" id="4_e66sq"]
 [ext_resource type="FontFile" uid="uid://beygpdo3u8bl0" path="res://assets/fonts/Quantico-Regular.ttf" id="4_g4kpe"]
-[ext_resource type="PackedScene" uid="uid://lrcebcgemmjq" path="res://controller_settings.tscn" id="5_t0eg1"]
+[ext_resource type="PackedScene" uid="uid://lrcebcgemmjq" path="res://scenes/interface/controller_settings.tscn" id="5_t0eg1"]
+[ext_resource type="PackedScene" uid="uid://d2ihcy362yvow" path="res://scenes/interface/assist_settings.tscn" id="6_ir2q1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp4ig"]
 bg_color = Color(0, 0.65098, 0.894118, 1)
@@ -671,7 +672,8 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2uumm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2uumm")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2uumm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uumm")
-text = "Key Rebinding"
+disabled = true
+text = "[REBINDING COMING IN V2]"
 
 [node name="Controller" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
 z_index = 3
@@ -799,6 +801,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ControllerSettings" parent="PauseLayer" instance=ExtResource("5_t0eg1")]
+visible = false
+z_index = 20
+
+[node name="AssistSettings" parent="PauseLayer" instance=ExtResource("6_ir2q1")]
 visible = false
 z_index = 20
 
@@ -1005,6 +1011,7 @@ color = Color(0, 0, 0, 1)
 [connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox/SoundSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox/VoiceSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_voice_slider_value_changed"]
 [connection signal="pressed" from="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Controller" to="." method="_on_controller_pressed"]
+[connection signal="pressed" from="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Features" to="." method="_on_features_pressed"]
 [connection signal="pressed" from="PauseLayer/Settings/Exit" to="." method="_on_settings_exit_pressed"]
 [connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extreme" to="." method="_on_extreme_selected"]
 [connection signal="pressed" from="PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Ultra Hard" to="." method="_on_ultra_hard_selected"]

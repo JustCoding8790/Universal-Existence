@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ldm0v4kbtmkv"]
+[gd_scene load_steps=56 format=3 uid="uid://ldm0v4kbtmkv"]
 
 [ext_resource type="Texture2D" uid="uid://b5k0twyg583fc" path="res://assets/images/player/pink/Double Jump (32x32).png" id="1_buvok"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_hxn6j"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b4o33d05ud4eg" path="res://assets/images/player/pink/Wall Jump (32x32).png" id="7_qi24c"]
 [ext_resource type="AudioStream" uid="uid://dw6xu7h7jo7nh" path="res://assets/audio/sounds/jump.wav" id="9_00eyl"]
 [ext_resource type="AudioStream" uid="uid://c3paslcqruyw0" path="res://assets/audio/sounds/death.wav" id="10_1oahy"]
-[ext_resource type="PackedScene" uid="uid://puef5kxhww8y" path="res://scenes/pause.tscn" id="11_w0qo5"]
+[ext_resource type="PackedScene" uid="uid://puef5kxhww8y" path="res://scenes/interface/pause.tscn" id="11_w0qo5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a55tn"]
 atlas = ExtResource("1_buvok")
@@ -346,6 +346,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dryr8"]
 size = Vector2(15, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xhap"]
+size = Vector2(15, 16.5)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(207, 283)
 scale = Vector2(3, 3)
@@ -371,3 +374,7 @@ pitch_scale = 0.85
 bus = &"Sound"
 
 [node name="Pause" parent="." instance=ExtResource("11_w0qo5")]
+
+[node name="FloorShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_5xhap")

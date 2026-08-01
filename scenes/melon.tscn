@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://cjydfbr4fu606"]
 
-[ext_resource type="Script" path="res://scripts/melon.gd" id="1_nnrq5"]
+[ext_resource type="Script" path="res://scripts/collectibles/melon.gd" id="1_nnrq5"]
 [ext_resource type="Texture2D" uid="uid://e3p2e757111f" path="res://assets/images/collectibles/Collected.png" id="2_dmqly"]
 [ext_resource type="Texture2D" uid="uid://7mn31o4tuwi6" path="res://assets/images/collectibles/Melon.png" id="3_ljlmv"]
 [ext_resource type="AudioStream" uid="uid://btvhjawtm863j" path="res://assets/audio/sounds/collect.wav" id="4_rxij8"]

@@ -28,7 +28,7 @@ func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int
 	var shape_owner_id = shape_find_owner(local_shape_index)
 	var hit_shape_node = shape_owner_get_owner(shape_owner_id)
 	if hit_shape_node == vulnerable_shape_2d:
-		if body.name == "Player" and body.alive:
+		if body.name == "Player" and body.alive and body.velocity.y > 0:
 			alive = false
 			body.jump_boost()
 			animated_sprite_2d.animation = "hit"

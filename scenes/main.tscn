@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://qyfn0w2jicd7"]
+[gd_scene load_steps=8 format=3 uid="uid://qyfn0w2jicd7"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_n6jyp"]
 [ext_resource type="PackedScene" uid="uid://cisqlv1o8irl" path="res://scenes/levels/scrapped_1-7_3.tscn" id="1_riavm"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="3_1ubbr"]
+[ext_resource type="Script" path="res://scripts/interface/speedrun_panel.gd" id="4_klmj4"]
 [ext_resource type="AudioStream" uid="uid://cb6ay61rtcmc" path="res://assets/audio/music/fields_main.ogg" id="4_vt1jn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg2fv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fojn4"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -16,6 +17,16 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg2fv"]
+bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54362, 0.845585, 1, 1)
+corner_radius_bottom_right = 5
 shadow_size = 5
 
 [node name="Main" type="Node2D"]
@@ -45,7 +56,7 @@ offset_top = 10.0
 offset_right = 120.0
 offset_bottom = 85.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dg2fv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fojn4")
 
 [node name="ScoreLabel" type="Label" parent="HUD/ScorePanel"]
 layout_mode = 0
@@ -55,6 +66,23 @@ theme_override_fonts/font = ExtResource("3_1ubbr")
 theme_override_font_sizes/font_size = 21
 text = "SCORE
 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedrunPanel" type="Panel" parent="HUD"]
+visible = false
+offset_right = 160.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dg2fv")
+script = ExtResource("4_klmj4")
+
+[node name="SpeedrunTimer" type="Label" parent="HUD/SpeedrunPanel"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_1ubbr")
+theme_override_font_sizes/font_size = 21
+text = "0:00:00.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://dvubpxu0dp36d"]
 
-[ext_resource type="Script" path="res://scripts/snail.gd" id="1_e2jdf"]
+[ext_resource type="Script" path="res://scripts/enemies/snail.gd" id="1_e2jdf"]
 [ext_resource type="Texture2D" uid="uid://dqyx0rrmuugy7" path="res://assets/images/enemies/snail/Hit (38x24).png" id="1_ftbr2"]
 [ext_resource type="Texture2D" uid="uid://dqo5w4kkei0wn" path="res://assets/images/enemies/snail/Idle (38x24).png" id="2_rvhic"]
 [ext_resource type="Texture2D" uid="uid://crsgjsxtlehcm" path="res://assets/images/enemies/snail/Walk (38x24).png" id="3_tgpd7"]

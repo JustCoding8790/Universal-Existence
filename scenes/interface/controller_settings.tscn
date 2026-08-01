@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://lrcebcgemmjq"]
 
-[ext_resource type="Script" path="res://controller_settings.gd" id="1_7htw7"]
+[ext_resource type="Script" path="res://scripts/interface/controller_settings.gd" id="1_7htw7"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="2_p0l4w"]
 [ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="3_he55x"]
 
@@ -42,22 +42,6 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="Animation" id="Animation_gx668"]
-resource_name = "open"
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1250, 86.5), Vector2(326, 86.5)]
-}
-
 [sub_resource type="Animation" id="Animation_v7btw"]
 length = 0.001
 tracks/0/type = "value"
@@ -87,6 +71,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(326, 86.5), Vector2(1250, 86.5)]
+}
+
+[sub_resource type="Animation" id="Animation_gx668"]
+resource_name = "open"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1250, 86.5), Vector2(326, 86.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tk6p4"]
@@ -141,15 +141,16 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p0l4w")
 theme_override_font_sizes/font_size = 24
-text = "SENSITIVITY"
+text = "SENSITIVITY (50%-150%)"
 
 [node name="SensitivitySlider" type="HSlider" parent="ControllerContainer/ControlVBox/SensitivityVBox"]
 layout_mode = 2
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_j2fba")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_8gjxd")
-max_value = 1.0
+min_value = 0.5
+max_value = 1.5
 step = 0.05
-value = 0.5
+value = 1.0
 
 [node name="DeadzoneVBox" type="VBoxContainer" parent="ControllerContainer/ControlVBox"]
 layout_mode = 2
@@ -158,15 +159,15 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p0l4w")
 theme_override_font_sizes/font_size = 24
-text = "DEADZONE"
+text = "DEADZONE (0% - 50%)"
 
 [node name="DeadzoneSlider" type="HSlider" parent="ControllerContainer/ControlVBox/DeadzoneVBox"]
 layout_mode = 2
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0xb3j")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pj1pk")
-max_value = 1.0
+max_value = 0.5
 step = 0.05
-value = 0.5
+value = 0.15
 
 [node name="VibrationVBox" type="VBoxContainer" parent="ControllerContainer/ControlVBox"]
 visible = false
@@ -255,8 +256,6 @@ libraries = {
 "": SubResource("AnimationLibrary_tk6p4")
 }
 
-[connection signal="value_changed" from="ControllerContainer/ControlVBox/SensitivityVBox/SensitivitySlider" to="ControllerContainer/ControlVBox" method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="ControllerContainer/ControlVBox/DeadzoneVBox/DeadzoneSlider" to="ControllerContainer/ControlVBox" method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="ControllerContainer/ControlVBox/VibrationVBox/VibrationSlider" to="ControllerContainer/ControlVBox" method="_on_sound_slider_value_changed"]
-[connection signal="value_changed" from="ControllerContainer/ControlVBox/PlaceholderVBox/PlaceholderSlider" to="ControllerContainer/ControlVBox" method="_on_voice_slider_value_changed"]
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="ControllerContainer/ControlVBox/SensitivityVBox/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
+[connection signal="value_changed" from="ControllerContainer/ControlVBox/DeadzoneVBox/DeadzoneSlider" to="." method="_on_deadzone_slider_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_settings_back_pressed"]

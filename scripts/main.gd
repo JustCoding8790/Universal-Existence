@@ -87,10 +87,14 @@ func _setup_level(level_root: Node) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		# print(body.name)
-		Global.level += 1
-		body.can_move = false
-		await _load_level(Global.world, Global.level, false, false)
+		if Global.training:
+			body.can_move = false
+			await _load_level(Global.world, Global.level, false, true)
+		else:
+			# print(body.name)
+			Global.level += 1
+			body.can_move = false
+			await _load_level(Global.world, Global.level, false, false)
 
 func _on_player_died(body) -> void:
 	body.die()

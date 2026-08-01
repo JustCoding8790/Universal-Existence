@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://cdkralsml8mgg"]
 
-[ext_resource type="Script" path="res://scenes/mushroom.gd" id="1_a7l5r"]
+[ext_resource type="Script" path="res://scripts/enemies/mushroom.gd" id="1_a7l5r"]
 [ext_resource type="Texture2D" uid="uid://rs4p7ws431ge" path="res://assets/images/enemies/mushroom/Hit.png" id="2_bx46n"]
 [ext_resource type="Texture2D" uid="uid://hrqfeo4i02wf" path="res://assets/images/enemies/mushroom/Idle (32x32).png" id="3_pfpwo"]
 [ext_resource type="Texture2D" uid="uid://b87w7kmo66atn" path="res://assets/images/enemies/mushroom/Run (32x32).png" id="4_oa6bu"]
@@ -272,7 +272,7 @@ animations = [{
 size = Vector2(28.3333, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt71c"]
-size = Vector2(27, 8.33333)
+size = Vector2(26, 12)
 
 [node name="Mushroom" type="Area2D"]
 scale = Vector2(3, 3)
@@ -289,7 +289,7 @@ position = Vector2(-0.166667, 11)
 shape = SubResource("RectangleShape2D_syfr7")
 
 [node name="VulnerableShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.166667, 1.83333)
+position = Vector2(3.57628e-07, -2.54313e-06)
 shape = SubResource("RectangleShape2D_xt71c")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

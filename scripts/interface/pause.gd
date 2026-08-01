@@ -14,6 +14,7 @@ extends Control
 @onready var settings_menu: Panel = $PauseLayer/Settings
 @onready var settings_exit: Button = $PauseLayer/Settings/Exit
 @onready var controller_settings: Control = $PauseLayer/ControllerSettings
+@onready var assist_settings: Panel = $PauseLayer/AssistSettings
 
 @onready var master_slider: HSlider = $PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox/MasterSlider
 @onready var music_slider: HSlider = $PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox/MusicSlider
@@ -37,10 +38,6 @@ func _ready() -> void:
 	# Positioning fallback
 	difficulty_selection.position = Vector2(427.25, 80.23)
 	settings_exit.disabled = true
-	master_slider.value = 0.5
-	music_slider.value = 0.5
-	sound_slider.value = 0.5
-	voice_slider.value = 0.5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -62,6 +59,9 @@ func _on_resume_pressed() -> void:
 		diff_menu_on = false
 		settings_menu_on = false
 		settings.disabled = false
+		controller_settings._on_settings_back_pressed()
+		assist_settings._on_assist_back_pressed()
+		# speedrun_panel.start_timer()
 		if Global.difficulty != previous_difficulty:
 			difficulty_changed.emit(Global.world, Global.level, false, true)
 
@@ -129,9 +129,13 @@ func pause_menu() -> void:
 		diff_menu_on = false
 		settings_menu_on = false
 		settings.disabled = false
+		controller_settings._on_settings_back_pressed()
+		assist_settings._on_assist_back_pressed()
+		# speedrun_panel.start_timer()
 		if Global.difficulty != previous_difficulty:
 			difficulty_changed.emit(Global.world, Global.level, false, true)
 	else:
+		# speedrun_panel.stop_timer()
 		pause.show()
 		get_tree().paused = true
 		main_player.play("open")
@@ -190,4 +194,7 @@ func _on_hard_selected() -> void:
 # --------------------
 
 func _on_controller_pressed() -> void:
-	controller_settings.open()
+	controller_settings.settings_open()
+
+func _on_features_pressed() -> void:
+	assist_settings.assist_open()
