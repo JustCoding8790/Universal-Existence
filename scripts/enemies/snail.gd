@@ -1,5 +1,6 @@
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shooting_timer: Timer = $Timer
 
 var speed = 50
 var direction = -1

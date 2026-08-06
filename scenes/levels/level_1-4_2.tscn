@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_krl77"]
 [ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_mm1tn"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_0wnmb"]
-[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/spikes.tscn" id="6_3vwrx"]
-[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/apple.tscn" id="7_023py"]
-[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/melon.tscn" id="8_wxots"]
+[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/traps/spikes.tscn" id="6_3vwrx"]
+[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="7_023py"]
+[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/collectibles/melon.tscn" id="8_wxots"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
 texture = ExtResource("2_roshm")

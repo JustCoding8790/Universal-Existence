@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://cdkralsml8mgg"]
+[gd_scene load_steps=50 format=3 uid="uid://cdkralsml8mgg"]
 
 [ext_resource type="Script" path="res://scripts/enemies/mushroom.gd" id="1_a7l5r"]
 [ext_resource type="Texture2D" uid="uid://rs4p7ws431ge" path="res://assets/images/enemies/mushroom/Hit.png" id="2_bx46n"]
+[ext_resource type="Texture2D" uid="uid://e3p2e757111f" path="res://assets/images/collectibles/Collected.png" id="3_0ugkx"]
 [ext_resource type="Texture2D" uid="uid://hrqfeo4i02wf" path="res://assets/images/enemies/mushroom/Idle (32x32).png" id="3_pfpwo"]
 [ext_resource type="Texture2D" uid="uid://b87w7kmo66atn" path="res://assets/images/enemies/mushroom/Run (32x32).png" id="4_oa6bu"]
 
@@ -24,6 +25,30 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_m78qw"]
 atlas = ExtResource("2_bx46n")
 region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qclb"]
+atlas = ExtResource("3_0ugkx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cwhc"]
+atlas = ExtResource("3_0ugkx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v716w"]
+atlas = ExtResource("3_0ugkx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flr0n"]
+atlas = ExtResource("3_0ugkx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgrw8"]
+atlas = ExtResource("3_0ugkx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3p3l"]
+atlas = ExtResource("3_0ugkx")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqtja"]
 atlas = ExtResource("3_pfpwo")
@@ -162,6 +187,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m78qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qclb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cwhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v716w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flr0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgrw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3p3l")
 }],
 "loop": false,
 "name": &"hit",
@@ -281,7 +324,7 @@ script = ExtResource("1_a7l5r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mik35")
-animation = &"idle"
+animation = &"hit"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

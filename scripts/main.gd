@@ -98,7 +98,6 @@ func _on_exit_body_entered(body: Node2D) -> void:
 
 func _on_player_died(body) -> void:
 	body.die()
-	await _load_level(Global.world, Global.level, false, true)
 
 # --------------------
 # SCORE

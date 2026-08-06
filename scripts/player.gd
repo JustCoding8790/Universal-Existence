@@ -93,6 +93,7 @@ func die() -> void:
 	animated_sprite_2d.animation = "hit"
 	alive = false
 	death_sound.play()
+	await main._load_level(Global.world, Global.level, false, true)
 
 func _reset_vertical_gravity() -> void:
 	ProjectSettings.set_setting("physics/2d/default_gravity", 1250 * self.scale.x)
