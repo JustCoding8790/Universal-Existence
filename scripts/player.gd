@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
 @onready var main: Node2D = $"../.."
+@onready var shooting_timer: Timer = $ShootingTimer
+@onready var projectile = load("res://scenes/mechanics/normal_player_bullet.tscn")
 # @onready var floor_cast: ShapeCast2D = $FloorShapeCast2D
 
 var SPEED = 150.0
@@ -13,11 +15,14 @@ const JUMP_BUFFER_TIME = 0.2
 var coyote_timer = 0.0
 const COYOTE_TIME = 20
 var jump_multiplier = 1.1
+var direction
 
 var jump_count = 0
 var double_jump_anim_playing = false
 var alive = true
 var can_move = true
+
+var shoot_mode = ""
 
 func _ready() -> void:
 	# Connect main
@@ -27,6 +32,10 @@ func jump_boost() -> void:
 	velocity.y = JUMP_VELOCITY * self.scale.x * 1.35
 	jump_sound.play()
 	jump_count = 1
+
+# --------------------
+# MOVEMENT
+# --------------------
 
 func _physics_process(delta: float) -> void:
 	if !alive:
@@ -77,7 +86,7 @@ func _physics_process(delta: float) -> void:
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction := Input.get_axis("left", "right")
+		direction = Input.get_axis("left", "right")
 		if direction:
 			velocity.x = min(direction * SPEED * self.scale.x, direction * SPEED * self.scale.x * Global.sensitivity_multi)
 		else:
@@ -101,3 +110,29 @@ func _reset_vertical_gravity() -> void:
 		jump_multiplier = 1.1
 	else:
 		jump_multiplier = 1
+
+# --------------------
+# SHOOTING
+# --------------------
+
+func start_shooting(type: String) -> void:
+	shooting_timer.start()
+	shoot_mode = type
+
+func _on_shooting_timer_timeout() -> void:
+	shooting_timer.stop()
+	var bullet = projectile.instantiate()
+	# bullet.visible = false
+	get_tree().get_root().add_child(bullet)
+	bullet.global_position = global_position
+	bullet.scale = self.scale
+	if shoot_mode == "horizontal":
+		if animated_sprite_2d.flip_h:
+			bullet.global_position.x -= 15
+			bullet.sprite_2d.flip_h = true
+			bullet.direction = -1
+		else:
+			bullet.global_position.x += 15
+			bullet.direction = 1
+	# bullet.visible = true
+	shooting_timer.start()

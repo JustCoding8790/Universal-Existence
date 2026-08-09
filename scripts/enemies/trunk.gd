@@ -3,10 +3,14 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shooting_timer: Timer = $ShootingCooldown
 @onready var projectile = load("res://scenes/enemies/trunk_bullet.tscn")
+@onready var hit_sound: AudioStreamPlayer = $HitSound
+
 var speed = 50
 var direction = -1
 var speeds = [35, 50, 60, 75]
 var shoot_intervals = [3, 2, 1.5, 1]
+var health = 55
+var hp_amounts = [25, 30, 35, 40]
 signal player_died
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +21,7 @@ func _ready() -> void:
 	speed = speeds[Global.difficulty]
 	shooting_timer.wait_time = shoot_intervals[Global.difficulty]
 	shooting_timer.start()
+	health = hp_amounts[Global.difficulty]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,6 +43,9 @@ func _on_shooting_timer_timeout() -> void:
 		bullet.sprite_2d.flip_h = true
 	else:
 		bullet.global_position.x += 15
+	bullet.global_position.y += 4
+	if health <= 0:
+		bullet.queue_free()
 	bullet.visible = true
 	animated_sprite_2d.animation = "walk"
 	animated_sprite_2d.play()
@@ -47,6 +55,15 @@ func _on_shooting_timer_timeout() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive:
 		player_died.emit(body)
-	elif body.name == "TileMapLayer" or body.name == "CollisionShape2D":
+	elif body.name == "TileMapLayer":
 		direction *= -1
 		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+
+func take_damage(damage: int) -> void:
+	hit_sound.play()
+	health -= damage
+	if health <= 0:
+		shooting_timer.stop()
+		animated_sprite_2d.animation = "hit"
+		await animated_sprite_2d.animation_finished
+		queue_free()

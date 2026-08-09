@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://4mnpjl480jan"]
+[gd_scene load_steps=64 format=3 uid="uid://4mnpjl480jan"]
 
 [ext_resource type="Script" path="res://scripts/enemies/trunk.gd" id="1_2u8df"]
 [ext_resource type="Texture2D" uid="uid://bm6ygesuumu35" path="res://assets/images/enemies/trunk/Hit (64x32).png" id="2_po7w5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bbonsfdgy1sm1" path="res://assets/images/enemies/trunk/Idle (64x32).png" id="4_htb7u"]
 [ext_resource type="Texture2D" uid="uid://jrtnf8jnql7p" path="res://assets/images/enemies/trunk/Run (64x32).png" id="5_530hs"]
 [ext_resource type="Texture2D" uid="uid://skgvfar4241m" path="res://assets/images/enemies/trunk/Attack (64x32).png" id="5_wvvou"]
+[ext_resource type="AudioStream" uid="uid://8t1gn8hvn0pq" path="res://assets/audio/sounds/bullet_hit.wav" id="7_2676i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwxky"]
 atlas = ExtResource("2_po7w5")
@@ -426,6 +427,10 @@ position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_syfr7")
 
 [node name="ShootingCooldown" type="Timer" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2676i")
+bus = &"Sound"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="ShootingCooldown" to="." method="_on_shooting_timer_timeout"]

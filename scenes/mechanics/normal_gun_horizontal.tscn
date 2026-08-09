@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ldl08ejh8wp"]
+
+[ext_resource type="Script" path="res://scripts/mechanics/normal_gun_horizontal.gd" id="1_8kexq"]
+[ext_resource type="Texture2D" uid="uid://chv0n2vux7sys" path="res://assets/images/mechanics/Player Gun - Normal (Horizontal).png" id="2_tawsb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7yys"]
+size = Vector2(16, 14)
+
+[node name="NormalGunHorizontal" type="Area2D"]
+script = ExtResource("1_8kexq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_tawsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_i7yys")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

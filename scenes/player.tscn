@@ -378,3 +378,8 @@ bus = &"Sound"
 [node name="FloorShapeCast2D" type="ShapeCast2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_5xhap")
+
+[node name="ShootingTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]
