@@ -1,17 +1,20 @@
-[gd_scene load_steps=26 format=4 uid="uid://c2lw564sdu80s"]
+[gd_scene load_steps=27 format=4 uid="uid://cri0q4qsfqftf"]
 
-[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_4mnul"]
-[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_cen6n"]
-[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_e1jq6"]
-[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_kfrmc"]
-[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_8r0kq"]
-[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="6_pcsf1"]
-[ext_resource type="PackedScene" uid="uid://dvubpxu0dp36d" path="res://scenes/enemies/snail.tscn" id="7_igqle"]
-[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/collectibles/melon.tscn" id="8_ohkbn"]
-[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/traps/spikes.tscn" id="9_x2224"]
+[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_tqdec"]
+[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_jjqux"]
+[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_h1bsp"]
+[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_nm3ke"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_5r4lj"]
+[ext_resource type="PackedScene" uid="uid://gllw8mhfxndk" path="res://scenes/mechanics/normal_gun_up.tscn" id="6_dm7it"]
+[ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="7_knrp5"]
+[ext_resource type="PackedScene" uid="uid://hgne2kduq7o2" path="res://scenes/enemies/bee.tscn" id="7_ve74g"]
+[ext_resource type="PackedScene" uid="uid://cdkralsml8mgg" path="res://scenes/enemies/mushroom.tscn" id="9_x35lu"]
+[ext_resource type="PackedScene" uid="uid://d1rk0vgn44ixa" path="res://scenes/enemies/plant.tscn" id="10_2v46e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
-texture = ExtResource("2_cen6n")
+texture = ExtResource("2_jjqux")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
@@ -300,51 +303,49 @@ texture = ExtResource("2_cen6n")
 20:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_q13hu"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06rio"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulilj"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upoao"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e47y4"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wiseb"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_junvf"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ghe7"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dtgi"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l047r"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw6ch"]
-atlas = ExtResource("4_kfrmc")
+atlas = ExtResource("4_nm3ke")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjwnv"]
@@ -386,9 +387,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnj25"]
-size = Vector2(36, 99.75)
+size = Vector2(36, 118.75)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woptx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgdyi"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -401,7 +402,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sogdw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0iav"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -418,35 +419,36 @@ shadow_size = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
+offset_top = -2.0
 offset_right = 1152.0
-offset_bottom = 668.0
-texture = ExtResource("1_4mnul")
+offset_bottom = 666.0
+texture = ExtResource("1_tqdec")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("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AAAjAAIAAAAGAAEAAAAjAAEAAAAGAAEAAAABABIAAAAHAAEAAAABABEAAAAHAAAAAAACABEAAAAHAAAAAAADABEAAAAHAAAAAAAEABEAAAAHAAAAAAAFABEAAAAHAAAAAAACABIAAAAHAAEAAAADABIAAAAHAAEAAAAEABIAAAAHAAEAAAAFABIAAAAHAAEAAAAHABEAAAAHAAAAAAAGABEAAAAHAAAAAAAGABIAAAAHAAEAAAAHABIAAAAHAAEAAAAIAA8AAAAGAAEAAAAJAA8AAAAHAAEAAAAKAA8AAAAHAAEAAAAIAA0AAAAGAAAAAAAIAA4AAAAGAAEAAAAJAA0AAAAHAAAAAAAJAA4AAAAHAAEAAAAKAA0AAAAHAAAAAAAKAA4AAAAHAAEAAAAIABEAAAAGAAEAAAAIABIAAAAHAAEAAAAJABEAAAAHAAEAAAAJABIAAAAHAAEAAAAKABEAAAAHAAEAAAAKABIAAAAHAAEAAAAIABAAAAAGAAEAAAAJABAAAAAHAAEAAAAKABAAAAAHAAEAAAATAAsAAAAHAAAAAAATAAwAAAAHAAEAAAATAA0AAAAHAAIAAAAPAAsAAAAHAAAAAAAQAAwAAAAHAAEAAAAQAA0AAAAHAAIAAAARAA0AAAAHAAIAAAASAA0AAAAHAAIAAAASAAwAAAAHAAEAAAARAAwAAAAHAAEAAAAPAAwAAAAHAAEAAAAPAA0AAAAHAAIAAAAQAAsAAAAHAAAAAAARAAsAAAAHAAAAAAASAAsAAAAHAAAAAAAUAAsAAAAHAAAAAAAVAAsAAAAHAAAAAAAWAAsAAAAHAAAAAAAWAAwAAAAHAAEAAAAWAA0AAAAHAAIAAAAUAAwAAAAHAAEAAAAUAA0AAAAHAAIAAAAVAA0AAAAHAAIAAAAVAAwAAAAHAAEAAAAeAAwAAAAIAAEAAAAeAA0AAAAIAAIAAAAXAAwAAAAHAAEAAAAXAA0AAAAHAAIAAAAYAAwAAAAHAAEAAAAYAA0AAAAHAAIAAAAZAAwAAAAHAAEAAAAZAA0AAAAHAAIAAAAaAAwAAAAIAAEAAAAaAA0AAAAIAAIAAAAdAAwAAAAGAAEAAAAdAA0AAAAGAAIAAAAXAAsAAAAHAAAAAAAYAAsAAAAHAAAAAAAZAAsAAAAHAAAAAAAaAAsAAAAIAAAAAAAdAAsAAAAGAAEAAAAeAAsAAAAIAAEAAAAiAA0AAAAHAAAAAAAhAA0AAAAGAAAAAAAhAA4AAAAGAAEAAAAhAA8AAAAGAAEAAAAhABAAAAAGAAEAAAAhABEAAAAGAAEAAAAhABIAAAAGAAEAAAAiAA4AAAAHAAEAAAAiAA8AAAAHAAEAAAAiABAAAAAHAAEAAAAjAA4AAAAHAAEAAAAjAA8AAAAHAAEAAAAjABAAAAAHAAEAAAAkAA4AAAAHAAEAAAAkAA8AAAAHAAEAAAAlAA4AAAAHAAEAAAAlAA8AAAAHAAEAAAAmAA4AAAAHAAEAAAAmAA8AAAAHAAEAAAAeAAoAAAAIAAEAAAAdAAoAAAAGAAEAAAAdAAkAAAAGAAEAAAAdAAgAAAAGAAEAAAAdAAcAAAAGAAEAAAAdAAYAAAAGAAEAAAAdAAUAAAAGAAEAAAAdAAQAAAAGAAEAAAAdAAMAAAAGAAEAAAAdAAIAAAAGAAEAAAAdAAEAAAAGAAEAAAAeAAEAAAAIAAEAAAAeAAIAAAAIAAEAAAAeAAMAAAAIAAEAAAAeAAQAAAAIAAEAAAAeAAUAAAAIAAEAAAAeAAYAAAAIAAEAAAAeAAcAAAAIAAEAAAAeAAgAAAAIAAEAAAAeAAkAAAAIAAEAAAAOAA0AAAAHAAEAAAANAA0AAAAHAAEAAAAMAA0AAAAHAAEAAAALAA0AAAAGAAEAAAALAAsAAAAGAAAAAAAMAAsAAAAHAAAAAAANAAsAAAAHAAAAAAAOAAsAAAAHAAAAAAALAAwAAAAGAAEAAAALAA4AAAAHAAEAAAAMAA4AAAAHAAEAAAANAA4AAAAHAAEAAAAOAA4AAAAIAAEAAAAOAA8AAAAIAAEAAAAOABAAAAAIAAEAAAAOABEAAAAIAAEAAAAOABIAAAAIAAEAAAANABIAAAAHAAEAAAAMABIAAAAHAAEAAAALABIAAAAHAAEAAAALABEAAAAHAAEAAAAMABEAAAAHAAEAAAANABEAAAAHAAEAAAANABAAAAAHAAEAAAANAA8AAAAHAAEAAAAMAA8AAAAHAAEAAAALAA8AAAAHAAEAAAALABAAAAAHAAEAAAAMABAAAAAHAAEAAAAMAAwAAAAHAAEAAAANAAwAAAAHAAEAAAAOAAwAAAAHAAEAAAALAAoAAAAMAAEAAAAaAAoAAAAMAAEAAAA=")
+position = Vector2(0, -2)
+scale = Vector2(1.75, 1.75)
+tile_map_data = PackedByteArray("AAAAAA0AAAAIAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAIAAEAAAAAABEAAAAIAAEAAAAAABIAAAAIAAEAAAAAABQAAAAIAAEAAAAAABMAAAAIAAEAAAAjAAAAAAAHAAIAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAAAABAAAAAIAAEAAAAkAAAAAAAHAAIAAAAlAAAAAAAHAAIAAAAmAAAAAAAHAAIAAAAAABYAAAAHAAEAAAABABYAAAAHAAEAAAACABYAAAAIAAEAAAADABYAAAAHAAAAAAAEABYAAAAHAAAAAAAFABYAAAAHAAAAAAAGABYAAAAHAAAAAAAHABYAAAAHAAAAAAAIABYAAAAHAAAAAAAJABYAAAAHAAAAAAAKABYAAAAHAAAAAAALABYAAAAHAAAAAAAMABYAAAAHAAAAAAANABYAAAAHAAAAAAASABYAAAAHAAAAAAATABYAAAAHAAAAAAAUABYAAAAHAAAAAAAVABYAAAAHAAAAAAAWABYAAAAHAAAAAAAXABYAAAAHAAAAAAAYABYAAAAHAAAAAAAZABYAAAAHAAAAAAAaABYAAAAHAAAAAAAbABYAAAAHAAAAAAAcABYAAAAHAAAAAAAdABYAAAAHAAAAAAAeABYAAAAHAAAAAAAfABYAAAAHAAAAAAAgABYAAAAHAAAAAAAhABYAAAAHAAAAAAAiABYAAAAHAAAAAAAkABYAAAAIAAAAAAAnABYAAAAGAAEAAAAoABYAAAAHAAEAAAAAABcAAAAHAAEAAAABABcAAAAHAAEAAAACABcAAAAHAAEAAAADABcAAAAHAAEAAAAEABcAAAAHAAEAAAAFABcAAAAHAAEAAAAGABcAAAAHAAEAAAAHABcAAAAHAAEAAAAIABcAAAAHAAEAAAAJABcAAAAHAAEAAAAKABcAAAAHAAEAAAALABcAAAAHAAEAAAAMABcAAAAHAAEAAAANABcAAAAHAAEAAAAOABcAAAAHAAEAAAAPABcAAAAHAAEAAAAQABcAAAAHAAEAAAARABcAAAAHAAEAAAASABcAAAAHAAEAAAATABcAAAAHAAEAAAAUABcAAAAHAAEAAAAVABcAAAAHAAEAAAAWABcAAAAHAAEAAAAXABcAAAAHAAEAAAAYABcAAAAHAAEAAAAZABcAAAAHAAEAAAAaABcAAAAHAAEAAAAbABcAAAAHAAEAAAAcABcAAAAHAAEAAAAdABcAAAAHAAEAAAAeABcAAAAHAAEAAAAfABcAAAAHAAEAAAAgABcAAAAHAAEAAAAhABcAAAAHAAEAAAAiABcAAAAHAAEAAAAjABcAAAAHAAEAAAAkABcAAAAIAAEAAAAlABcAAAAHAAAAAAAmABcAAAAHAAAAAAAnABcAAAAGAAEAAAAoABcAAAAHAAEAAAApABcAAAAHAAEAAAApABYAAAAHAAEAAAAOABYAAAAHAAAAAAAPABYAAAAHAAAAAAAQABYAAAAHAAAAAAARABYAAAAHAAAAAAAjABYAAAAHAAAAAAAoABUAAAAHAAEAAAAoABQAAAAHAAEAAAAoABMAAAAHAAEAAAAoABIAAAAHAAEAAAAoABEAAAAHAAEAAAAoABAAAAAHAAEAAAAoAA8AAAAHAAEAAAAoAA4AAAAHAAEAAAAoAA0AAAAHAAEAAAAAABUAAAAHAAEAAAAnAAEAAAAGAAEAAAAnAAIAAAAGAAEAAAAnAAMAAAAGAAEAAAAnAAQAAAAGAAIAAAAoAAQAAAAHAAIAAAApAA0AAAAHAAEAAAApAA4AAAAHAAEAAAApAA8AAAAHAAEAAAApABAAAAAHAAEAAAApABEAAAAHAAEAAAApABIAAAAHAAEAAAApABMAAAAHAAEAAAApABQAAAAHAAEAAAApABUAAAAHAAEAAAAnABUAAAAGAAEAAAAnABQAAAAGAAEAAAAnABMAAAAGAAEAAAAnABIAAAAGAAEAAAAnABEAAAAGAAEAAAAnABAAAAAGAAEAAAAnAA8AAAAGAAEAAAAnAA4AAAAGAAEAAAAnAA0AAAAGAAEAAAAoAAwAAAAHAAEAAAAnAAwAAAAGAAEAAAApAAwAAAAHAAEAAAApAAQAAAAHAAIAAAAqAAQAAAAHAAIAAAArAAQAAAAHAAIAAAAsAAQAAAAHAAIAAAAnAAkAAAAGAAAAAAAoAAkAAAAHAAAAAAApAAkAAAAHAAAAAAApAAoAAAAHAAEAAAApAAsAAAAHAAEAAAAoAAsAAAAHAAEAAAAoAAoAAAAHAAEAAAAnAAsAAAAGAAEAAAAnAAoAAAAGAAEAAAAoAAMAAAAHAAEAAAApAAMAAAAHAAEAAAApAAIAAAAHAAEAAAAoAAIAAAAHAAEAAAAoAAEAAAAHAAEAAAApAAEAAAAHAAEAAAApAAAAAAAHAAEAAAAoAAAAAAAHAAEAAAAnAAAAAAAHAAEAAAAqAAMAAAAHAAEAAAAqAAIAAAAHAAEAAAAqAAEAAAAHAAEAAAAqAAAAAAAHAAEAAAArAAAAAAAHAAEAAAAsAAAAAAAHAAEAAAAsAAEAAAAHAAEAAAAsAAIAAAAHAAEAAAAsAAMAAAAHAAEAAAArAAMAAAAHAAEAAAArAAIAAAAHAAEAAAArAAEAAAAHAAEAAAAqAAkAAAAHAAAAAAArAAkAAAAHAAAAAAAqAAoAAAAHAAEAAAAqAAsAAAAHAAEAAAArAAsAAAAHAAEAAAArAAoAAAAHAAEAAAAsAAsAAAAHAAEAAAAsAAoAAAAHAAEAAAAsAAkAAAAHAAAAAAABABQAAAAHAAAAAAACABQAAAAIAAAAAAACABUAAAAIAAEAAAABABUAAAAHAAEAAAAmABMAAAAOAAAAAAAlABMAAAAMAAAAAAAlAA8AAAANAAAAAAAmAA8AAAAOAAAAAAAmAA4AAAAMAAEAAAAkAA8AAAAMAAAAAAA=")
 tile_set = SubResource("TileSet_q13hu")
 
-[node name="Player" parent="." instance=ExtResource("3_e1jq6")]
-position = Vector2(67, 512)
-scale = Vector2(2, 2)
+[node name="Player" parent="." instance=ExtResource("3_h1bsp")]
+position = Vector2(56, 529)
+scale = Vector2(1.75, 1.75)
 
 [node name="Flag" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1107, 368)
-scale = Vector2(1.5, 1.5)
+position = Vector2(1115, 208)
+scale = Vector2(1.313, 1.313)
 sprite_frames = SubResource("SpriteFrames_vjwnv")
 animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 0.867057
+frame_progress = 0.888598
 
 [node name="Exit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-position = Vector2(1216, 368)
+position = Vector2(1203, 194.625)
 shape = SubResource("RectangleShape2D_cnj25")
 
 [node name="InfoText" type="CanvasLayer" parent="."]
@@ -456,16 +458,16 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 190.0
 offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_woptx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel"]
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_8r0kq")
+theme_override_fonts/font = ExtResource("5_5r4lj")
 theme_override_font_sizes/font_size = 15
-text = "Watch where you go or
-you'll be SNAILed! HA!"
+text = "You better defeat all 
+those plants and bees."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -474,91 +476,73 @@ offset_left = 20.0
 offset_top = 62.0
 offset_right = 170.0
 offset_bottom = 107.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_sogdw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel2"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("5_8r0kq")
+theme_override_fonts/font = ExtResource("5_5r4lj")
 theme_override_font_sizes/font_size = 12
-text = "Sorry.
-Just... avoid them."
+text = "Or just use a mushroom.
+Bee careful out there!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Apples" type="Node2D" parent="."]
+[node name="NormalGunUp" parent="." instance=ExtResource("6_dm7it")]
+position = Vector2(159, 596)
+scale = Vector2(1.75, 1.75)
 
-[node name="Apple" parent="Apples" instance=ExtResource("6_pcsf1")]
-position = Vector2(1025, 545)
-scale = Vector2(2, 2)
-
-[node name="Apple2" parent="Apples" instance=ExtResource("6_pcsf1")]
-position = Vector2(608, 192)
-scale = Vector2(2, 2)
+[node name="NormalGunHorizontal" parent="." instance=ExtResource("7_knrp5")]
+position = Vector2(801, 600)
+scale = Vector2(1.75, 1.75)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Snail" parent="Enemies" instance=ExtResource("7_igqle")]
-position = Vector2(735, 328)
-scale = Vector2(2, 2)
+[node name="BadBee" parent="Enemies" instance=ExtResource("7_ve74g")]
+position = Vector2(928, 252)
+scale = Vector2(1.75, 1.75)
+metadata/Patrol_Time = 4.0
 
-[node name="Snail2Flip" parent="Enemies" instance=ExtResource("7_igqle")]
-position = Vector2(479, 328)
-scale = Vector2(2, 2)
+[node name="BadBee2Flip" parent="Enemies" instance=ExtResource("7_ve74g")]
+position = Vector2(160, 172)
+scale = Vector2(1.75, 1.75)
+metadata/Patrol_Time = 4.0
 
-[node name="Snail3" parent="Enemies" instance=ExtResource("7_igqle")]
-position = Vector2(672, 584)
-scale = Vector2(2, 2)
+[node name="BadBee3" parent="Enemies" instance=ExtResource("7_ve74g")]
+position = Vector2(833, 92)
+scale = Vector2(1.75, 1.75)
+metadata/Patrol_Time = 4.0
 
-[node name="Snail4Flip" parent="Enemies" instance=ExtResource("7_igqle")]
-position = Vector2(864, 584)
-scale = Vector2(2, 2)
+[node name="BadBee4Flip" parent="Enemies" instance=ExtResource("7_ve74g")]
+position = Vector2(417, 332)
+scale = Vector2(1.75, 1.75)
+metadata/Patrol_Time = 4.0
 
-[node name="Melons" type="Node2D" parent="."]
+[node name="BadBee5" parent="Enemies" instance=ExtResource("7_ve74g")]
+position = Vector2(993, 172)
+scale = Vector2(1.75, 1.75)
+metadata/Patrol_Time = 4.0
 
-[node name="Melon" parent="Melons" instance=ExtResource("8_ohkbn")]
-position = Vector2(512, 515)
-scale = Vector2(2, 2)
+[node name="BadBee6Flip" parent="Enemies" instance=ExtResource("7_ve74g")]
+position = Vector2(289, 252)
+scale = Vector2(1.75, 1.75)
+metadata/Patrol_Time = 4.0
 
-[node name="Traps" type="Node2D" parent="."]
+[node name="Mushroom2Flip" parent="Enemies" instance=ExtResource("9_x35lu")]
+position = Vector2(287, 573.5)
+scale = Vector2(2.5, 2.5)
 
-[node name="Spikes2" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(498, 336)
-scale = Vector2(2, 2)
+[node name="PoisonPlant" parent="Enemies" instance=ExtResource("10_2v46e")]
+position = Vector2(1065, 613)
+scale = Vector2(1.75, 1.75)
+metadata/Min_Delay = 0.5
+metadata/Max_Delay = 0.5
 
-[node name="Spikes3" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(528, 336)
-scale = Vector2(2, 2)
+[node name="PoisonPlant2" parent="Enemies" instance=ExtResource("10_2v46e")]
+position = Vector2(1065, 500)
+scale = Vector2(1.75, 1.75)
 
-[node name="Spikes6" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(496, 592)
-scale = Vector2(2, 2)
-
-[node name="Spikes7" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(526, 592)
-scale = Vector2(2, 2)
-
-[node name="Spikes8" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(754, 592)
-scale = Vector2(2, 2)
-
-[node name="Spikes9" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(784, 592)
-scale = Vector2(2, 2)
-
-[node name="Spikes10" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(1012, 592)
-scale = Vector2(2, 2)
-
-[node name="Spikes11" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(1042, 592)
-scale = Vector2(2, 2)
-
-[node name="Spikes4" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(690, 336)
-scale = Vector2(2, 2)
-
-[node name="Spikes5" parent="Traps" instance=ExtResource("9_x2224")]
-position = Vector2(720, 336)
-scale = Vector2(2, 2)
+[node name="PoisonPlant3" parent="Enemies" instance=ExtResource("10_2v46e")]
+position = Vector2(1037, 388)
+scale = Vector2(1.75, 1.75)

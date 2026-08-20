@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cdkralsml8mgg"]
+[gd_scene load_steps=52 format=3 uid="uid://cdkralsml8mgg"]
 
 [ext_resource type="Script" path="res://scripts/enemies/mushroom.gd" id="1_a7l5r"]
 [ext_resource type="Texture2D" uid="uid://rs4p7ws431ge" path="res://assets/images/enemies/mushroom/Hit.png" id="2_bx46n"]
@@ -312,10 +312,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syfr7"]
-size = Vector2(28.3333, 10)
+size = Vector2(31, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt71c"]
-size = Vector2(26, 12)
+size = Vector2(22, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5lga"]
+size = Vector2(22, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khr1p"]
+size = Vector2(3.33333, 30)
 
 [node name="Mushroom" type="Area2D"]
 scale = Vector2(3, 3)
@@ -324,15 +330,33 @@ script = ExtResource("1_a7l5r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mik35")
-animation = &"hit"
+animation = &"idle"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.166667, 11)
+position = Vector2(-0.166666, 11)
 shape = SubResource("RectangleShape2D_syfr7")
 
 [node name="VulnerableShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.57628e-07, -2.54313e-06)
+position = Vector2(3.17891e-07, -2.54313e-06)
 shape = SubResource("RectangleShape2D_xt71c")
+
+[node name="SafeShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2.38419e-07, -15)
+shape = SubResource("RectangleShape2D_n5lga")
+disabled = true
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-12.6667, -9)
+shape = SubResource("RectangleShape2D_khr1p")
+disabled = true
+
+[node name="DangerShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(12.6667, -9)
+shape = SubResource("RectangleShape2D_khr1p")
+disabled = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

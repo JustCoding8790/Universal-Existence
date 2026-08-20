@@ -11,10 +11,11 @@ var SPEED = 150.0
 var JUMP_VELOCITY = -350.0
 const MAX_JUMPS = 2
 var jump_buffer_timer = 0.0
-const JUMP_BUFFER_TIME = 0.2
+const JUMP_BUFFER_TIME = 0.15
 var coyote_timer = 0.0
 const COYOTE_TIME = 20
 var jump_multiplier = 1.1
+var gravity_multiplier = 1
 var direction
 
 var jump_count = 0
@@ -23,6 +24,7 @@ var alive = true
 var can_move = true
 
 var shoot_mode = ""
+var shoot_dir = ""
 
 func _ready() -> void:
 	# Connect main
@@ -105,34 +107,42 @@ func die() -> void:
 	await main._load_level(Global.world, Global.level, false, true)
 
 func _reset_vertical_gravity() -> void:
-	ProjectSettings.set_setting("physics/2d/default_gravity", 1250 * self.scale.x)
 	if self.scale.x == 1.5:
-		jump_multiplier = 1.1
+		jump_multiplier = 1.2
+		gravity_multiplier = 0.8
 	else:
 		jump_multiplier = 1
+		gravity_multiplier = 1
+	ProjectSettings.set_setting("physics/2d/default_gravity", 1250 * self.scale.x * gravity_multiplier)
 
 # --------------------
 # SHOOTING
 # --------------------
 
-func start_shooting(type: String) -> void:
+func start_shooting(type: String, dir: String) -> void:
 	shooting_timer.start()
 	shoot_mode = type
+	shoot_dir = dir
 
 func _on_shooting_timer_timeout() -> void:
 	shooting_timer.stop()
-	var bullet = projectile.instantiate()
-	# bullet.visible = false
-	get_tree().get_root().add_child(bullet)
-	bullet.global_position = global_position
-	bullet.scale = self.scale
-	if shoot_mode == "horizontal":
-		if animated_sprite_2d.flip_h:
-			bullet.global_position.x -= 15
-			bullet.sprite_2d.flip_h = true
-			bullet.direction = -1
-		else:
-			bullet.global_position.x += 15
-			bullet.direction = 1
-	# bullet.visible = true
-	shooting_timer.start()
+	if shoot_mode == "normal":
+		var bullet = projectile.instantiate()
+		# bullet.visible = false
+		get_tree().get_root().add_child(bullet)
+		bullet.global_position = global_position
+		bullet.scale = self.scale
+		if shoot_dir == "horizontal":
+			if animated_sprite_2d.flip_h:
+				bullet.global_position.x -= 15
+				bullet.sprite_2d.flip_h = true
+				bullet.direction = -1
+			else:
+				bullet.global_position.x += 15
+				bullet.direction = 1
+		elif shoot_dir == "up":
+			bullet.global_position.y -= 15
+			bullet.direction = 2
+			bullet.rotation = deg_to_rad(-90)
+		# bullet.visible = true
+		shooting_timer.start()

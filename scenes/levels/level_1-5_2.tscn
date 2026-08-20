@@ -490,11 +490,11 @@ vertical_alignment = 1
 [node name="Apples" type="Node2D" parent="."]
 
 [node name="Apple" parent="Apples" instance=ExtResource("6_pcsf1")]
-position = Vector2(512, 513)
+position = Vector2(1024, 545)
 scale = Vector2(2, 2)
 
 [node name="Apple2" parent="Apples" instance=ExtResource("6_pcsf1")]
-position = Vector2(608, 256)
+position = Vector2(608, 192)
 scale = Vector2(2, 2)
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -514,7 +514,7 @@ scale = Vector2(2, 2)
 [node name="Melons" type="Node2D" parent="."]
 
 [node name="Melon" parent="Melons" instance=ExtResource("8_ohkbn")]
-position = Vector2(63, 189)
+position = Vector2(511, 513)
 scale = Vector2(2, 2)
 
 [node name="Traps" type="Node2D" parent="."]
@@ -533,4 +533,12 @@ scale = Vector2(2, 2)
 
 [node name="Spikes5" parent="Traps" instance=ExtResource("9_5g6co")]
 position = Vector2(720, 336)
+scale = Vector2(2, 2)
+
+[node name="Spikes6" parent="Traps" instance=ExtResource("9_5g6co")]
+position = Vector2(496, 592)
+scale = Vector2(2, 2)
+
+[node name="Spikes7" parent="Traps" instance=ExtResource("9_5g6co")]
+position = Vector2(526, 592)
 scale = Vector2(2, 2)

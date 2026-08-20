@@ -497,11 +497,15 @@ vertical_alignment = 1
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Spikes" parent="Traps" instance=ExtResource("6_qj8xe")]
-position = Vector2(290, 368)
+position = Vector2(274, 368)
 scale = Vector2(2, 2)
 
 [node name="Spikes2" parent="Traps" instance=ExtResource("6_qj8xe")]
-position = Vector2(320, 368)
+position = Vector2(304, 368)
+scale = Vector2(2, 2)
+
+[node name="Spikes3" parent="Traps" instance=ExtResource("6_qj8xe")]
+position = Vector2(434, 368)
 scale = Vector2(2, 2)
 
 [node name="Spikes4" parent="Traps" instance=ExtResource("6_qj8xe")]
@@ -635,7 +639,7 @@ scale = Vector2(2, 2)
 [node name="Apples" type="Node2D" parent="."]
 
 [node name="Apple" parent="Apples" instance=ExtResource("7_ea7vv")]
-position = Vector2(304, 255)
+position = Vector2(288, 255)
 scale = Vector2(2, 2)
 
 [node name="Apple2" parent="Apples" instance=ExtResource("7_ea7vv")]

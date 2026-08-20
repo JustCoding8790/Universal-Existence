@@ -15,7 +15,7 @@ func _ready() -> void:
 	speed = speeds[Global.difficulty]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	position.x += direction * speed * delta * self.scale.x
 
 #func _on_timer_timeout() -> void:

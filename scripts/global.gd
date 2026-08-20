@@ -3,7 +3,7 @@ extends Node
 # --------------------
 # GLOBAL STATS
 # --------------------
-var difficulty = 3
+var difficulty = 2
 var can_pause = false
 var world: int = 1	# implement different worlds later
 var level: int = 9

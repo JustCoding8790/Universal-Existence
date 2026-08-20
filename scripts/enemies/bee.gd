@@ -1,34 +1,40 @@
 extends Area2D
-@onready var trunkwalker: Area2D = $"."
+@onready var bee: Area2D = $"."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var shooting_timer: Timer = $ShootingCooldown
-@onready var projectile = load("res://scenes/enemies/trunk_bullet.tscn")
+@onready var shooting_timer: Timer = $ShootingTimer
+@onready var patrol_timer: Timer = $PatrolTimer
+@onready var projectile = load("res://scenes/enemies/bee_bullet.tscn")
 @onready var hit_sound: AudioStreamPlayer = $HitSound
 
-var speed = 50
+var speed = 100
 var direction = -1
-var speeds = [35, 50, 60, 75]
-var min_shoot_intervals = [2.5, 2, 1.25, 0.75]
-var max_shoot_intervals = [3, 2.5, 2.25, 1.75]
-var health = 55
-var hp_amounts = [25, 30, 35, 40]
+var speeds = [65, 75, 90, 100]
+var min_shoot_intervals = [2, 1.5, 1, 0.5]
+var max_shoot_intervals = [3, 2.5, 2, 1.5]
+var health = 20
+var hp_amounts = [12, 15, 16, 20]
 var self_alive = true
+var speed_multiplier = 1
 signal player_died
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if "Flip" in self.name:
 		direction *= -1
-		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
-	speed = speeds[Global.difficulty]
+	speed = randi_range(speeds[Global.difficulty] - 10, speeds[Global.difficulty] + 10)
+	patrol_timer.wait_time = bee.get_meta("Patrol_Time")
 	shooting_timer.wait_time = randf_range(min_shoot_intervals[Global.difficulty], max_shoot_intervals[Global.difficulty])
+	patrol_timer.start()
 	shooting_timer.start()
 	health = hp_amounts[Global.difficulty]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if animated_sprite_2d.animation == "walk":
-		position.x += direction * speed * delta * self.scale.x
+	if patrol_timer.time_left <= 0.5 or patrol_timer.time_left >= bee.get_meta("Patrol_Time") - 0.5:
+		speed_multiplier = min(patrol_timer.time_left * 2, (bee.get_meta("Patrol_Time") - patrol_timer.time_left) * 2)
+	else:
+		speed_multiplier = 1
+	position.x += direction * speed * delta * self.scale.x * speed_multiplier
 
 func _on_shooting_timer_timeout() -> void:
 	shooting_timer.stop()
@@ -38,29 +44,29 @@ func _on_shooting_timer_timeout() -> void:
 	bullet.visible = false
 	get_tree().get_root().add_child(bullet)
 	bullet.global_position = global_position
-	bullet.scale = trunkwalker.scale
-	bullet.direction = direction
+	bullet.scale = bee.scale
 	if direction == -1:
-		bullet.global_position.x -= 15
-		bullet.sprite_2d.flip_h = true
+		bullet.global_position.x -= 8
 	else:
-		bullet.global_position.x += 15
-	bullet.global_position.y += 4
+		bullet.global_position.x += 8
+	bullet.global_position.y += 16
 	if health <= 0:
 		bullet.queue_free()
 	bullet.visible = true
-	animated_sprite_2d.animation = "walk"
+	animated_sprite_2d.animation = "idle"
 	animated_sprite_2d.play()
 	shooting_timer.wait_time = randf_range(min_shoot_intervals[Global.difficulty], max_shoot_intervals[Global.difficulty])
 	shooting_timer.start()
 	# print("Projectile spawned")
 
+func _on_patrol_timer_timeout() -> void:
+	direction *= -1
+	speed = randi_range(speeds[Global.difficulty] - 25, speeds[Global.difficulty] + 25)
+	patrol_timer.start()
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
 		player_died.emit(body)
-	elif body.name == "TileMapLayer":
-		direction *= -1
-		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
 
 func take_damage(damage: int) -> void:
 	hit_sound.play()

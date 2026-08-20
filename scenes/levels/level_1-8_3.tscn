@@ -442,7 +442,8 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Flag" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1112, 136)
+position = Vector2(1112, 132)
+scale = Vector2(1.125, 1.125)
 sprite_frames = SubResource("SpriteFrames_vjwnv")
 animation = &"idle"
 autoplay = "idle"
@@ -840,7 +841,7 @@ position = Vector2(725, 61)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apple5" parent="Apples" instance=ExtResource("6_om0kk")]
-position = Vector2(608, 415)
+position = Vector2(928, 449)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apple6" parent="Apples" instance=ExtResource("6_om0kk")]
