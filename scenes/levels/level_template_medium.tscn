@@ -1,14 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://c0s041g5oe64h"]
+[gd_scene load_steps=22 format=4 uid="uid://c0s041g5oe64h"]
 
 [ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_tqdec"]
 [ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_jjqux"]
 [ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_h1bsp"]
 [ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_nm3ke"]
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_5r4lj"]
-[ext_resource type="PackedScene" uid="uid://gllw8mhfxndk" path="res://scenes/mechanics/normal_gun_up.tscn" id="6_dm7it"]
-[ext_resource type="PackedScene" uid="uid://hgne2kduq7o2" path="res://scenes/enemies/bee.tscn" id="7_ve74g"]
-[ext_resource type="PackedScene" uid="uid://4mnpjl480jan" path="res://scenes/enemies/trunk.tscn" id="8_qy6jp"]
-[ext_resource type="PackedScene" uid="uid://cdkralsml8mgg" path="res://scenes/enemies/mushroom.tscn" id="9_x35lu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
 texture = ExtResource("2_jjqux")
@@ -487,55 +483,3 @@ text = "On XBOX controller, use
 the A button."
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="NormalGunVertical" parent="." instance=ExtResource("6_dm7it")]
-position = Vector2(159, 596)
-scale = Vector2(1.75, 1.75)
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="BadBee" parent="Enemies" instance=ExtResource("7_ve74g")]
-position = Vector2(928, 252)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
-
-[node name="BadBee2Flip" parent="Enemies" instance=ExtResource("7_ve74g")]
-position = Vector2(160, 172)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
-
-[node name="BadBee3" parent="Enemies" instance=ExtResource("7_ve74g")]
-position = Vector2(833, 92)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
-
-[node name="BadBee4Flip" parent="Enemies" instance=ExtResource("7_ve74g")]
-position = Vector2(417, 332)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
-
-[node name="BadBee5" parent="Enemies" instance=ExtResource("7_ve74g")]
-position = Vector2(289, 252)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
-
-[node name="BadBee6Flip" parent="Enemies" instance=ExtResource("7_ve74g")]
-position = Vector2(1057, 172)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
-
-[node name="Trunkwalker" parent="Enemies" instance=ExtResource("8_qy6jp")]
-position = Vector2(766, 586)
-scale = Vector2(1.75, 1.75)
-
-[node name="Trunkwalker2Flip" parent="Enemies" instance=ExtResource("8_qy6jp")]
-position = Vector2(448, 586)
-scale = Vector2(1.75, 1.75)
-
-[node name="Mushroom" parent="Enemies" instance=ExtResource("9_x35lu")]
-position = Vector2(960, 573.5)
-scale = Vector2(2.5, 2.5)
-
-[node name="Mushroom2Flip" parent="Enemies" instance=ExtResource("9_x35lu")]
-position = Vector2(288, 573.5)
-scale = Vector2(2.5, 2.5)

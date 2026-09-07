@@ -1,16 +1,13 @@
-[gd_scene load_steps=25 format=4 uid="uid://c6tlvoxlg0xin"]
+[gd_scene load_steps=10 format=4 uid="uid://dpbha1ats8q3f"]
 
-[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_fajgt"]
-[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_bx73g"]
-[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_7aiyb"]
-[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_w46gh"]
-[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_2bnea"]
-[ext_resource type="PackedScene" uid="uid://4mnpjl480jan" path="res://scenes/enemies/trunk.tscn" id="6_71efl"]
-[ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="7_lmpls"]
-[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="8_3vpql"]
+[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_iwjja"]
+[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_pg50m"]
+[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_psbnp"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="4_qmlx8"]
+[ext_resource type="Script" path="res://scripts/interface/demo_stats_panel.gd" id="5_6f4yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
-texture = ExtResource("2_bx73g")
+texture = ExtResource("2_pg50m")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -306,87 +303,6 @@ texture = ExtResource("2_bx73g")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_06rio"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ulilj"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_upoao"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e47y4"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wiseb"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_junvf"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ghe7"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dtgi"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l047r"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iw6ch"]
-atlas = ExtResource("4_w46gh")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vjwnv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06rio")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ulilj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_upoao")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e47y4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wiseb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_junvf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ghe7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7dtgi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l047r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iw6ch")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 15.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnj25"]
-size = Vector2(36, 163.5)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgdyi"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
@@ -417,37 +333,21 @@ shadow_size = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_top = -2.0
+offset_top = -1.0
 offset_right = 1152.0
-offset_bottom = 666.0
-texture = ExtResource("1_fajgt")
+offset_bottom = 667.0
+texture = ExtResource("1_iwjja")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-position = Vector2(0, -2)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("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")
+tile_map_data = PackedByteArray("AAAAAA0AAAAIAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAIAAEAAAAAABEAAAAIAAEAAAAAABIAAAAIAAEAAAAAABQAAAAHAAEAAAABABQAAAAHAAEAAAACABQAAAAHAAEAAAADABQAAAAHAAEAAAAEABQAAAAHAAEAAAAFABQAAAAHAAEAAAAGABQAAAAHAAEAAAAHABQAAAAHAAEAAAAIABQAAAAHAAEAAAAJABQAAAAHAAEAAAAKABQAAAAHAAEAAAALABQAAAAHAAEAAAAMABQAAAAHAAEAAAANABQAAAAHAAEAAAAOABQAAAAHAAEAAAAPABQAAAAHAAEAAAAQABQAAAAHAAEAAAARABQAAAAHAAEAAAASABQAAAAHAAEAAAATABQAAAAHAAEAAAAUABQAAAAHAAEAAAAVABQAAAAHAAEAAAAWABQAAAAHAAEAAAAXABQAAAAHAAEAAAAYABQAAAAHAAEAAAAZABQAAAAHAAEAAAAaABQAAAAHAAEAAAAbABQAAAAHAAEAAAAcABQAAAAHAAEAAAAdABQAAAAHAAEAAAAeABQAAAAHAAEAAAAfABQAAAAHAAEAAAAgABQAAAAHAAEAAAAhABQAAAAHAAEAAAAiABQAAAAHAAEAAAAjABQAAAAHAAEAAAAAABMAAAAIAAEAAAAjAAIAAAAGAAEAAAAjAAEAAAAGAAEAAAAjAAAAAAAKAAAAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAABABMAAAAHAAAAAAACABMAAAAHAAAAAAADABMAAAAHAAAAAAAEABMAAAAHAAAAAAAAABAAAAAIAAEAAAAFABMAAAAHAAAAAAAGABMAAAAHAAAAAAAHABMAAAAHAAAAAAAIABMAAAAHAAAAAAAJABMAAAAHAAAAAAAKABMAAAAHAAAAAAALABMAAAAHAAAAAAAMABMAAAAHAAAAAAANABMAAAAHAAAAAAAOABMAAAAHAAAAAAAPABMAAAAHAAAAAAAQABMAAAAHAAAAAAARABMAAAAHAAAAAAATABMAAAAHAAAAAAASABMAAAAHAAAAAAAUABMAAAAHAAAAAAAVABMAAAAHAAAAAAAWABMAAAAHAAAAAAAXABMAAAAHAAAAAAAYABMAAAAHAAAAAAAhABMAAAAHAAAAAAAkAAIAAAAHAAEAAAAlAAIAAAAHAAEAAAAmAAIAAAAHAAEAAAAkAAAAAAAHAAEAAAAlAAAAAAAHAAEAAAAmAAAAAAAHAAEAAAAmAAEAAAAHAAEAAAAlAAEAAAAHAAEAAAAkAAEAAAAHAAEAAAAgABMAAAAHAAAAAAAfABMAAAAHAAAAAAAeABMAAAAHAAAAAAAdABMAAAAHAAAAAAAcABMAAAAHAAAAAAAbABMAAAAHAAAAAAAaABMAAAAHAAAAAAAZABMAAAAHAAAAAAAkAAoAAAAHAAEAAAAlAAoAAAAHAAAAAAAmAAoAAAAHAAAAAAAjAAQAAAAGAAEAAAAmAAMAAAAHAAEAAAAlAAMAAAAHAAEAAAAkAAMAAAAHAAEAAAAjAAMAAAAGAAEAAAAkAAQAAAAHAAEAAAAlAAQAAAAHAAIAAAAmAAQAAAAHAAIAAAAkAAsAAAAHAAEAAAAkAAwAAAAHAAEAAAAmAAwAAAAHAAEAAAAmAAsAAAAHAAEAAAAlAAsAAAAHAAEAAAAlAAwAAAAHAAEAAAAjABMAAAAGAAEAAAAjABIAAAAGAAEAAAAjABEAAAAGAAEAAAAjABAAAAAGAAEAAAAjAA8AAAAGAAEAAAAjAA4AAAAGAAEAAAAjAA0AAAAGAAEAAAAjAAwAAAAGAAEAAAAjAAsAAAAGAAEAAAAjAAoAAAAGAAEAAAAjAAkAAAAGAAEAAAAjAAgAAAAGAAEAAAAjAAcAAAAGAAEAAAAjAAYAAAAGAAEAAAAjAAUAAAAGAAEAAAAkAAkAAAAHAAEAAAAkAAgAAAAHAAEAAAAkAAcAAAAHAAEAAAAkAAYAAAAHAAEAAAAkAAUAAAAHAAEAAAAkAA0AAAAHAAEAAAAkAA4AAAAHAAEAAAAkAA8AAAAHAAEAAAAkABAAAAAHAAEAAAAkABEAAAAHAAEAAAAkABIAAAAHAAEAAAAkABMAAAAHAAEAAAAkABQAAAAHAAEAAAAiABMAAAAHAAAAAAA=")
 tile_set = SubResource("TileSet_q13hu")
 
-[node name="Player" parent="." instance=ExtResource("3_7aiyb")]
-position = Vector2(63, 511)
+[node name="Player" parent="." instance=ExtResource("3_psbnp")]
+position = Vector2(85, 560)
 scale = Vector2(2, 2)
-
-[node name="Flag" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(28, 208)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_vjwnv")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.888598
-
-[node name="Exit" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-position = Vector2(-66, 174.75)
-shape = SubResource("RectangleShape2D_cnj25")
 
 [node name="InfoText" type="CanvasLayer" parent="."]
 
@@ -462,10 +362,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_2bnea")
+theme_override_fonts/font = ExtResource("4_qmlx8")
 theme_override_font_sizes/font_size = 15
-text = "These Trunkwalkers
-sure will be a blast!"
+text = "Jump = W/Space/Up
+Double Jump = Jump x2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -480,53 +380,159 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("5_2bnea")
+theme_override_fonts/font = ExtResource("4_qmlx8")
 theme_override_font_sizes/font_size = 12
-text = "No, wait, I executed that
-joke wrong. Oops..."
+text = "On XBOX controller, use
+the A button."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="DemoPanel" type="Panel" parent="InfoText"]
+offset_left = 336.0
+offset_top = 175.0
+offset_right = 816.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
+script = ExtResource("5_6f4yh")
 
-[node name="TrunkwalkerFlip" parent="Enemies" instance=ExtResource("6_71efl")]
-position = Vector2(416, 574)
-scale = Vector2(2, 2)
+[node name="TitleLabel" type="Label" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 30
+text = "Thanks for playing the demo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Trunkwalker2" parent="Enemies" instance=ExtResource("6_71efl")]
-position = Vector2(799, 574)
-scale = Vector2(2, 2)
+[node name="TitleLabel2" type="Label" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.133333
+anchor_right = 1.0
+anchor_bottom = 0.206667
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 24
+text = "Full version coming out soon!
+Check out your stats:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Trunkwalker4" parent="Enemies" instance=ExtResource("6_71efl")]
-position = Vector2(287, 221)
-scale = Vector2(2, 2)
+[node name="LeftVBoxContainer" type="VBoxContainer" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 111.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Trunkwalker5Flip" parent="Enemies" instance=ExtResource("6_71efl")]
-position = Vector2(670, 221)
-scale = Vector2(2, 2)
+[node name="DiffLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Difficulty: ???"
+vertical_alignment = 1
 
-[node name="NormalGunHorizontal" parent="." instance=ExtResource("7_lmpls")]
-position = Vector2(128, 528)
-scale = Vector2(2, 2)
+[node name="ApplesLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Apples: ???"
+vertical_alignment = 1
 
-[node name="Apples" type="Node2D" parent="."]
+[node name="MelonsLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Melons: ???"
+vertical_alignment = 1
 
-[node name="Apple6" parent="Apples" instance=ExtResource("8_3vpql")]
-position = Vector2(1089, 127)
-scale = Vector2(2, 2)
+[node name="TimeLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Time: ???"
+vertical_alignment = 1
 
-[node name="Apple7" parent="Apples" instance=ExtResource("8_3vpql")]
-position = Vector2(801, 431)
-scale = Vector2(2, 2)
+[node name="SpikeLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Spike Deaths: ???"
+vertical_alignment = 1
 
-[node name="Apple8" parent="Apples" instance=ExtResource("8_3vpql")]
-position = Vector2(416, 431)
-scale = Vector2(2, 2)
+[node name="SnailLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Snail Deaths: ???    "
+vertical_alignment = 1
 
-[node name="Apple9" parent="Apples" instance=ExtResource("8_3vpql")]
-position = Vector2(673, 79)
-scale = Vector2(2, 2)
+[node name="RightVBoxContainer" type="VBoxContainer" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 112.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Apple10" parent="Apples" instance=ExtResource("8_3vpql")]
-position = Vector2(288, 79)
-scale = Vector2(2, 2)
+[node name="MushroomLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Mushroom Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TrunkLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Trunkwalker Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlantLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Plant Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BeeLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Bee Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BeeGoodLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Bee Good Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DeathLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Total Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1

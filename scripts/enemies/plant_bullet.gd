@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive:
 		body.die()
+		Global.deaths["plants"] += 1
 		queue_free()
 	elif body.name == "TileMapLayer":
 		queue_free()

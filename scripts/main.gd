@@ -70,6 +70,8 @@ func _setup_level(level_root: Node) -> void:
 	if enemies:
 		for enemy in enemies.get_children():
 			enemy.player_died.connect(_on_player_died)
+		if enemies.has_meta("Enemies_Left"):
+			enemies.boss_defeated.connect(_on_boss_defeated)
 	
 	# Connect collectibles
 	var apples = level_root.get_node_or_null("Apples")
@@ -98,6 +100,11 @@ func _on_exit_body_entered(body: Node2D) -> void:
 
 func _on_player_died(body) -> void:
 	body.die()
+
+func _on_boss_defeated() -> void:
+	await get_tree().create_timer(3).timeout
+	Global.level += 1
+	await _load_level(Global.world, Global.level, false, true)
 
 # --------------------
 # SCORE

@@ -243,6 +243,7 @@ scale = Vector2(3, 3)
 script = ExtResource("1_8fcs4")
 metadata/Min_Delay = 0.0
 metadata/Max_Delay = 0.0
+metadata/HP_Handicap = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

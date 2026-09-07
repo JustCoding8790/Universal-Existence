@@ -579,7 +579,7 @@ metadata/Min_Delay = 1.0
 metadata/Max_Delay = 3.0
 
 [node name="TrunkwalkerFlip" parent="Enemies" instance=ExtResource("7_u5poi")]
-position = Vector2(223, 576)
+position = Vector2(95, 576)
 scale = Vector2(1.5, 1.5)
 
 [node name="Trunkwalker2" parent="Enemies" instance=ExtResource("7_u5poi")]

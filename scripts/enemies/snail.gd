@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive:
 		player_died.emit(body)
+		Global.deaths["snails"] += 1
 	elif body.name == "TileMapLayer" or body.name == "CollisionShape2D":
 		direction *= -1
 		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h

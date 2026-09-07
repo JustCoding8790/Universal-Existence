@@ -162,8 +162,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_11gd8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_11gd8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_11gd8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_11gd8")
-disabled = true
-text = "Speedrun Timer - COMING SOON"
+text = "Speedrun Timer - OFF"
 
 [node name="SpeedrunningText" type="Label" parent="ControllerContainer/VBoxContainer/SpeedrunningVBox"]
 z_index = 3

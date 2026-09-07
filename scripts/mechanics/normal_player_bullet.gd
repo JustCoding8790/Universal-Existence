@@ -21,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
-	if "Trunkwalker" in area.name or "PoisonPlant" in area.name or "BadBee" in area.name:
+	if "Trunkwalker" in area.name or "PoisonPlant" in area.name or "BadBee" in area.name or "Bee Good" in area.name:
 		if area.health > 0:
 			area.take_damage(4)
 			queue_free()

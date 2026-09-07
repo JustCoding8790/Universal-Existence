@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dvnwsa070ef2r"]
+[gd_scene load_steps=26 format=4 uid="uid://dvnwsa070ef2r"]
 
 [ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_51jny"]
 [ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_8ck0m"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4mnpjl480jan" path="res://scenes/enemies/trunk.tscn" id="6_np1da"]
 [ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="7_5vmjr"]
 [ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/traps/spikes.tscn" id="8_qidvd"]
+[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="9_ymell"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
 texture = ExtResource("2_8ck0m")
@@ -566,4 +567,26 @@ scale = Vector2(2, 2)
 
 [node name="Spikes13" parent="Traps" instance=ExtResource("8_qidvd")]
 position = Vector2(784, 238)
+scale = Vector2(2, 2)
+
+[node name="Apples" type="Node2D" parent="."]
+
+[node name="Apple6" parent="Apples" instance=ExtResource("9_ymell")]
+position = Vector2(1089, 127)
+scale = Vector2(2, 2)
+
+[node name="Apple7" parent="Apples" instance=ExtResource("9_ymell")]
+position = Vector2(737, 431)
+scale = Vector2(2, 2)
+
+[node name="Apple8" parent="Apples" instance=ExtResource("9_ymell")]
+position = Vector2(480, 431)
+scale = Vector2(2, 2)
+
+[node name="Apple9" parent="Apples" instance=ExtResource("9_ymell")]
+position = Vector2(641, 79)
+scale = Vector2(2, 2)
+
+[node name="Apple10" parent="Apples" instance=ExtResource("9_ymell")]
+position = Vector2(384, 79)
 scale = Vector2(2, 2)

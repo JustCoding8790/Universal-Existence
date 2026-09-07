@@ -55,6 +55,7 @@ func _on_shooting_timer_timeout() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
 		player_died.emit(body)
+		Global.deaths["plants"] += 1
 
 func take_damage(damage: int) -> void:
 	hit_sound.play()

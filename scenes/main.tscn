@@ -71,14 +71,14 @@ vertical_alignment = 1
 
 [node name="SpeedrunPanel" type="Panel" parent="HUD"]
 visible = false
-offset_right = 160.0
+offset_right = 200.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dg2fv")
 script = ExtResource("4_klmj4")
 
 [node name="SpeedrunTimer" type="Label" parent="HUD/SpeedrunPanel"]
 layout_mode = 0
-offset_right = 160.0
+offset_right = 200.0
 offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("3_1ubbr")
 theme_override_font_sizes/font_size = 21

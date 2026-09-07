@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cc2vjilx4efs4"]
+[gd_scene load_steps=28 format=4 uid="uid://cc2vjilx4efs4"]
 
 [ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_w1mtq"]
 [ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_kadde"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://hgne2kduq7o2" path="res://scenes/enemies/bee.tscn" id="8_0dm8b"]
 [ext_resource type="PackedScene" uid="uid://cdkralsml8mgg" path="res://scenes/enemies/mushroom.tscn" id="9_45yuu"]
 [ext_resource type="PackedScene" uid="uid://d1rk0vgn44ixa" path="res://scenes/enemies/plant.tscn" id="10_x8xpm"]
+[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="11_0l5du"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
 texture = ExtResource("2_kadde")
@@ -534,3 +535,17 @@ position = Vector2(1065, 500)
 scale = Vector2(1.75, 1.75)
 metadata/Min_Delay = 0.5
 metadata/Max_Delay = 0.5
+
+[node name="Apples" type="Node2D" parent="."]
+
+[node name="Apple6" parent="Apples" instance=ExtResource("11_0l5du")]
+position = Vector2(801, 415)
+scale = Vector2(1.75, 1.75)
+
+[node name="Apple7" parent="Apples" instance=ExtResource("11_0l5du")]
+position = Vector2(545, 415)
+scale = Vector2(1.75, 1.75)
+
+[node name="Apple8" parent="Apples" instance=ExtResource("11_0l5du")]
+position = Vector2(288, 415)
+scale = Vector2(1.75, 1.75)

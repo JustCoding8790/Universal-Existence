@@ -67,6 +67,9 @@ func _on_patrol_timer_timeout() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
 		player_died.emit(body)
+		Global.deaths["bees"] += 1
+		if Global.deaths["bees"] == 1:
+			print("Ok, why'd you think colliding into them was a good idea?")
 
 func take_damage(damage: int) -> void:
 	hit_sound.play()

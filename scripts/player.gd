@@ -8,20 +8,25 @@ extends CharacterBody2D
 # @onready var floor_cast: ShapeCast2D = $FloorShapeCast2D
 
 var SPEED = 150.0
-var JUMP_VELOCITY = -350.0
+var JUMP_VELOCITY = -315.0
 const MAX_JUMPS = 2
 var jump_buffer_timer = 0.0
 const JUMP_BUFFER_TIME = 0.15
 var coyote_timer = 0.0
-const COYOTE_TIME = 20
+const COYOTE_TIME = 2
 var jump_multiplier = 1.1
 var gravity_multiplier = 1
 var direction
 
 var jump_count = 0
 var double_jump_anim_playing = false
+var holding_jump = false
 var alive = true
 var can_move = true
+
+var base_gravity = 1875
+var hold_gravity_scale = 0.5
+var jump_cut_multiplier = 0.45
 
 var shoot_mode = ""
 var shoot_dir = ""
@@ -34,6 +39,7 @@ func jump_boost() -> void:
 	velocity.y = JUMP_VELOCITY * self.scale.x * 1.35
 	jump_sound.play()
 	jump_count = 1
+	double_jump_anim_playing = false
 
 # --------------------
 # MOVEMENT
@@ -51,7 +57,10 @@ func _physics_process(delta: float) -> void:
 		
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		var gravity = base_gravity * gravity_multiplier
+		#if Input.is_action_pressed("jump") and velocity.y < 0:
+			#gravity += hold_gravity_scale
+		velocity.y += gravity * delta
 		if jump_count == 0:
 			animated_sprite_2d.animation = "fall"
 		elif jump_count == 1:
@@ -65,26 +74,29 @@ func _physics_process(delta: float) -> void:
 
 	if can_move:
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and jump_count >= 1 and jump_count < MAX_JUMPS:
-			# jump adjustments (at scale 1.5, jump movement feels too heavy)
-			velocity.y = JUMP_VELOCITY * self.scale.x * jump_multiplier
-			jump_sound.play()
-			jump_count += 1
-		elif Input.is_action_just_pressed("jump"):
-			jump_buffer_timer = JUMP_BUFFER_TIME
-
+		if Input.is_action_just_pressed("jump"):
+			if jump_count < MAX_JUMPS:
+				# jump adjustments (at scale 1.5, jump movement feels too heavy)
+				velocity.y = JUMP_VELOCITY * self.scale.x * jump_multiplier
+				jump_sound.play()
+				jump_count += 1
+			else:
+				jump_buffer_timer = JUMP_BUFFER_TIME
+		if Input.is_action_just_released("jump") and velocity.y < 0:
+			velocity.y *= jump_cut_multiplier
+		# Buffer and coyote time
 		if jump_buffer_timer > 0:
 			jump_buffer_timer -= delta
+			if (is_on_floor() or coyote_timer > 0) and jump_count < MAX_JUMPS:
+				velocity.y = JUMP_VELOCITY * self.scale.x * jump_multiplier
+				jump_sound.play()
+				jump_count += 1
+				jump_buffer_timer = 0
+				coyote_timer = 0
 		if is_on_floor():
 			coyote_timer = COYOTE_TIME
 		else:
 			coyote_timer -= delta
-		if jump_buffer_timer > 0 and (is_on_floor() or coyote_timer > 0):
-			velocity.y = JUMP_VELOCITY * self.scale.x * jump_multiplier
-			jump_sound.play()
-			jump_count += 1
-			jump_buffer_timer = 0
-			coyote_timer = 0
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -101,18 +113,16 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.flip_h = true
 
 func die() -> void:
+	Global.total_deaths += 1
 	animated_sprite_2d.animation = "hit"
 	alive = false
 	death_sound.play()
-	await main._load_level(Global.world, Global.level, false, true)
+	await animated_sprite_2d.animation_finished
+	animated_sprite_2d.animation = "disappear"
+	animated_sprite_2d.play()
+	main._load_level(Global.world, Global.level, false, true)
 
 func _reset_vertical_gravity() -> void:
-	if self.scale.x == 1.5:
-		jump_multiplier = 1.2
-		gravity_multiplier = 0.8
-	else:
-		jump_multiplier = 1
-		gravity_multiplier = 1
 	ProjectSettings.set_setting("physics/2d/default_gravity", 1250 * self.scale.x * gravity_multiplier)
 
 # --------------------

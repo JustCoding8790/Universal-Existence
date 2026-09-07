@@ -578,7 +578,7 @@ position = Vector2(992, 71)
 scale = Vector2(1.5, 1.5)
 
 [node name="TrunkwalkerFlip" parent="Enemies" instance=ExtResource("9_ydlp6")]
-position = Vector2(223, 576)
+position = Vector2(95, 576)
 scale = Vector2(1.5, 1.5)
 
 [node name="Trunkwalker2" parent="Enemies" instance=ExtResource("9_ydlp6")]

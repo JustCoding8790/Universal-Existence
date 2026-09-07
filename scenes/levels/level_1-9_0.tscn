@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bx34vdgi8rmjb"]
+[gd_scene load_steps=25 format=4 uid="uid://bx34vdgi8rmjb"]
 
 [ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_18ne8"]
 [ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_wkv0j"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_jyp4f"]
 [ext_resource type="PackedScene" uid="uid://4mnpjl480jan" path="res://scenes/enemies/trunk.tscn" id="6_ajr2x"]
 [ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="7_qo5t2"]
+[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="8_s4r8y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
 texture = ExtResource("2_wkv0j")
@@ -497,13 +498,27 @@ position = Vector2(799, 574)
 scale = Vector2(2, 2)
 
 [node name="Trunkwalker4" parent="Enemies" instance=ExtResource("6_ajr2x")]
-position = Vector2(287, 221)
-scale = Vector2(2, 2)
-
-[node name="Trunkwalker5Flip" parent="Enemies" instance=ExtResource("6_ajr2x")]
-position = Vector2(670, 221)
+position = Vector2(415, 221)
 scale = Vector2(2, 2)
 
 [node name="NormalGunHorizontal" parent="." instance=ExtResource("7_qo5t2")]
 position = Vector2(128, 528)
+scale = Vector2(2, 2)
+
+[node name="Apples" type="Node2D" parent="."]
+
+[node name="Apple6" parent="Apples" instance=ExtResource("8_s4r8y")]
+position = Vector2(1089, 127)
+scale = Vector2(2, 2)
+
+[node name="Apple7" parent="Apples" instance=ExtResource("8_s4r8y")]
+position = Vector2(801, 431)
+scale = Vector2(2, 2)
+
+[node name="Apple8" parent="Apples" instance=ExtResource("8_s4r8y")]
+position = Vector2(416, 431)
+scale = Vector2(2, 2)
+
+[node name="Apple10" parent="Apples" instance=ExtResource("8_s4r8y")]
+position = Vector2(416, 79)
 scale = Vector2(2, 2)

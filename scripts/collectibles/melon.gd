@@ -17,4 +17,5 @@ func _disable_collision() -> void:
 
 func _on_animated_sprite_2d_animation_looped() -> void:
 	if animated_sprite_2d.animation == "collected":
+		Global.fruits[1] += 1
 		queue_free()

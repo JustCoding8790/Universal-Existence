@@ -58,6 +58,7 @@ func _on_shooting_timer_timeout() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
 		player_died.emit(body)
+		Global.deaths["trunks"] += 1
 	elif body.name == "TileMapLayer":
 		direction *= -1
 		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
