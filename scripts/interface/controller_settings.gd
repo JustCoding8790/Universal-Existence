@@ -27,6 +27,7 @@ func _on_deadzone_slider_value_changed(value: float) -> void:
 func settings_open() -> void:
 	features_button.disabled = true
 	settings_exit.disabled = true
+	deadzone_slider.value = InputMap.action_get_deadzone("left")
 	controller_settings.visible = true
 	controller_settings_player.play("open")
 	await controller_settings_player.animation_finished

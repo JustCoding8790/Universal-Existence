@@ -86,7 +86,25 @@ text = "0:00:00.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VoiceCaptions" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 80.0
+offset_right = 240.0
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_1ubbr")
+theme_override_font_sizes/font_size = 21
+text = "I'm Domainus and I say voicelines because I can. :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vt1jn")
 autoplay = true
 bus = &"Music"
+
+[node name="Timer" type="Timer" parent="."]

@@ -4,6 +4,7 @@ extends Area2D
 var SPEED = 300
 var speeds = [140, 200, 240, 300]
 var direction = -1
+signal player_shot
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,8 +16,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive:
-		body.die()
-		Global.deaths["trunks"] += 1
+		player_shot.emit(body)
 		queue_free()
 	elif body.name == "TileMapLayer":
 		queue_free()

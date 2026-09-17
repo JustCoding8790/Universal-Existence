@@ -32,8 +32,13 @@ func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int
 	var hit_shape_node = shape_owner_get_owner(shape_owner_id)
 	if hit_shape_node == collision_shape_2d and alive:
 		if body.name == "Player" and body.alive:
-			player_died.emit(body)
+			var voicelines = []
 			Global.deaths["mushrooms"] += 1
+			if Global.deaths["mushrooms"] == 2:
+				voicelines.append(["You know you can just bounce on top of them to avoid being killed, right?", 4])
+			elif Global.deaths["mushrooms"] == 5:
+				voicelines.append(["Is this what you call being careful?", 2])
+			player_died.emit(body, voicelines)
 		elif body.name == "TileMapLayer":
 			direction *= -1
 			animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h

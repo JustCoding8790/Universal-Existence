@@ -45,6 +45,7 @@ func _on_shooting_timer_timeout() -> void:
 	bullet.global_position.y -= 12
 	if health <= 0:
 		bullet.queue_free()
+	bullet.player_shot.connect(bullet_shot_player)
 	bullet.visible = true
 	animated_sprite_2d.animation = "idle"
 	animated_sprite_2d.play()
@@ -54,8 +55,17 @@ func _on_shooting_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
-		player_died.emit(body)
+		var voicelines = []
 		Global.deaths["plants"] += 1
+		if Global.deaths["plants"] == 2:
+			voicelines.append(["They're tanky, but they can't hold out forever.", 2.5])
+		elif Global.deaths["plants"] == 4:
+			voicelines.append(["There's a video game in our universe called Plants vs Ghosts.", 3.5])
+			voicelines.append(["I would recommend it to you, but...", 2])
+			voicelines.append(["Well, you know...", 1.5])
+		elif Global.deaths["plants"] == 7:
+			voicelines.append(["Outplanted by the plants...", 1.5])
+		player_died.emit(body, voicelines)
 
 func take_damage(damage: int) -> void:
 	hit_sound.play()
@@ -66,3 +76,16 @@ func take_damage(damage: int) -> void:
 		animated_sprite_2d.animation = "hit"
 		await animated_sprite_2d.animation_finished
 		queue_free()
+
+func bullet_shot_player(body) -> void:
+	var voicelines = []
+	Global.deaths["plants"] += 1
+	if Global.deaths["plants"] == 2:
+		voicelines.append(["They're tanky, but they can't hold out forever.", 2.5])
+	elif Global.deaths["plants"] == 4:
+		voicelines.append(["There's a video game in our universe called Plants vs Ghosts.", 3.5])
+		voicelines.append(["I would recommend it to you, but...", 2])
+		voicelines.append(["Well, you know...", 1.5])
+	elif Global.deaths["plants"] == 7:
+		voicelines.append(["Outplanted by the plants...", 1.5])
+	player_died.emit(body, voicelines)

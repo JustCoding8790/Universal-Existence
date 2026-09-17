@@ -38,6 +38,7 @@ func assist_open() -> void:
 	controller_button.disabled = true
 	settings_exit.disabled = true
 	assist_settings.visible = true
+	game_speed_slider.value = Engine.time_scale
 	if Global.speedrun_timer_on:
 		speedrun_button.text = "Speedrun Timers - ON"
 	else:

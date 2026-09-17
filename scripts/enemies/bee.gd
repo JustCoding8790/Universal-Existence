@@ -52,6 +52,7 @@ func _on_shooting_timer_timeout() -> void:
 	bullet.global_position.y += 16
 	if health <= 0:
 		bullet.queue_free()
+	bullet.player_shot.connect(bullet_shot_player)
 	bullet.visible = true
 	animated_sprite_2d.animation = "idle"
 	animated_sprite_2d.play()
@@ -66,10 +67,14 @@ func _on_patrol_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
-		player_died.emit(body)
 		Global.deaths["bees"] += 1
-		if Global.deaths["bees"] == 1:
-			print("Ok, why'd you think colliding into them was a good idea?")
+		var voicelines = []
+		'''if Global.deaths["bees"] == 1:
+			voicelines.append(["Ok, why'd you think colliding into them was a good idea?", 4])
+		if Global.deaths["bees"] == 3:
+			voicelines.append(["Please stop colliding with the bees...", 2.5])
+			voicelines.append(["What are you trying to do?", 1.5])'''
+		player_died.emit(body, voicelines)
 
 func take_damage(damage: int) -> void:
 	hit_sound.play()
@@ -80,3 +85,22 @@ func take_damage(damage: int) -> void:
 		animated_sprite_2d.animation = "hit"
 		await animated_sprite_2d.animation_finished
 		queue_free()
+
+func bullet_shot_player(body) -> void:
+	var voicelines = []
+	Global.deaths["bees"] += 1
+	if Global.deaths["bees"] == 1:
+		voicelines.append(["Those bees sure do sting...", 2])
+		voicelines.append(["But they won't last long when you \"sting\" them back.", 3])
+	elif Global.deaths["bees"] == 3:
+		voicelines.append(["What a bee-ting!", 1.5])
+		voicelines.append(["Hey, let me make my jokes!", 2])
+	elif Global.deaths["bees"] == 5:
+		voicelines.append(["Honestly, I'm scared of bees.", 1.5])
+		voicelines.append(["I had to run on a sidewalk with a long bush...", 2])
+		voicelines.append(["And bees were EVERYWHERE around that bush.", 2])
+		voicelines.append(["So hey, if you get scared of bees after this, just know I'm here for you.", 3.5])
+	elif Global.deaths["bees"] == 8:
+		voicelines.append(["You know, I had some high hopes you'll past the last challenge of the test.", 3.5])
+		voicelines.append(["But honestly, we might need to downgrade the difficulty.", 3])
+	player_died.emit(body, voicelines)

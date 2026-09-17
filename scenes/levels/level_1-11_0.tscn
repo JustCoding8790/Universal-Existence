@@ -539,13 +539,13 @@ metadata/Max_Delay = 0.5
 [node name="Apples" type="Node2D" parent="."]
 
 [node name="Apple6" parent="Apples" instance=ExtResource("11_0l5du")]
-position = Vector2(801, 415)
+position = Vector2(801, 447)
 scale = Vector2(1.75, 1.75)
 
 [node name="Apple7" parent="Apples" instance=ExtResource("11_0l5du")]
-position = Vector2(545, 415)
+position = Vector2(545, 447)
 scale = Vector2(1.75, 1.75)
 
 [node name="Apple8" parent="Apples" instance=ExtResource("11_0l5du")]
-position = Vector2(288, 415)
+position = Vector2(288, 447)
 scale = Vector2(1.75, 1.75)

@@ -48,6 +48,7 @@ func _on_shooting_timer_timeout() -> void:
 	bullet.global_position.y += 4
 	if health <= 0:
 		bullet.queue_free()
+	bullet.player_shot.connect(bullet_shot_player)
 	bullet.visible = true
 	animated_sprite_2d.animation = "walk"
 	animated_sprite_2d.play()
@@ -57,8 +58,19 @@ func _on_shooting_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
-		player_died.emit(body)
+		var voicelines = []
 		Global.deaths["trunks"] += 1
+		if Global.deaths["trunks"] == 2:
+			voicelines.append(["Does their randomness mess you up?", 2])
+			voicelines.append(["You see, they don't like visitors who get too close to them...", 3])
+		elif Global.deaths["trunks"] == 5:
+			voicelines.append(["Shooting from a distance would make killing the Trunkwalkers a breeze.", 3])
+			voicelines.append(["But what happens when there's barely any way do such?", 2.5])
+			voicelines.append(["You'll find a way to defeat them.", 1.5])
+		elif Global.deaths["trunks"] == 7:
+			voicelines.append(["I respect their boundaries.", 1.5])
+			voicelines.append(["But, of course, they get in the way of things.", 2.5])
+		player_died.emit(body, voicelines)
 	elif body.name == "TileMapLayer":
 		direction *= -1
 		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
@@ -72,3 +84,18 @@ func take_damage(damage: int) -> void:
 		animated_sprite_2d.animation = "hit"
 		await animated_sprite_2d.animation_finished
 		queue_free()
+
+func bullet_shot_player(body) -> void:
+	var voicelines = []
+	Global.deaths["trunks"] += 1
+	if Global.deaths["trunks"] == 2:
+		voicelines.append(["Does their randomness mess you up?", 2])
+		voicelines.append(["You see, they don't like visitors who get too close to them...", 3])
+	elif Global.deaths["trunks"] == 5:
+		voicelines.append(["Shooting from a distance would make killing the Trunkwalkers a breeze.", 3])
+		voicelines.append(["But what happens when there's barely any way do such?", 2.5])
+		voicelines.append(["You'll find a way to defeat them.", 1.5])
+	elif Global.deaths["trunks"] == 7:
+		voicelines.append(["I respect their boundaries.", 1.5])
+		voicelines.append(["But, of course, they get in the way of things.", 2.5])
+	player_died.emit(body, voicelines)

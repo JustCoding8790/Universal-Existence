@@ -198,3 +198,18 @@ func _on_controller_pressed() -> void:
 
 func _on_features_pressed() -> void:
 	assist_settings.assist_open()
+
+func _on_reset_settings_pressed() -> void:
+	master_slider.value = 0.5
+	AudioServer.set_bus_volume_db(0, 0.5)
+	music_slider.value = 0.5
+	AudioServer.set_bus_volume_db(1, 0.5)
+	sound_slider.value = 0.5
+	AudioServer.set_bus_volume_db(2, 0.5)
+	voice_slider.value = 0.5
+	AudioServer.set_bus_volume_db(3, 0.5)
+	InputMap.action_set_deadzone("left", 0.15)
+	InputMap.action_set_deadzone("right", 0.15)
+	Engine.time_scale = 1
+	Global.speedrun_timer_on = false
+	Global.training = false

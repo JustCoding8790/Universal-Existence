@@ -14,7 +14,7 @@ var jump_buffer_timer = 0.0
 const JUMP_BUFFER_TIME = 0.15
 var coyote_timer = 0.0
 const COYOTE_TIME = 2
-var jump_multiplier = 1.1
+var jump_multiplier = 1
 var gravity_multiplier = 1
 var direction
 

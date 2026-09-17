@@ -64,6 +64,7 @@ func _on_shooting_timer_timeout() -> void:
 	bullet.global_position.y += 16
 	if health <= 0:
 		bullet.queue_free()
+	bullet.player_shot.connect(bullet_shot_player)
 	bullet.visible = true
 	animated_sprite_2d.animation = "idle"
 	animated_sprite_2d.play()
@@ -87,8 +88,17 @@ func _on_accel_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.alive and self_alive:
-		player_died.emit(body)
+		var voicelines = []
 		Global.deaths["bossbee"] += 1
+		'''if Global.deaths["bossbee"] == 1:
+			voicelines.append(["How'd you even manage to collide with her in the first place?", 3])
+		elif Global.deaths["bossbee"] == 4:
+			voicelines.append(["I know you have to be doing this intentionally.", 2])
+			voicelines.append(["...Right?", 1])
+		elif Global.deaths["bossbee"] == 12:
+				voicelines.append(["Okay, it's starting to get old.", 2])
+				voicelines.append(["Maybe consider switching to a lower difficulty for now.", 3])'''
+		player_died.emit(body, voicelines)
 
 func take_damage(damage: int) -> void:
 	hit_sound.play()
@@ -137,3 +147,22 @@ func take_damage(damage: int) -> void:
 		Global.bee_good_diff = Global.difficulty
 		Global.demo_time = Time.get_ticks_msec()
 		queue_free()
+
+func bullet_shot_player(body) -> void:
+	var voicelines = []
+	Global.deaths["bossbee"] += 1
+	if Global.deaths["bossbee"] == 2:
+		voicelines.append(["Is the number of bullets being fired at once overwhelming for you?", 3])
+		voicelines.append(["Well, don't worry. That's exactly what I intended.", 3])
+	elif Global.deaths["bossbee"] == 4:
+		voicelines.append(["She's a good one, ain't she?", 2])
+	elif Global.deaths["bossbee"] == 7:
+		voicelines.append(["Don't focus too much on shooting the boss, my friend...", 3])
+		voicelines.append(["Most of your bullets will probably hit her anyways.", 2.5])
+		voicelines.append(["Focus on dodging for now.", 1.5])
+	elif Global.deaths["bossbee"] == 9:
+		voicelines.append(["Oof. Must've stung you a lot to die to that.", 3])
+	elif Global.deaths["bossbee"] == 12:
+		voicelines.append(["Okay, it's starting to get old.", 1.5])
+		voicelines.append(["Maybe consider switching to a lower difficulty for now.", 2.5])
+	player_died.emit(body, voicelines)
