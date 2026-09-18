@@ -460,6 +460,7 @@ position = Vector2(1602, 329.417)
 shape = SubResource("RectangleShape2D_cnj25")
 
 [node name="InfoText" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="InfoPanel" type="Panel" parent="InfoText"]
 offset_left = 10.0

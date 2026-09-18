@@ -95,7 +95,7 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["Shooting from a distance would make killing the Trunkwalkers a breeze.", 3])
 		voicelines.append(["But what happens when there's barely any way do such?", 2.5])
 		voicelines.append(["You'll find a way to defeat them.", 1.5])
-	elif Global.deaths["trunks"] == 7:
+	elif Global.deaths["trunks"] == 8:
 		voicelines.append(["I respect their boundaries.", 1.5])
 		voicelines.append(["But, of course, they get in the way of things.", 2.5])
 	player_died.emit(body, voicelines)

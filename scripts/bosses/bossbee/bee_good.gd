@@ -162,7 +162,7 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["Focus on dodging for now.", 1.5])
 	elif Global.deaths["bossbee"] == 9:
 		voicelines.append(["Oof. Must've stung you a lot to die to that.", 3])
-	elif Global.deaths["bossbee"] == 12:
+	'''elif Global.deaths["bossbee"] == 12:
 		voicelines.append(["Okay, it's starting to get old.", 1.5])
-		voicelines.append(["Maybe consider switching to a lower difficulty for now.", 2.5])
+		voicelines.append(["Maybe consider switching to a lower difficulty for now.", 2.5])'''
 	player_died.emit(body, voicelines)

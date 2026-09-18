@@ -303,7 +303,7 @@ texture = ExtResource("2_hx1eg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgdyi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvip8"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -316,7 +316,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0iav"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkp7"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -356,7 +356,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 190.0
 offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvip8")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel"]
 layout_mode = 0
@@ -364,8 +364,32 @@ offset_right = 180.0
 offset_bottom = 60.0
 theme_override_fonts/font = ExtResource("4_2ly1w")
 theme_override_font_sizes/font_size = 15
-text = "Jump = W/Space/Up
-Double Jump = Jump x2"
+text = "Good job on defeating
+Bee Good for good!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarningPanel" type="Panel" parent="InfoText"]
+visible = false
+offset_left = 837.0
+offset_top = 472.0
+offset_right = 1137.0
+offset_bottom = 592.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvip8")
+
+[node name="WarningLabel" type="Label" parent="InfoText/WarningPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_2ly1w")
+theme_override_font_sizes/font_size = 15
+text = "WARNING:
+The upcoming story segment dives deep
+into the idea of existence and people's
+actions. Don't enter if you aren't ready."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -374,7 +398,7 @@ offset_left = 20.0
 offset_top = 62.0
 offset_right = 170.0
 offset_bottom = 107.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2mkp7")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel2"]
 layout_mode = 0
@@ -382,8 +406,8 @@ offset_right = 150.0
 offset_bottom = 45.0
 theme_override_fonts/font = ExtResource("4_2ly1w")
 theme_override_font_sizes/font_size = 12
-text = "On XBOX controller, use
-the A button."
+text = "Congrats on completing
+Natural Plains!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -392,7 +416,7 @@ offset_left = 336.0
 offset_top = 175.0
 offset_right = 816.0
 offset_bottom = 475.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvip8")
 script = ExtResource("5_e4lgy")
 
 [node name="TitleLabel" type="Label" parent="InfoText/DemoPanel"]

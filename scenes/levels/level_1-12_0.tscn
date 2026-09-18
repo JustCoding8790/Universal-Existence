@@ -357,6 +357,7 @@ position = Vector2(63, 361)
 scale = Vector2(1.75, 1.75)
 
 [node name="InfoText" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="InfoPanel" type="Panel" parent="InfoText"]
 offset_left = 10.0

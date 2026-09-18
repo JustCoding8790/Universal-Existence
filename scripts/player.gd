@@ -124,7 +124,9 @@ func die() -> void:
 
 func _reset_vertical_gravity() -> void:
 	ProjectSettings.set_setting("physics/2d/default_gravity", 1250 * self.scale.x * gravity_multiplier)
-
+	jump_multiplier = 1 - (self.scale.x - 1.75)/2
+	if self.scale.x == 2:
+		jump_multiplier += 0.125
 # --------------------
 # SHOOTING
 # --------------------
