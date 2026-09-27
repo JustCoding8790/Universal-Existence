@@ -509,15 +509,11 @@ position = Vector2(352, 574)
 scale = Vector2(2, 2)
 
 [node name="Trunkwalker4" parent="Enemies" instance=ExtResource("6_np1da")]
-position = Vector2(511, 222)
+position = Vector2(383, 222)
 scale = Vector2(2, 2)
 
 [node name="Trunkwalker5Flip" parent="Enemies" instance=ExtResource("6_np1da")]
-position = Vector2(766, 222)
-scale = Vector2(2, 2)
-
-[node name="Trunkwalker6Flip" parent="Enemies" instance=ExtResource("6_np1da")]
-position = Vector2(255, 222)
+position = Vector2(638, 222)
 scale = Vector2(2, 2)
 
 [node name="Traps" type="Node2D" parent="."]
@@ -528,14 +524,6 @@ scale = Vector2(2, 2)
 
 [node name="Spikes3" parent="Traps" instance=ExtResource("8_qidvd")]
 position = Vector2(368, 590)
-scale = Vector2(2, 2)
-
-[node name="Spikes4" parent="Traps" instance=ExtResource("8_qidvd")]
-position = Vector2(594, 590)
-scale = Vector2(2, 2)
-
-[node name="Spikes5" parent="Traps" instance=ExtResource("8_qidvd")]
-position = Vector2(624, 590)
 scale = Vector2(2, 2)
 
 [node name="Spikes6" parent="Traps" instance=ExtResource("8_qidvd")]

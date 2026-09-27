@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1oxa7yqwbskh"
+path="res://.godot/imported/unused_music.ogg-80a144970b66a2878c517cea4f763149.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/UE Music/unused_music.ogg"
+dest_files=["res://.godot/imported/unused_music.ogg-80a144970b66a2878c517cea4f763149.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,5 +1,5 @@
 extends Area2D
-@onready var bee: Area2D = $"."
+@onready var bee_good: Area2D = $"."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shooting_timer: Timer = $ShootingTimer
 @onready var accel_timer: Timer = $AccelTimer
@@ -29,6 +29,8 @@ signal player_died
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if bee_good.name != "Bee Good":
+		enemies._on_bee_good_created(bee_good)
 	plant_left = get_node_or_null("../PoisonPlant")
 	plant_right = get_node_or_null("../PoisonPlant2Flip")
 	shooting_timer.wait_time = randf_range(min_shoot_intervals[Global.difficulty], max_shoot_intervals[Global.difficulty])
@@ -56,7 +58,7 @@ func _on_shooting_timer_timeout() -> void:
 	bullet.visible = false
 	get_tree().get_root().add_child(bullet)
 	bullet.global_position = global_position
-	bullet.scale = bee.scale
+	bullet.scale = bee_good.scale
 	if direction == -1:
 		bullet.global_position.x -= 8
 	else:

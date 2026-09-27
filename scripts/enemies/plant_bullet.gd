@@ -2,7 +2,7 @@ extends Area2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var SPEED = 360
-var speeds = [120, 180, 220, 280]
+var speeds = [120, 180, 200, 260]
 var direction = -1
 signal player_shot
 

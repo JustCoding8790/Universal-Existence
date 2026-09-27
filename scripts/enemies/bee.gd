@@ -12,7 +12,7 @@ var speeds = [65, 75, 90, 100]
 var min_shoot_intervals = [2, 1.5, 1, 0.5]
 var max_shoot_intervals = [3, 2.5, 2, 1.5]
 var health = 20
-var hp_amounts = [12, 15, 16, 20]
+var hp_amounts = [8, 10, 12, 16]
 var self_alive = true
 var speed_multiplier = 1
 signal player_died

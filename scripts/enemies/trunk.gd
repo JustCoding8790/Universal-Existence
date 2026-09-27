@@ -97,5 +97,14 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["You'll find a way to defeat them.", 1.5])
 	elif Global.deaths["trunks"] == 8:
 		voicelines.append(["I respect their boundaries.", 1.5])
-		voicelines.append(["But, of course, they get in the way of things.", 2.5])
+		voicelines.append(["But, of course, they get in the way of things...", 2.5])
+	elif Global.deaths["trunks"] == 12:
+		voicelines.append(["You may hate these Trunkwalkers however much you like...", 2.5])
+		voicelines.append(["But they are vital to providing oxygen to breathe.", 2])
+		voicelines.append(["Sorry, but they exist for a reason.", 2])
+	elif Global.deaths["trunks"] == 17:
+		voicelines.append(["Always be careful of where you jump.", 1.5])
+		voicelines.append(["Especially when they randomly stop to shoot bullets.", 2])
+		voicelines.append(["You can either jump into them or land on a bullet.", 2])
+		
 	player_died.emit(body, voicelines)

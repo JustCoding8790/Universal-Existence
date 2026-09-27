@@ -7,12 +7,12 @@ extends Area2D
 
 var speed = 50
 var direction = -1
-var min_shoot_intervals = [2.5, 2, 1.25, 0.5]
-var max_shoot_intervals = [5, 3.5, 2.75, 2]
+var min_shoot_intervals = [2.5, 2, 1.5, 1]
+var max_shoot_intervals = [5, 3.5, 2.5, 2]
 var min_delay
 var max_delay
 var health = 80
-var hp_amounts = [65, 75, 90, 100]
+var hp_amounts = [65, 70, 75, 80]
 var self_alive = true
 signal player_died
 
@@ -63,8 +63,17 @@ func _on_body_entered(body: Node2D) -> void:
 			voicelines.append(["There's a video game in our universe called Plants vs Ghosts.", 3.5])
 			voicelines.append(["I would recommend it to you, but...", 2])
 			voicelines.append(["Well, you know...", 1.5])
+			voicelines.append(["PTSD exists and stuff...", 1.5])
 		elif Global.deaths["plants"] == 7:
 			voicelines.append(["Outplanted by the plants...", 1.5])
+		elif Global.deaths["plants"] == 10:
+			voicelines.append(["Struggling with the plants still?", 1.5])
+			voicelines.append(["Well, for one thing, it's best if you shoot from far away.", 3])
+			voicelines.append(["You'll need the extra reaction time, trust me.", 2.5])
+		elif Global.deaths["plants"] == 15:
+			voicelines.append(["Just gonna mention something...", 1.5])
+			voicelines.append(["Please don't go and rip out plants outside of the UPC.", 2])
+			voicelines.append(["Or, at least, the non-harmful plants.", 2])
 		player_died.emit(body, voicelines)
 
 func take_damage(damage: int) -> void:
@@ -86,6 +95,15 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["There's a video game in our universe called Plants vs Ghosts.", 3.5])
 		voicelines.append(["I would recommend it to you, but...", 2])
 		voicelines.append(["Well, you know...", 1.5])
+		voicelines.append(["PTSD exists and stuff...", 1.5])
 	elif Global.deaths["plants"] == 7:
 		voicelines.append(["Outplanted by the plants...", 1.5])
+	elif Global.deaths["plants"] == 10:
+		voicelines.append(["Struggling with the plants still?", 1.5])
+		voicelines.append(["Well, for one thing, it's best if you shoot from far away.", 3])
+		voicelines.append(["You'll need the extra reaction time, trust me.", 2.5])
+	elif Global.deaths["plants"] == 15:
+		voicelines.append(["Just gonna mention something...", 1.5])
+		voicelines.append(["Please don't go and rip out plants outside of the UPC.", 2])
+		voicelines.append(["Or, at least, the non-harmful plants.", 2])
 	player_died.emit(body, voicelines)

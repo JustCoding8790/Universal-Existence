@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://puef5kxhww8y"]
+[gd_scene load_steps=43 format=3 uid="uid://puef5kxhww8y"]
 
 [ext_resource type="Script" path="res://scripts/interface/pause.gd" id="1_6qymi"]
 [ext_resource type="FontFile" uid="uid://bdrntb82danr4" path="res://assets/fonts/Square-Black.ttf" id="2_wcveb"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://beygpdo3u8bl0" path="res://assets/fonts/Quantico-Regular.ttf" id="4_g4kpe"]
 [ext_resource type="PackedScene" uid="uid://lrcebcgemmjq" path="res://scenes/interface/controller_settings.tscn" id="5_t0eg1"]
 [ext_resource type="PackedScene" uid="uid://d2ihcy362yvow" path="res://scenes/interface/assist_settings.tscn" id="6_ir2q1"]
+[ext_resource type="PackedScene" uid="uid://er4ktd8mdl25" path="res://scenes/interface/credits.tscn" id="8_5bgj7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp4ig"]
 bg_color = Color(0, 0.65098, 0.894118, 1)
@@ -968,6 +969,10 @@ text = "For the most skilled jumpers of the universe.
 Not for the faint of heart."
 horizontal_alignment = 1
 
+[node name="Credits" parent="PauseLayer" instance=ExtResource("8_5bgj7")]
+visible = false
+z_index = 20
+
 [node name="MainPlayer" type="AnimationPlayer" parent="PauseLayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -1010,6 +1015,7 @@ color = Color(0, 0, 0, 1)
 [connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox/MusicSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox/SoundSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox/VoiceSlider" to="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox" method="_on_voice_slider_value_changed"]
+[connection signal="pressed" from="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Controller" to="." method="_on_controller_pressed"]
 [connection signal="pressed" from="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Features" to="." method="_on_features_pressed"]
 [connection signal="pressed" from="PauseLayer/Settings/RightMarginContainer/VBoxContainer/ResetSettings" to="." method="_on_reset_settings_pressed"]

@@ -61,7 +61,7 @@ func _load_level(world_number: int, level_number: int, first_load: bool, reset_s
 	current_level_root.name = "LevelRoot"
 	_setup_level(current_level_root)
 	reset_gravity.emit()
-	if Global.level_deaths == 0:
+	if Global.level_deaths == 0 and not reset_score:
 		if world_number == 1 and level_number == 1:
 			voiceline_queue.append(["...", 2])
 			voiceline_queue.append(["Oh! A jumper arrived!", 1.5])
@@ -131,6 +131,7 @@ func _setup_level(level_root: Node) -> void:
 			enemy.player_died.connect(_on_player_died)
 		if enemies.has_meta("Enemies_Left"):
 			enemies.boss_defeated.connect(_on_boss_defeated)
+			enemies.player_defeated.connect(_on_player_died)
 	
 	# Connect collectibles
 	var apples = level_root.get_node_or_null("Apples")
@@ -202,7 +203,7 @@ func _on_exit_body_entered(body: Node2D) -> void:
 func _on_player_died(body, voicelines) -> void:
 	body.die()
 	Global.level_deaths += 1
-	if Global.level_deaths == 12 and Global.difficulty >= 1:
+	if Global.level_deaths % 12 == 0 and Global.difficulty >= 1:
 		Global.levels_with_many_deaths += 1
 		Global.difficulty -= 1
 		if Global.levels_with_many_deaths == 1:
@@ -220,7 +221,7 @@ func _on_player_died(body, voicelines) -> void:
 func _on_boss_defeated() -> void:
 	await get_tree().create_timer(3).timeout
 	Global.level += 1
-	await _load_level(Global.world, Global.level, false, true)
+	await _load_level(Global.world, Global.level, false, false)
 
 # --------------------
 # SCORE

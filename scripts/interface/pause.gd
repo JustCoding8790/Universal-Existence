@@ -15,6 +15,7 @@ extends Control
 @onready var settings_exit: Button = $PauseLayer/Settings/Exit
 @onready var controller_settings: Control = $PauseLayer/ControllerSettings
 @onready var assist_settings: Panel = $PauseLayer/AssistSettings
+@onready var credits: Panel = $PauseLayer/Credits
 
 @onready var master_slider: HSlider = $PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox/MasterSlider
 @onready var music_slider: HSlider = $PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox/MusicSlider
@@ -131,6 +132,7 @@ func pause_menu() -> void:
 		settings.disabled = false
 		controller_settings._on_settings_back_pressed()
 		assist_settings._on_assist_back_pressed()
+		credits._on_credits_back_pressed()
 		# speedrun_panel.start_timer()
 		if Global.difficulty != previous_difficulty:
 			difficulty_changed.emit(Global.world, Global.level, false, true)
@@ -213,3 +215,6 @@ func _on_reset_settings_pressed() -> void:
 	Engine.time_scale = 1
 	Global.speedrun_timer_on = false
 	Global.training = false
+
+func _on_credits_pressed() -> void:
+	credits.credits_open()
