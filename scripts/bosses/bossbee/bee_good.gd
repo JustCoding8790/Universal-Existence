@@ -113,8 +113,9 @@ func take_damage(damage: int) -> void:
 			defeated = true
 			former_speed = Engine.time_scale
 			Engine.time_scale = Engine.time_scale / 5
-			plant_left.animated_sprite_2d.animation = "hit"
-			plant_right.animated_sprite_2d.animation = "hit"
+			if Global.difficulty >= 2:
+				plant_left.animated_sprite_2d.animation = "hit"
+				plant_right.animated_sprite_2d.animation = "hit"
 		animated_sprite_2d.animation = "hit"
 		await animated_sprite_2d.animation_finished
 		if scale.x > 2:
@@ -164,7 +165,9 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["Focus on dodging for now.", 1.5])
 	elif Global.deaths["bossbee"] == 9:
 		voicelines.append(["Oof. Must've stung you a lot to die to that.", 3])
-	'''elif Global.deaths["bossbee"] == 12:
-		voicelines.append(["Okay, it's starting to get old.", 1.5])
-		voicelines.append(["Maybe consider switching to a lower difficulty for now.", 2.5])'''
+	elif Global.deaths["bossbee"] == 14:
+		voicelines.append(["Honestly, the science behind why SHE specifically is able to split is complicated.", 4])
+		voicelines.append(["But she did have a genetic mutation when she was young, so...", 3.5])
+	elif Global.deaths["bossbee"] == 20:
+		voicelines.append(["To be honest, I'm kind of running out of things to say...", 3.5])
 	player_died.emit(body, voicelines)

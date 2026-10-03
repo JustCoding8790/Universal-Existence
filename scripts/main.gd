@@ -219,7 +219,9 @@ func _on_player_died(body, voicelines) -> void:
 			voiceline_queue.append([line[0], line[1]])
 
 func _on_boss_defeated() -> void:
-	await get_tree().create_timer(3).timeout
+	for i in range(3):
+		score += 1
+		await get_tree().create_timer(1).timeout
 	Global.level += 1
 	await _load_level(Global.world, Global.level, false, false)
 

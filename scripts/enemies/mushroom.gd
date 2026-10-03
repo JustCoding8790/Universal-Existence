@@ -34,10 +34,13 @@ func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int
 		if body.name == "Player" and body.alive:
 			var voicelines = []
 			Global.deaths["mushrooms"] += 1
-			if Global.deaths["mushrooms"] == 2:
-				voicelines.append(["You know you can just bounce on top of them to avoid being killed, right?", 4])
-			elif Global.deaths["mushrooms"] == 5:
+			if Global.deaths["mushrooms"] == 1:
+				voicelines.append(["Bouncing on top of mushrooms can be used to skip an entire level!", 3])
+				voicelines.append(["If you do it correctly, that is...", 1.5])
+			elif Global.deaths["mushrooms"] == 2:
 				voicelines.append(["Is this what you call being careful?", 2])
+			elif Global.deaths["mushrooms"] == 3:
+				voicelines.append(["You know you can just bounce on top of them to avoid being killed, right?", 4])
 			player_died.emit(body, voicelines)
 		elif body.name == "TileMapLayer":
 			direction *= -1

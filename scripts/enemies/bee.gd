@@ -101,6 +101,12 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["And bees were EVERYWHERE around that bush.", 2])
 		voicelines.append(["So hey, if you get scared of bees after this, just know I'm here for you.", 3.5])
 	elif Global.deaths["bees"] == 8:
+		voicelines.append(["Let me bee your guide here.", 1.5])
+		voicelines.append(["Bees are only dangerous in groups.", 1.5])
+		voicelines.append(["One or two bees can't overwhelm you with stingers easily.", 2.5])
+		voicelines.append(["And luckily for you, they're only together in the middle of the room.", 3])
+	elif Global.deaths["bees"] == 11:
 		voicelines.append(["You know, I had some high hopes you'll past the last challenge of the test.", 3.5])
 		voicelines.append(["But honestly, we might need to downgrade the difficulty.", 3])
+		voicelines.append(["Hmmm, let me think...", 2])
 	player_died.emit(body, voicelines)

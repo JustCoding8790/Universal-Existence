@@ -6,7 +6,7 @@ extends Node
 var difficulty = 2
 var can_pause = false
 var world: int = 1	# implement different worlds later
-var level: int = 9
+var level: int = 1
 
 var bee_good_diff
 var demo_time

@@ -20,6 +20,9 @@ func _on_body_entered(body: Node2D) -> void:
 			voicelines.append(["I repeat...", 0.5])
 			voicelines.append(["A STATIONARY TRIANGLE IN THE GROUND!", 1.5])
 		elif Global.deaths["spikes"] == 12:
-			voicelines.append(["Still a problem, eh?", 1.5])
+			voicelines.append(["Still a problem, huh?", 1.5])
 			voicelines.append(["Although you probably have other things to be worrying about by now...", 3])
+		elif Global.deaths["spikes"] == 16:
+			voicelines.append(["You know, I wonder how spikes kill people.", 2])
+			voicelines.append(["In reality, they simply hurt your foot, but nothing else...", 3])
 		player_died.emit(body, voicelines)
