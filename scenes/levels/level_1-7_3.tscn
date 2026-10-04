@@ -494,15 +494,11 @@ position = Vector2(223, 567.75)
 scale = Vector2(2.5, 2.5)
 
 [node name="MushroomFlip2" parent="Enemies" instance=ExtResource("6_vcm68")]
-position = Vector2(483, 567.75)
+position = Vector2(543, 567.75)
 scale = Vector2(2.5, 2.5)
 
 [node name="Mushroom3" parent="Enemies" instance=ExtResource("6_vcm68")]
-position = Vector2(735, 567.75)
-scale = Vector2(2.5, 2.5)
-
-[node name="MushroomFlip4" parent="Enemies" instance=ExtResource("6_vcm68")]
-position = Vector2(992, 567.75)
+position = Vector2(863, 567.75)
 scale = Vector2(2.5, 2.5)
 
 [node name="Traps" type="Node2D" parent="."]
