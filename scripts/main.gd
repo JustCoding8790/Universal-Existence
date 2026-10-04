@@ -2,6 +2,7 @@ extends Node2D
 @onready var score_label: Label = $HUD/ScorePanel/ScoreLabel
 @onready var fade: ColorRect = $HUD/Fade
 @onready var voice_captions: Label = $HUD/VoiceCaptions
+@onready var bgm_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var score: int = 0
 var prev_score: int = 0
@@ -14,6 +15,10 @@ signal reset_gravity
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(0, linear_to_db(0.75))
+	AudioServer.set_bus_volume_db(1, linear_to_db(0.75))
+	AudioServer.set_bus_volume_db(2, linear_to_db(0.75))
+	AudioServer.set_bus_volume_db(3, linear_to_db(0.75))
 	fade.modulate.a = 1.0
 	current_level_root = get_node("LevelRoot")
 	await _load_level(Global.world, Global.level, true, false)
@@ -101,8 +106,13 @@ func _load_level(world_number: int, level_number: int, first_load: bool, reset_s
 			voiceline_queue.append(["You better defeat all those plants and bees.", 2])
 			voiceline_queue.append(["Or just use a mushroom. Bee careful out there!", 2.5])
 		elif world_number == 1 and level_number == 12:
+			bgm_player.stream = load("res://assets/audio/music/boss_bee_good.ogg")
+			bgm_player.volume_db = -27
+			bgm_player.play()
 			voiceline_queue.append(["Bee Good will serve to you a good challenge.", 2])
 			voiceline_queue.append(["But she isn't morally good herself, though...", 2])
+		elif world_number == 1 and level_number == 13:
+			pass
 	# Fade in
 	await _fade(0.0)
 	Global.can_pause = true
@@ -219,11 +229,18 @@ func _on_player_died(body, voicelines) -> void:
 			voiceline_queue.append([line[0], line[1]])
 
 func _on_boss_defeated() -> void:
-	for i in range(3):
-		score += 1
-		await get_tree().create_timer(1).timeout
+	bgm_player.stream = load("res://assets/audio/music/boss_victory.ogg")
+	bgm_player.play()
+	for i in range(5):
+		increase_score(1)
+		await get_tree().create_timer(0.75).timeout
 	Global.level += 1
 	await _load_level(Global.world, Global.level, false, false)
+	await bgm_player.finished
+	bgm_player.volume_db = -18
+	bgm_player.stream = load("res://assets/audio/music/hub_ambience.ogg")
+	
+	bgm_player.play()
 
 # --------------------
 # SCORE

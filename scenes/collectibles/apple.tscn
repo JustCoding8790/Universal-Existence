@@ -200,6 +200,7 @@ shape = SubResource("CircleShape2D_fa2ar")
 
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_1ussh")
+volume_db = -12.0
 pitch_scale = 1.5
 bus = &"Sound"
 

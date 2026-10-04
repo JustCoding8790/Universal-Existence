@@ -7,10 +7,7 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
-	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
-	sound_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
-	voice_slider.value = db_to_linear(AudioServer.get_bus_volume_db(3))
+	pass
 
 func _on_master_slider_value_changed(value: float) -> void:
 	release_focus()

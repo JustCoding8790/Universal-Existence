@@ -93,6 +93,10 @@ func _on_difficulty_pressed() -> void:
 func _on_settings_pressed() -> void:
 	settings.disabled = true
 	settings_menu.visible = true
+	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
+	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
+	sound_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	voice_slider.value = db_to_linear(AudioServer.get_bus_volume_db(3))
 	main_player.play("close")
 	settings_player.play("open")
 	await settings_player.animation_finished

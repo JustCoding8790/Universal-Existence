@@ -430,6 +430,7 @@ shape = SubResource("RectangleShape2D_syfr7")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2676i")
+volume_db = -12.0
 bus = &"Sound"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
