@@ -10,25 +10,56 @@
         A 2D platformer containing plenty of recurring mechanics. In a new universe created by Domainus, you are participating in the UPC (Universal Platforming Course) to prepare for an inevitable big threat that will one day attack the universe. You can go from bouncing across walking mushrooms to firing guns at angry bees. As you travel through the UPC, you'll start to slowly learn about the universe and the true meaning of existence.
         <br />
         <br />
-        <a href="https://justcoding8790.itch.io/gameware-malfunction">Play Universal Existence Now On Itch.io</a>
+        <a href="https://justcoding8790.itch.io/universal-existence">Play Universal Existence Now On Itch.io</a>
         <br />
         <br />
-        <a href="https://kenney.nl/assets/new-platformer-pack">CC0 Assets I Used Are Here</a>
+        <a href="https://pixelfrog-assets.itch.io/pixel-adventure-1">CC0 Assets I Used Are Here</a>
     </p>
-    <h2 align="center"> Microgame Instructions </h2>
-    <h3 align="center"> Microgame #1: Classic as a Ruby </h3>
+    <h2 align="center"> Controls </h2>
+    <h3 align="center"> Keyboard </h3>
     <p align="center">
-        It's just a classic, ordinary platformer. As the green astronaut, jump onto platforms and get both rubies by touching them. Left and right arrow keys to move left and right. Space to jump.
+        A or Left Arrow Key = Move Left
         <br />
+        D or Right Arrow Key = Move Right
+        <br />
+        Space or W or Up Arrow Key = Jump
+        <br />
+        Jump Button (x2) = Double-Jump
+        <br />
+        Esc = Open Pause Menu
     </p>
-    <h3 align="center"> Microgame #2: Gem Collector </h3>
+    <h3 align="center"> XBOX Controller </h3>
     <p align="center">
-        Left-click the blue gems using your mouse/trackpad. You'll know when you've clicked them if they turn green. If the gem turns yellow, that means you are hovering over the gem and can click it.
+        Note: You cannot navigate pause menus with an Xbox controller. You must use your mouse instead. Also, there's a possible "walking backwards" issue that might occur when using the left joystick to move.
         <br />
+        <br />
+        Left Joystick or D-Pad = Move Left/Right
+        <br />
+        LB = Move Left (Recommended for avoiding "walking backwards" issue)
+        <br />
+        RB = Move Right (Recommended for avoiding "walking backwards" issue)
+        <br />
+        A Button or Up Button on D-Pad = Jump
+        <br />
+        Jump Button (x2) = Double-Jump
+        <br />
+        Menu Button = Open Pause Menu
     </p>
-    <h3 align="center"> Microgame #3: Capture the Flag Recruitment </h3>
+    <h2 align="center"> Credits </h2>
     <p align="center">
-        There are two bases, marked by either a red or a blue flag. You need to collect the underground ruby in this microgame. One base offers the ruby if you join them by going through their door. The other doesn't. Make sure you go into the correct base, as once you're in, you can't get out. Left and right arrow keys to move left and right. Space to jump (you won't need to jump for this microgame, but the option is there).
+        Creator: JustCoding8790
         <br />
+        Main Music Composer: Rush
+        <br />
+        CC0 Assets: Pixel Frog
+        <br />
+        Quantico Font: MADType
+        <br />
+        <a href="https://freesound.org/s/212580/">Rain Loop by qubodup (License: Attribution 4.0)</a>
+        <br />
+        Made for Hack Club's Stardance event.
+        <br />
+        <br />
+        Playtesters: dinkyee, Cats, Eclipseus8, Nao, oorangjuice_62060
     </p>
 </div>
