@@ -1,19 +1,19 @@
-[gd_scene load_steps=28 format=4 uid="uid://csk71s5kpk6yt"]
+[gd_scene load_steps=28 format=4 uid="uid://5bexn8ac8ufc"]
 
-[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_1o0sf"]
-[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_a6nc6"]
-[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_lgckr"]
-[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_f2xow"]
-[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_cquv0"]
-[ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="6_eqd5b"]
-[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/traps/spikes.tscn" id="7_3wkgt"]
-[ext_resource type="PackedScene" uid="uid://d1rk0vgn44ixa" path="res://scenes/enemies/plant.tscn" id="8_qrrpq"]
-[ext_resource type="PackedScene" uid="uid://4mnpjl480jan" path="res://scenes/enemies/trunk.tscn" id="9_5xl6b"]
-[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="10_cqfof"]
-[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/collectibles/melon.tscn" id="11_ugi44"]
+[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_qgdf2"]
+[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_aoblm"]
+[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_new5i"]
+[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_a8tnr"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_vixu8"]
+[ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="6_6jif5"]
+[ext_resource type="PackedScene" uid="uid://4n4wqev8fey0" path="res://scenes/traps/spikes.tscn" id="7_w5w5v"]
+[ext_resource type="PackedScene" uid="uid://d1rk0vgn44ixa" path="res://scenes/enemies/plant.tscn" id="8_bnct3"]
+[ext_resource type="PackedScene" uid="uid://4mnpjl480jan" path="res://scenes/enemies/trunk.tscn" id="9_kb3c7"]
+[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="10_eboka"]
+[ext_resource type="PackedScene" uid="uid://cjydfbr4fu606" path="res://scenes/collectibles/melon.tscn" id="11_kyah5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
-texture = ExtResource("2_a6nc6")
+texture = ExtResource("2_aoblm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -316,43 +316,43 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06rio"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulilj"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upoao"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e47y4"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wiseb"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_junvf"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ghe7"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dtgi"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l047r"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw6ch"]
-atlas = ExtResource("4_f2xow")
+atlas = ExtResource("4_a8tnr")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjwnv"]
@@ -430,7 +430,7 @@ texture_filter = 1
 offset_top = -2.0
 offset_right = 1152.0
 offset_bottom = 666.0
-texture = ExtResource("1_1o0sf")
+texture = ExtResource("1_qgdf2")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -439,7 +439,7 @@ scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAAAAA0AAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAIAAEAAAAAABEAAAAIAAEAAAAAABIAAAAIAAEAAAAAABMAAAAIAAEAAAAjAAAAAAAHAAIAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAAAABAAAAAIAAEAAAAkAAAAAAAHAAIAAAAlAAAAAAAHAAIAAAAmAAAAAAAHAAIAAAAAABoAAAAHAAEAAAAAABsAAAAHAAEAAAABABsAAAAHAAEAAAACABsAAAAHAAEAAAADABsAAAAHAAEAAAAEABsAAAAHAAEAAAAFABsAAAAHAAEAAAAGABsAAAAHAAEAAAAHABsAAAAHAAEAAAAIABsAAAAHAAEAAAAJABsAAAAHAAEAAAAKABsAAAAHAAEAAAALABsAAAAHAAEAAAAMABsAAAAHAAEAAAANABsAAAAHAAEAAAAOABsAAAAHAAEAAAAPABsAAAAHAAEAAAAQABsAAAAHAAEAAAARABsAAAAHAAEAAAASABsAAAAHAAEAAAATABsAAAAHAAEAAAAUABsAAAAHAAEAAAAVABsAAAAHAAEAAAAWABsAAAAHAAEAAAAXABsAAAAHAAEAAAAYABsAAAAHAAEAAAAZABsAAAAHAAEAAAAaABsAAAAHAAEAAAAbABsAAAAHAAEAAAAcABsAAAAHAAEAAAAdABsAAAAHAAEAAAAeABsAAAAHAAEAAAAfABsAAAAHAAEAAAAgABsAAAAHAAEAAAAhABsAAAAHAAEAAAAiABsAAAAHAAEAAAAjABsAAAAHAAEAAAAkABsAAAAHAAEAAAAlABsAAAAHAAEAAAAmABsAAAAHAAEAAAAnABsAAAAHAAEAAAAoABsAAAAHAAEAAAApABsAAAAHAAEAAAAqABsAAAAHAAEAAAArABsAAAAHAAEAAAAsABsAAAAHAAEAAAAtABsAAAAHAAEAAAAuABsAAAAHAAEAAAAvABsAAAAHAAEAAAAvABoAAAAHAAEAAAAuABoAAAAHAAEAAAAtABoAAAAHAAEAAAAsABoAAAAHAAEAAAArABoAAAAHAAEAAAAqABoAAAAHAAEAAAApABoAAAAHAAEAAAAoABoAAAAHAAEAAAAnABoAAAAHAAEAAAAmABoAAAAHAAEAAAAlABoAAAAHAAEAAAAkABoAAAAHAAEAAAAjABoAAAAHAAEAAAAiABoAAAAHAAEAAAAhABoAAAAHAAEAAAAgABoAAAAHAAEAAAAfABoAAAAHAAEAAAAeABoAAAAHAAEAAAAdABoAAAAHAAEAAAAcABoAAAAHAAEAAAAbABoAAAAHAAEAAAAaABoAAAAHAAEAAAAZABoAAAAHAAEAAAAYABoAAAAHAAEAAAAXABoAAAAHAAEAAAAWABoAAAAHAAEAAAAVABoAAAAHAAEAAAAUABoAAAAHAAEAAAATABoAAAAHAAEAAAASABoAAAAHAAEAAAARABoAAAAHAAEAAAAQABoAAAAHAAEAAAAPABoAAAAHAAEAAAAOABoAAAAHAAEAAAANABoAAAAHAAEAAAAMABoAAAAHAAEAAAALABoAAAAHAAEAAAAKABoAAAAHAAEAAAAJABoAAAAHAAEAAAAIABoAAAAHAAEAAAAHABoAAAAHAAEAAAAGABoAAAAHAAEAAAAFABoAAAAHAAEAAAAEABoAAAAHAAEAAAADABoAAAAHAAEAAAACABoAAAAHAAEAAAABABoAAAAHAAEAAAAAABQAAAAIAAEAAAAAABUAAAAIAAEAAAAAABYAAAAIAAEAAAAAABcAAAAIAAEAAAAAABgAAAAIAAEAAAAAABkAAAAIAAEAAAABABkAAAAHAAAAAAACABkAAAAHAAAAAAADABkAAAAHAAAAAAAFABkAAAAHAAAAAAAGABkAAAAHAAAAAAAHABkAAAAHAAAAAAAIABkAAAAHAAAAAAAJABkAAAAHAAAAAAAKABkAAAAHAAAAAAALABkAAAAHAAAAAAAMABkAAAAHAAAAAAANABkAAAAHAAAAAAAOABkAAAAHAAAAAAAPABkAAAAHAAAAAAAQABkAAAAHAAAAAAARABkAAAAHAAAAAAASABkAAAAHAAAAAAATABkAAAAHAAAAAAAUABkAAAAHAAAAAAAVABkAAAAHAAAAAAAWABkAAAAHAAAAAAAXABkAAAAHAAAAAAAYABkAAAAHAAAAAAAZABkAAAAHAAAAAAAaABkAAAAHAAAAAAAbABkAAAAHAAAAAAAcABkAAAAHAAAAAAAdABkAAAAHAAAAAAAeABkAAAAHAAAAAAAfABkAAAAHAAAAAAAgABkAAAAHAAAAAAAhABkAAAAHAAAAAAAiABkAAAAHAAAAAAAjABkAAAAHAAAAAAAkABkAAAAHAAAAAAAlABkAAAAHAAAAAAAmABkAAAAHAAAAAAAnABkAAAAHAAAAAAAoABkAAAAGAAEAAAApABkAAAAHAAEAAAAqABkAAAAHAAEAAAArABkAAAAHAAEAAAAsABkAAAAHAAEAAAAtABkAAAAHAAEAAAAuABkAAAAHAAEAAAAvABkAAAAHAAEAAAAvABgAAAAHAAEAAAAvABcAAAAGAAEAAAAvABYAAAAGAAEAAAAvABUAAAAGAAEAAAAvABQAAAAGAAEAAAAvABMAAAAGAAEAAAAvABIAAAAGAAEAAAAvABEAAAAGAAEAAAAvABAAAAAGAAEAAAAvAA8AAAAGAAEAAAAvAA4AAAAGAAEAAAAvAA0AAAAHAAEAAAAvAAwAAAAHAAEAAAAvAAsAAAAHAAEAAAAvAAoAAAAHAAEAAAAvAAgAAAAHAAEAAAAvAAcAAAAHAAAAAAAvAAkAAAAHAAEAAAAvAAEAAAAHAAIAAAAnAAAAAAAHAAIAAAAoAAAAAAAHAAIAAAApAAAAAAAHAAIAAAAqAAAAAAAHAAIAAAArAAAAAAAHAAIAAAAsAAAAAAAHAAEAAAAtAAAAAAAHAAEAAAAuAAAAAAAHAAEAAAAvAAAAAAAHAAEAAAAwAAcAAAAHAAAAAAAxAAcAAAAHAAAAAAAyAAcAAAAHAAAAAAAwAAgAAAAHAAEAAAAxAAgAAAAHAAEAAAAyAAgAAAAHAAEAAAAyAAkAAAAHAAEAAAAxAAkAAAAHAAEAAAAwAAkAAAAHAAEAAAAuAAEAAAAHAAIAAAAtAAEAAAAHAAIAAAAyAAEAAAAHAAIAAAAxAAEAAAAHAAIAAAAwAAEAAAAHAAIAAAAwAAAAAAAHAAEAAAAxAAAAAAAHAAEAAAAyAAAAAAAHAAEAAAAEABkAAAAHAAAAAAAuABcAAAAHAAAAAAAtABcAAAAHAAAAAAAsABcAAAAHAAAAAAArABcAAAAIAAEAAAAqABcAAAAHAAEAAAApABcAAAAHAAEAAAApABgAAAAHAAEAAAApABYAAAAHAAEAAAApABUAAAAIAAEAAAApABQAAAAIAAEAAAApABMAAAAIAAEAAAApABIAAAAIAAEAAAAoABEAAAAGAAAAAAApABEAAAAIAAAAAAArABgAAAAHAAEAAAAsABgAAAAHAAEAAAAtABgAAAAHAAEAAAAuABgAAAAHAAEAAAAqABgAAAAHAAEAAAAoABIAAAAGAAEAAAAoABMAAAAGAAEAAAAoABQAAAAGAAEAAAAoABUAAAAGAAEAAAAoABYAAAAGAAEAAAAoABcAAAAGAAEAAAAoABgAAAAGAAEAAAAGABUAAAANAAAAAAAHABUAAAAOAAAAAAAFABEAAAANAAAAAAAGABEAAAANAAAAAAAHABEAAAAOAAAAAAAFABUAAAANAAAAAAAGAA0AAAAGAAIAAAAHAA0AAAAHAAIAAAAIAA0AAAAHAAIAAAAJAA0AAAAHAAIAAAAKAA0AAAAHAAIAAAALAA0AAAAHAAIAAAAMAA0AAAAHAAIAAAANAA0AAAAHAAIAAAAOAA0AAAAHAAIAAAAPAA0AAAAHAAIAAAAQAA0AAAAHAAIAAAARAA0AAAAHAAIAAAASAA0AAAAHAAIAAAATAA0AAAAHAAIAAAAUAA0AAAAHAAIAAAAVAA0AAAAHAAIAAAAWAA0AAAAHAAIAAAAXAA0AAAAHAAIAAAAYAA0AAAAHAAIAAAAZAA0AAAAHAAIAAAAaAA0AAAAHAAIAAAAbAA0AAAAHAAIAAAAcAA0AAAAHAAIAAAAdAA0AAAAHAAIAAAAeAA0AAAAHAAIAAAAfAA0AAAAHAAIAAAAgAA0AAAAHAAIAAAAhAA0AAAAHAAIAAAAiAA0AAAAHAAIAAAAjAA0AAAAHAAIAAAAkAA0AAAAHAAIAAAAlAA0AAAAHAAIAAAAmAA0AAAAHAAIAAAAnAA0AAAAHAAIAAAAoAA0AAAAHAAIAAAApAA0AAAAHAAIAAAAqAA0AAAAHAAIAAAArAA0AAAAHAAIAAAAsAA0AAAAHAAIAAAAtAA0AAAAHAAIAAAAuAA0AAAAHAAIAAAAEABUAAAAMAAAAAAAEABEAAAAMAAAAAAAGAAwAAAAGAAAAAAAHAAwAAAAHAAAAAAAIAAwAAAAHAAAAAAAJAAwAAAAHAAAAAAAKAAwAAAAHAAAAAAALAAwAAAAHAAAAAAAMAAwAAAAHAAAAAAANAAwAAAAHAAAAAAAOAAwAAAAHAAAAAAAPAAwAAAAHAAAAAAAQAAwAAAAHAAAAAAARAAwAAAAHAAAAAAASAAwAAAAHAAAAAAATAAwAAAAHAAAAAAAUAAwAAAAHAAAAAAAVAAwAAAAHAAAAAAAWAAwAAAAHAAAAAAAXAAwAAAAHAAAAAAAYAAwAAAAHAAAAAAAZAAwAAAAHAAAAAAAaAAwAAAAHAAAAAAAbAAwAAAAHAAAAAAAcAAwAAAAHAAAAAAAdAAwAAAAHAAAAAAAeAAwAAAAHAAAAAAAfAAwAAAAHAAAAAAAgAAwAAAAHAAAAAAAhAAwAAAAHAAAAAAAiAAwAAAAHAAAAAAAjAAwAAAAHAAAAAAAkAAwAAAAHAAAAAAAlAAwAAAAHAAAAAAAmAAwAAAAHAAAAAAAnAAwAAAAHAAAAAAAsAAEAAAAGAAIAAAAoAAgAAAANAAAAAAApAAgAAAANAAAAAAAqAAgAAAANAAAAAAAoAAQAAAANAAAAAAApAAQAAAANAAAAAAAqAAQAAAANAAAAAAArAAQAAAAOAAAAAAArAAgAAAAOAAAAAAAoAAwAAAAHAAAAAAApAAwAAAAHAAAAAAAqAAwAAAAHAAAAAAArAAwAAAAHAAAAAAAsAAwAAAAHAAAAAAAtAAwAAAAHAAAAAAAuAAwAAAAGAAEAAAAuAAsAAAAGAAEAAAAuAAoAAAAGAAEAAAAuAAkAAAAGAAEAAAAuAAgAAAAGAAEAAAAuAAcAAAAGAAAAAAADAAwAAAAIAAAAAAADAA0AAAAIAAIAAAACAAwAAAAHAAAAAAABAAwAAAAHAAAAAAACAA0AAAAHAAIAAAABAA0AAAAHAAIAAAABAAgAAAANAAAAAAACAAgAAAANAAAAAAADAAgAAAANAAAAAAABAAQAAAANAAAAAAACAAQAAAANAAAAAAADAAQAAAANAAAAAAAEAAgAAAANAAAAAAAFAAgAAAANAAAAAAAGAAgAAAANAAAAAAAHAAgAAAANAAAAAAAGAAQAAAANAAAAAAAHAAQAAAANAAAAAAAFAAQAAAANAAAAAAAEAAQAAAANAAAAAAAIAAgAAAANAAAAAAAJAAgAAAAOAAAAAAAIAAQAAAANAAAAAAAJAAQAAAANAAAAAAAOAAgAAAAMAAAAAAAPAAgAAAANAAAAAAAKAAQAAAANAAAAAAALAAQAAAANAAAAAAAMAAQAAAANAAAAAAAQAAgAAAANAAAAAAARAAgAAAANAAAAAAASAAgAAAANAAAAAAATAAgAAAAOAAAAAAAOAAQAAAAOAAAAAAANAAQAAAANAAAAAAATAAQAAAAMAAAAAAAUAAQAAAANAAAAAAAVAAQAAAANAAAAAAAWAAQAAAANAAAAAAAXAAQAAAANAAAAAAAYAAQAAAAOAAAAAAAYAAgAAAAMAAAAAAAdAAQAAAAMAAAAAAAiAAgAAAAMAAAAAAAjAAgAAAANAAAAAAAkAAgAAAANAAAAAAAlAAgAAAANAAAAAAAmAAgAAAANAAAAAAAnAAgAAAANAAAAAAAdAAgAAAAOAAAAAAAiAAQAAAAOAAAAAAAnAAQAAAAMAAAAAAAcAAgAAAANAAAAAAAbAAgAAAANAAAAAAAaAAgAAAANAAAAAAAZAAgAAAANAAAAAAAhAAQAAAANAAAAAAAgAAQAAAANAAAAAAAfAAQAAAANAAAAAAAeAAQAAAANAAAAAAAqABUAAAAHAAAAAAAqABYAAAAHAAEAAAArABUAAAAIAAAAAAArABYAAAAIAAEAAAA=")
 tile_set = SubResource("TileSet_q13hu")
 
-[node name="Player" parent="." instance=ExtResource("3_lgckr")]
+[node name="Player" parent="." instance=ExtResource("3_new5i")]
 position = Vector2(1083, 528)
 scale = Vector2(1.5, 1.5)
 
@@ -474,7 +474,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_cquv0")
+theme_override_fonts/font = ExtResource("5_vixu8")
 theme_override_font_sizes/font_size = 15
 text = "A friend of mine said
 plants won't hurt you."
@@ -492,123 +492,123 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("5_cquv0")
+theme_override_fonts/font = ExtResource("5_vixu8")
 theme_override_font_sizes/font_size = 12
 text = "That's mostly true, it's
 just that these ones will."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NormalGunHorizontal" parent="." instance=ExtResource("6_eqd5b")]
+[node name="NormalGunHorizontal" parent="." instance=ExtResource("6_6jif5")]
 position = Vector2(1032, 492)
 scale = Vector2(1.5, 1.5)
 
 [node name="Traps" type="Node2D" parent="."]
 
-[node name="Spikes" parent="Traps" instance=ExtResource("7_3wkgt")]
+[node name="Spikes" parent="Traps" instance=ExtResource("7_w5w5v")]
 position = Vector2(406, 588)
 scale = Vector2(1.5, 1.5)
 
-[node name="Spikes2" parent="Traps" instance=ExtResource("7_3wkgt")]
+[node name="Spikes2" parent="Traps" instance=ExtResource("7_w5w5v")]
 position = Vector2(428, 588)
 scale = Vector2(1.5, 1.5)
 
-[node name="Spikes5" parent="Traps" instance=ExtResource("7_3wkgt")]
+[node name="Spikes5" parent="Traps" instance=ExtResource("7_w5w5v")]
 position = Vector2(928, 588)
 scale = Vector2(1.5, 1.5)
 
-[node name="Spikes6" parent="Traps" instance=ExtResource("7_3wkgt")]
+[node name="Spikes6" parent="Traps" instance=ExtResource("7_w5w5v")]
 position = Vector2(950, 588)
 scale = Vector2(1.5, 1.5)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="PoisonPlantFlip" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlantFlip" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(176, 576)
 scale = Vector2(1.5, 1.5)
 
-[node name="PoisonPlant2Flip" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant2Flip" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(176, 479)
 scale = Vector2(1.5, 1.5)
 
-[node name="PoisonPlant4Flip" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant4Flip" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(176, 383)
 scale = Vector2(1.5, 1.5)
 
-[node name="PoisonPlant4" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant4" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(992, 263)
 scale = Vector2(1.5, 1.5)
 metadata/Min_Delay = 1.0
 metadata/Max_Delay = 3.0
 
-[node name="PoisonPlant5" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant5" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(992, 167)
 scale = Vector2(1.5, 1.5)
 metadata/Min_Delay = 1.0
 metadata/Max_Delay = 3.0
 
-[node name="PoisonPlant6" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant6" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(992, 71)
 scale = Vector2(1.5, 1.5)
 metadata/Min_Delay = 1.0
 metadata/Max_Delay = 3.0
 
-[node name="PoisonPlant8Flip" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant8Flip" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(104, 167)
 scale = Vector2(1.5, 1.5)
 metadata/Min_Delay = 1.0
 metadata/Max_Delay = 3.0
 
-[node name="PoisonPlant5Flip" parent="Enemies" instance=ExtResource("8_qrrpq")]
+[node name="PoisonPlant5Flip" parent="Enemies" instance=ExtResource("8_bnct3")]
 position = Vector2(104, 71)
 scale = Vector2(1.5, 1.5)
 metadata/Min_Delay = 1.0
 metadata/Max_Delay = 3.0
 
-[node name="Trunkwalker" parent="Enemies" instance=ExtResource("9_5xl6b")]
+[node name="Trunkwalker" parent="Enemies" instance=ExtResource("9_kb3c7")]
 position = Vector2(543, 576)
 scale = Vector2(1.5, 1.5)
 
 [node name="Apples" type="Node2D" parent="."]
 
-[node name="Apple" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(289, 207)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple2" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple2" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(648, 110)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple6" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple6" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(942, 480)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple7" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple7" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(670, 480)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple8" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple8" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(414, 480)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple4" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple4" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(768, 206)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple3" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple3" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(408, 109)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple5" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple5" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(526, 205)
 scale = Vector2(1.5, 1.5)
 
-[node name="Apple9" parent="Apples" instance=ExtResource("10_cqfof")]
+[node name="Apple9" parent="Apples" instance=ExtResource("10_eboka")]
 position = Vector2(254, 384)
 scale = Vector2(1.5, 1.5)
 
 [node name="Melons" type="Node2D" parent="."]
 
-[node name="Melon" parent="Melons" instance=ExtResource("11_ugi44")]
+[node name="Melon" parent="Melons" instance=ExtResource("11_kyah5")]
 position = Vector2(46, 165)
 scale = Vector2(1.5, 1.5)

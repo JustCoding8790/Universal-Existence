@@ -1,19 +1,13 @@
-[gd_scene load_steps=28 format=4 uid="uid://ndmolwwk7alx"]
+[gd_scene load_steps=10 format=4 uid="uid://dpbha1ats8q3f"]
 
-[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_lf4xo"]
-[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_6i46u"]
-[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_3owog"]
-[ext_resource type="Texture2D" uid="uid://buv4meb8e877q" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="4_lc7nd"]
-[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="5_6s1qv"]
-[ext_resource type="PackedScene" uid="uid://gllw8mhfxndk" path="res://scenes/mechanics/normal_gun_up.tscn" id="6_q3evw"]
-[ext_resource type="PackedScene" uid="uid://c7ldl08ejh8wp" path="res://scenes/mechanics/normal_gun_horizontal.tscn" id="7_craaj"]
-[ext_resource type="PackedScene" uid="uid://hgne2kduq7o2" path="res://scenes/enemies/bee.tscn" id="8_kyvks"]
-[ext_resource type="PackedScene" uid="uid://cdkralsml8mgg" path="res://scenes/enemies/mushroom.tscn" id="9_xbn0q"]
-[ext_resource type="PackedScene" uid="uid://d1rk0vgn44ixa" path="res://scenes/enemies/plant.tscn" id="10_uamc2"]
-[ext_resource type="PackedScene" uid="uid://dapdktb8rxqhl" path="res://scenes/collectibles/apple.tscn" id="11_xe4p2"]
+[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_iwjja"]
+[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_pg50m"]
+[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_psbnp"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="4_qmlx8"]
+[ext_resource type="Script" path="res://scripts/interface/demo_stats_panel.gd" id="5_6f4yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
-texture = ExtResource("2_6i46u")
+texture = ExtResource("2_pg50m")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -309,88 +303,7 @@ texture = ExtResource("2_6i46u")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_06rio"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ulilj"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_upoao"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e47y4"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wiseb"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_junvf"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ghe7"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dtgi"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l047r"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iw6ch"]
-atlas = ExtResource("4_lc7nd")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vjwnv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06rio")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ulilj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_upoao")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e47y4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wiseb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_junvf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ghe7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7dtgi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l047r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iw6ch")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 15.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnj25"]
-size = Vector2(36, 118.75)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgdyi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca0j1"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -403,7 +316,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0iav"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4cei"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -420,56 +333,63 @@ shadow_size = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_top = -2.0
+offset_top = -1.0
 offset_right = 1152.0
-offset_bottom = 666.0
-texture = ExtResource("1_lf4xo")
+offset_bottom = 667.0
+texture = ExtResource("1_iwjja")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-position = Vector2(0, -2)
-scale = Vector2(1.75, 1.75)
-tile_map_data = PackedByteArray("AAAAAA0AAAAIAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAIAAEAAAAAABEAAAAIAAEAAAAAABIAAAAIAAEAAAAAABQAAAAIAAEAAAAAABMAAAAIAAEAAAAjAAAAAAAHAAIAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAAAABAAAAAIAAEAAAAkAAAAAAAHAAIAAAAlAAAAAAAHAAIAAAAmAAAAAAAHAAIAAAAAABYAAAAHAAEAAAABABYAAAAHAAEAAAACABYAAAAIAAEAAAADABYAAAAHAAAAAAAEABYAAAAHAAAAAAAFABYAAAAHAAAAAAAGABYAAAAHAAAAAAAHABYAAAAHAAAAAAAIABYAAAAHAAAAAAAJABYAAAAHAAAAAAAKABYAAAAHAAAAAAALABYAAAAHAAAAAAAMABYAAAAHAAAAAAANABYAAAAHAAAAAAASABYAAAAHAAAAAAATABYAAAAHAAAAAAAUABYAAAAHAAAAAAAVABYAAAAHAAAAAAAWABYAAAAHAAAAAAAXABYAAAAHAAAAAAAYABYAAAAHAAAAAAAZABYAAAAHAAAAAAAaABYAAAAHAAAAAAAbABYAAAAHAAAAAAAcABYAAAAHAAAAAAAdABYAAAAHAAAAAAAeABYAAAAHAAAAAAAfABYAAAAHAAAAAAAgABYAAAAHAAAAAAAhABYAAAAHAAAAAAAiABYAAAAHAAAAAAAkABYAAAAIAAAAAAAnABYAAAAGAAEAAAAoABYAAAAHAAEAAAAAABcAAAAHAAEAAAABABcAAAAHAAEAAAACABcAAAAHAAEAAAADABcAAAAHAAEAAAAEABcAAAAHAAEAAAAFABcAAAAHAAEAAAAGABcAAAAHAAEAAAAHABcAAAAHAAEAAAAIABcAAAAHAAEAAAAJABcAAAAHAAEAAAAKABcAAAAHAAEAAAALABcAAAAHAAEAAAAMABcAAAAHAAEAAAANABcAAAAHAAEAAAAOABcAAAAHAAEAAAAPABcAAAAHAAEAAAAQABcAAAAHAAEAAAARABcAAAAHAAEAAAASABcAAAAHAAEAAAATABcAAAAHAAEAAAAUABcAAAAHAAEAAAAVABcAAAAHAAEAAAAWABcAAAAHAAEAAAAXABcAAAAHAAEAAAAYABcAAAAHAAEAAAAZABcAAAAHAAEAAAAaABcAAAAHAAEAAAAbABcAAAAHAAEAAAAcABcAAAAHAAEAAAAdABcAAAAHAAEAAAAeABcAAAAHAAEAAAAfABcAAAAHAAEAAAAgABcAAAAHAAEAAAAhABcAAAAHAAEAAAAiABcAAAAHAAEAAAAjABcAAAAHAAEAAAAkABcAAAAIAAEAAAAlABcAAAAHAAAAAAAmABcAAAAHAAAAAAAnABcAAAAGAAEAAAAoABcAAAAHAAEAAAApABcAAAAHAAEAAAApABYAAAAHAAEAAAAOABYAAAAHAAAAAAAPABYAAAAHAAAAAAAQABYAAAAHAAAAAAARABYAAAAHAAAAAAAjABYAAAAHAAAAAAAoABUAAAAHAAEAAAAoABQAAAAHAAEAAAAoABMAAAAHAAEAAAAoABIAAAAHAAEAAAAoABEAAAAHAAEAAAAoABAAAAAHAAEAAAAoAA8AAAAHAAEAAAAoAA4AAAAHAAEAAAAoAA0AAAAHAAEAAAAAABUAAAAHAAEAAAAnAAEAAAAGAAEAAAAnAAIAAAAGAAEAAAAnAAMAAAAGAAEAAAAnAAQAAAAGAAIAAAAoAAQAAAAHAAIAAAApAA0AAAAHAAEAAAApAA4AAAAHAAEAAAApAA8AAAAHAAEAAAApABAAAAAHAAEAAAApABEAAAAHAAEAAAApABIAAAAHAAEAAAApABMAAAAHAAEAAAApABQAAAAHAAEAAAApABUAAAAHAAEAAAAnABUAAAAGAAEAAAAnABQAAAAGAAEAAAAnABMAAAAGAAEAAAAnABIAAAAGAAEAAAAnABEAAAAGAAEAAAAnABAAAAAGAAEAAAAnAA8AAAAGAAEAAAAnAA4AAAAGAAEAAAAnAA0AAAAGAAEAAAAoAAwAAAAHAAEAAAAnAAwAAAAGAAEAAAApAAwAAAAHAAEAAAApAAQAAAAHAAIAAAAqAAQAAAAHAAIAAAArAAQAAAAHAAIAAAAsAAQAAAAHAAIAAAAnAAkAAAAGAAAAAAAoAAkAAAAHAAAAAAApAAkAAAAHAAAAAAApAAoAAAAHAAEAAAApAAsAAAAHAAEAAAAoAAsAAAAHAAEAAAAoAAoAAAAHAAEAAAAnAAsAAAAGAAEAAAAnAAoAAAAGAAEAAAAoAAMAAAAHAAEAAAApAAMAAAAHAAEAAAApAAIAAAAHAAEAAAAoAAIAAAAHAAEAAAAoAAEAAAAHAAEAAAApAAEAAAAHAAEAAAApAAAAAAAHAAEAAAAoAAAAAAAHAAEAAAAnAAAAAAAHAAEAAAAqAAMAAAAHAAEAAAAqAAIAAAAHAAEAAAAqAAEAAAAHAAEAAAAqAAAAAAAHAAEAAAArAAAAAAAHAAEAAAAsAAAAAAAHAAEAAAAsAAEAAAAHAAEAAAAsAAIAAAAHAAEAAAAsAAMAAAAHAAEAAAArAAMAAAAHAAEAAAArAAIAAAAHAAEAAAArAAEAAAAHAAEAAAAqAAkAAAAHAAAAAAArAAkAAAAHAAAAAAAqAAoAAAAHAAEAAAAqAAsAAAAHAAEAAAArAAsAAAAHAAEAAAArAAoAAAAHAAEAAAAsAAsAAAAHAAEAAAAsAAoAAAAHAAEAAAAsAAkAAAAHAAAAAAABABQAAAAHAAAAAAACABQAAAAIAAAAAAACABUAAAAIAAEAAAABABUAAAAHAAEAAAAmABMAAAAOAAAAAAAlABMAAAAMAAAAAAAlAA4AAAANAAEAAAAlAA8AAAANAAIAAAAmAA4AAAAOAAEAAAAmAA8AAAAOAAIAAAA=")
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAA0AAAAIAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAIAAEAAAAAABEAAAAIAAEAAAAAABIAAAAIAAEAAAAAABQAAAAHAAEAAAABABQAAAAHAAEAAAACABQAAAAHAAEAAAADABQAAAAHAAEAAAAEABQAAAAHAAEAAAAFABQAAAAHAAEAAAAGABQAAAAHAAEAAAAHABQAAAAHAAEAAAAIABQAAAAHAAEAAAAJABQAAAAHAAEAAAAKABQAAAAHAAEAAAALABQAAAAHAAEAAAAMABQAAAAHAAEAAAANABQAAAAHAAEAAAAOABQAAAAHAAEAAAAPABQAAAAHAAEAAAAQABQAAAAHAAEAAAARABQAAAAHAAEAAAASABQAAAAHAAEAAAATABQAAAAHAAEAAAAUABQAAAAHAAEAAAAVABQAAAAHAAEAAAAWABQAAAAHAAEAAAAXABQAAAAHAAEAAAAYABQAAAAHAAEAAAAZABQAAAAHAAEAAAAaABQAAAAHAAEAAAAbABQAAAAHAAEAAAAcABQAAAAHAAEAAAAdABQAAAAHAAEAAAAeABQAAAAHAAEAAAAfABQAAAAHAAEAAAAgABQAAAAHAAEAAAAhABQAAAAHAAEAAAAiABQAAAAHAAEAAAAjABQAAAAHAAEAAAAAABMAAAAIAAEAAAAjAAIAAAAGAAEAAAAjAAEAAAAGAAEAAAAjAAAAAAAKAAAAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAABABMAAAAHAAAAAAACABMAAAAHAAAAAAADABMAAAAHAAAAAAAEABMAAAAHAAAAAAAAABAAAAAIAAEAAAAFABMAAAAHAAAAAAAGABMAAAAHAAAAAAAHABMAAAAHAAAAAAAIABMAAAAHAAAAAAAJABMAAAAHAAAAAAAKABMAAAAHAAAAAAALABMAAAAHAAAAAAAMABMAAAAHAAAAAAANABMAAAAHAAAAAAAOABMAAAAHAAAAAAAPABMAAAAHAAAAAAAQABMAAAAHAAAAAAARABMAAAAHAAAAAAATABMAAAAHAAAAAAASABMAAAAHAAAAAAAUABMAAAAHAAAAAAAVABMAAAAHAAAAAAAWABMAAAAHAAAAAAAXABMAAAAHAAAAAAAYABMAAAAHAAAAAAAhABMAAAAHAAAAAAAkAAIAAAAHAAEAAAAlAAIAAAAHAAEAAAAmAAIAAAAHAAEAAAAkAAAAAAAHAAEAAAAlAAAAAAAHAAEAAAAmAAAAAAAHAAEAAAAmAAEAAAAHAAEAAAAlAAEAAAAHAAEAAAAkAAEAAAAHAAEAAAAgABMAAAAHAAAAAAAfABMAAAAHAAAAAAAeABMAAAAHAAAAAAAdABMAAAAHAAAAAAAcABMAAAAHAAAAAAAbABMAAAAHAAAAAAAaABMAAAAHAAAAAAAZABMAAAAHAAAAAAAkAAoAAAAHAAEAAAAlAAoAAAAHAAAAAAAmAAoAAAAHAAAAAAAjAAQAAAAGAAEAAAAmAAMAAAAHAAEAAAAlAAMAAAAHAAEAAAAkAAMAAAAHAAEAAAAjAAMAAAAGAAEAAAAkAAQAAAAHAAEAAAAlAAQAAAAHAAIAAAAmAAQAAAAHAAIAAAAkAAsAAAAHAAEAAAAkAAwAAAAHAAEAAAAmAAwAAAAHAAEAAAAmAAsAAAAHAAEAAAAlAAsAAAAHAAEAAAAlAAwAAAAHAAEAAAAjABMAAAAGAAEAAAAjABIAAAAGAAEAAAAjABEAAAAGAAEAAAAjABAAAAAGAAEAAAAjAA8AAAAGAAEAAAAjAA4AAAAGAAEAAAAjAA0AAAAGAAEAAAAjAAwAAAAGAAEAAAAjAAsAAAAGAAEAAAAjAAoAAAAGAAEAAAAjAAkAAAAGAAEAAAAjAAgAAAAGAAEAAAAjAAcAAAAGAAEAAAAjAAYAAAAGAAEAAAAjAAUAAAAGAAEAAAAkAAkAAAAHAAEAAAAkAAgAAAAHAAEAAAAkAAcAAAAHAAEAAAAkAAYAAAAHAAEAAAAkAAUAAAAHAAEAAAAkAA0AAAAHAAEAAAAkAA4AAAAHAAEAAAAkAA8AAAAHAAEAAAAkABAAAAAHAAEAAAAkABEAAAAHAAEAAAAkABIAAAAHAAEAAAAkABMAAAAHAAEAAAAkABQAAAAHAAEAAAAiABMAAAAHAAAAAAA=")
 tile_set = SubResource("TileSet_q13hu")
 
-[node name="Player" parent="." instance=ExtResource("3_3owog")]
-position = Vector2(56, 529)
-scale = Vector2(1.75, 1.75)
-
-[node name="Flag" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1115, 208)
-scale = Vector2(1.313, 1.313)
-sprite_frames = SubResource("SpriteFrames_vjwnv")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.888598
-
-[node name="Exit" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-position = Vector2(1203, 194.625)
-shape = SubResource("RectangleShape2D_cnj25")
+[node name="Player" parent="." instance=ExtResource("3_psbnp")]
+position = Vector2(85, 560)
+scale = Vector2(2, 2)
 
 [node name="InfoText" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="InfoPanel" type="Panel" parent="InfoText"]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 190.0
 offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca0j1")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel"]
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_6s1qv")
+theme_override_fonts/font = ExtResource("4_qmlx8")
 theme_override_font_sizes/font_size = 15
-text = "You better defeat all 
-those plants and bees."
+text = "Good job on defeating
+Bee Good for good!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarningPanel" type="Panel" parent="InfoText"]
+visible = false
+offset_left = 837.0
+offset_top = 472.0
+offset_right = 1137.0
+offset_bottom = 592.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca0j1")
+
+[node name="WarningLabel" type="Label" parent="InfoText/WarningPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 15
+text = "WARNING:
+The upcoming story segment dives deep
+into the idea of existence and people's
+actions. Don't enter if you aren't ready."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -478,73 +398,165 @@ offset_left = 20.0
 offset_top = 62.0
 offset_right = 170.0
 offset_bottom = 107.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4cei")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel2"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("5_6s1qv")
+theme_override_fonts/font = ExtResource("4_qmlx8")
 theme_override_font_sizes/font_size = 12
-text = "Or just use a mushroom.
-Bee careful out there!"
+text = "Congrats on completing
+Natural Plains!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NormalGunUp" parent="." instance=ExtResource("6_q3evw")]
-position = Vector2(159, 596)
-scale = Vector2(1.75, 1.75)
+[node name="DemoPanel" type="Panel" parent="InfoText"]
+offset_left = 336.0
+offset_top = 175.0
+offset_right = 816.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca0j1")
+script = ExtResource("5_6f4yh")
 
-[node name="NormalGunHorizontal" parent="." instance=ExtResource("7_craaj")]
-position = Vector2(801, 600)
-scale = Vector2(1.75, 1.75)
+[node name="TitleLabel" type="Label" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 30
+text = "Thanks for playing the demo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="TitleLabel2" type="Label" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.133333
+anchor_right = 1.0
+anchor_bottom = 0.206667
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 24
+text = "Full version coming out soon!
+Check out your stats:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="BadBee" parent="Enemies" instance=ExtResource("8_kyvks")]
-position = Vector2(928, 252)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
+[node name="LeftVBoxContainer" type="VBoxContainer" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 111.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="BadBee2Flip" parent="Enemies" instance=ExtResource("8_kyvks")]
-position = Vector2(160, 172)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
+[node name="DiffLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Difficulty: ???"
+vertical_alignment = 1
 
-[node name="BadBee3" parent="Enemies" instance=ExtResource("8_kyvks")]
-position = Vector2(833, 92)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
+[node name="ApplesLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Apples: ???"
+vertical_alignment = 1
 
-[node name="BadBee4Flip" parent="Enemies" instance=ExtResource("8_kyvks")]
-position = Vector2(417, 332)
-scale = Vector2(1.75, 1.75)
-metadata/Patrol_Time = 4.0
+[node name="MelonsLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Melons: ???"
+vertical_alignment = 1
 
-[node name="Mushroom2Flip" parent="Enemies" instance=ExtResource("9_xbn0q")]
-position = Vector2(287, 573.5)
-scale = Vector2(2.5, 2.5)
+[node name="TimeLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Time: ???"
+vertical_alignment = 1
 
-[node name="PoisonPlant" parent="Enemies" instance=ExtResource("10_uamc2")]
-position = Vector2(1065, 613)
-scale = Vector2(1.75, 1.75)
-metadata/Min_Delay = 0.5
-metadata/Max_Delay = 0.5
+[node name="SpikeLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Spike Deaths: ???"
+vertical_alignment = 1
 
-[node name="PoisonPlant2" parent="Enemies" instance=ExtResource("10_uamc2")]
-position = Vector2(1065, 500)
-scale = Vector2(1.75, 1.75)
+[node name="SnailLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Snail Deaths: ???    "
+vertical_alignment = 1
 
-[node name="Apples" type="Node2D" parent="."]
+[node name="RightVBoxContainer" type="VBoxContainer" parent="InfoText/DemoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 112.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Apple6" parent="Apples" instance=ExtResource("11_xe4p2")]
-position = Vector2(801, 447)
-scale = Vector2(1.75, 1.75)
+[node name="MushroomLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Mushroom Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Apple7" parent="Apples" instance=ExtResource("11_xe4p2")]
-position = Vector2(545, 447)
-scale = Vector2(1.75, 1.75)
+[node name="TrunkLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Trunkwalker Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Apple8" parent="Apples" instance=ExtResource("11_xe4p2")]
-position = Vector2(288, 447)
-scale = Vector2(1.75, 1.75)
+[node name="PlantLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Plant Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BeeLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Bee Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BeeGoodLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Bee Good Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DeathLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qmlx8")
+theme_override_font_sizes/font_size = 18
+text = "    Total Deaths: ???    "
+horizontal_alignment = 2
+vertical_alignment = 1

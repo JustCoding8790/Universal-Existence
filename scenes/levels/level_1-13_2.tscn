@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://b7br3apju44e7"]
+[gd_scene load_steps=14 format=4 uid="uid://cm0pfvrvh3c80"]
 
-[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_l0gbl"]
-[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_hx1eg"]
-[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_6qdaj"]
-[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="4_2ly1w"]
-[ext_resource type="Script" path="res://scripts/interface/demo_stats_panel.gd" id="5_e4lgy"]
+[ext_resource type="Texture2D" uid="uid://hi0nx1ahkc8t" path="res://assets/images/backgrounds/Green.png" id="1_kc0ip"]
+[ext_resource type="Texture2D" uid="uid://mgg0a477yrk" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_s4dsm"]
+[ext_resource type="PackedScene" uid="uid://ldm0v4kbtmkv" path="res://scenes/player.tscn" id="3_ml4hd"]
+[ext_resource type="FontFile" uid="uid://ddq3lv0w6gjtr" path="res://assets/fonts/Quantico-Bold.ttf" id="4_yj80n"]
+[ext_resource type="PackedScene" uid="uid://gllw8mhfxndk" path="res://scenes/mechanics/normal_gun_up.tscn" id="5_rxmq0"]
+[ext_resource type="Script" path="res://scripts/bosses/boss_manager.gd" id="6_5t6ek"]
+[ext_resource type="PackedScene" uid="uid://dhcpwe28g3bqy" path="res://scenes/bosses/bossbee/bee_good.tscn" id="6_o66js"]
+[ext_resource type="PackedScene" uid="uid://d1rk0vgn44ixa" path="res://scenes/enemies/plant.tscn" id="7_78p5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iurch"]
-texture = ExtResource("2_hx1eg")
+texture = ExtResource("2_s4dsm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -303,7 +306,7 @@ texture = ExtResource("2_hx1eg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iurch")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvip8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgdyi"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -316,7 +319,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkp7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0iav"]
 bg_color = Color(4.04298e-06, 0.649753, 0.89457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -328,68 +331,49 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gku3i"]
+size = Vector2(250, 367)
 
 [node name="LevelRoot" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_top = -1.0
+offset_top = -2.0
 offset_right = 1152.0
-offset_bottom = 667.0
-texture = ExtResource("1_l0gbl")
+offset_bottom = 666.0
+texture = ExtResource("1_kc0ip")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAA0AAAAIAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAIAAEAAAAAABEAAAAIAAEAAAAAABIAAAAIAAEAAAAAABQAAAAHAAEAAAABABQAAAAHAAEAAAACABQAAAAHAAEAAAADABQAAAAHAAEAAAAEABQAAAAHAAEAAAAFABQAAAAHAAEAAAAGABQAAAAHAAEAAAAHABQAAAAHAAEAAAAIABQAAAAHAAEAAAAJABQAAAAHAAEAAAAKABQAAAAHAAEAAAALABQAAAAHAAEAAAAMABQAAAAHAAEAAAANABQAAAAHAAEAAAAOABQAAAAHAAEAAAAPABQAAAAHAAEAAAAQABQAAAAHAAEAAAARABQAAAAHAAEAAAASABQAAAAHAAEAAAATABQAAAAHAAEAAAAUABQAAAAHAAEAAAAVABQAAAAHAAEAAAAWABQAAAAHAAEAAAAXABQAAAAHAAEAAAAYABQAAAAHAAEAAAAZABQAAAAHAAEAAAAaABQAAAAHAAEAAAAbABQAAAAHAAEAAAAcABQAAAAHAAEAAAAdABQAAAAHAAEAAAAeABQAAAAHAAEAAAAfABQAAAAHAAEAAAAgABQAAAAHAAEAAAAhABQAAAAHAAEAAAAiABQAAAAHAAEAAAAjABQAAAAHAAEAAAAAABMAAAAIAAEAAAAjAAIAAAAGAAEAAAAjAAEAAAAGAAEAAAAjAAAAAAAKAAAAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAABABMAAAAHAAAAAAACABMAAAAHAAAAAAADABMAAAAHAAAAAAAEABMAAAAHAAAAAAAAABAAAAAIAAEAAAAFABMAAAAHAAAAAAAGABMAAAAHAAAAAAAHABMAAAAHAAAAAAAIABMAAAAHAAAAAAAJABMAAAAHAAAAAAAKABMAAAAHAAAAAAALABMAAAAHAAAAAAAMABMAAAAHAAAAAAANABMAAAAHAAAAAAAOABMAAAAHAAAAAAAPABMAAAAHAAAAAAAQABMAAAAHAAAAAAARABMAAAAHAAAAAAATABMAAAAHAAAAAAASABMAAAAHAAAAAAAUABMAAAAHAAAAAAAVABMAAAAHAAAAAAAWABMAAAAHAAAAAAAXABMAAAAHAAAAAAAYABMAAAAHAAAAAAAhABMAAAAHAAAAAAAkAAIAAAAHAAEAAAAlAAIAAAAHAAEAAAAmAAIAAAAHAAEAAAAkAAAAAAAHAAEAAAAlAAAAAAAHAAEAAAAmAAAAAAAHAAEAAAAmAAEAAAAHAAEAAAAlAAEAAAAHAAEAAAAkAAEAAAAHAAEAAAAgABMAAAAHAAAAAAAfABMAAAAHAAAAAAAeABMAAAAHAAAAAAAdABMAAAAHAAAAAAAcABMAAAAHAAAAAAAbABMAAAAHAAAAAAAaABMAAAAHAAAAAAAZABMAAAAHAAAAAAAkAAoAAAAHAAEAAAAlAAoAAAAHAAAAAAAmAAoAAAAHAAAAAAAjAAQAAAAGAAEAAAAmAAMAAAAHAAEAAAAlAAMAAAAHAAEAAAAkAAMAAAAHAAEAAAAjAAMAAAAGAAEAAAAkAAQAAAAHAAEAAAAlAAQAAAAHAAIAAAAmAAQAAAAHAAIAAAAkAAsAAAAHAAEAAAAkAAwAAAAHAAEAAAAmAAwAAAAHAAEAAAAmAAsAAAAHAAEAAAAlAAsAAAAHAAEAAAAlAAwAAAAHAAEAAAAjABMAAAAGAAEAAAAjABIAAAAGAAEAAAAjABEAAAAGAAEAAAAjABAAAAAGAAEAAAAjAA8AAAAGAAEAAAAjAA4AAAAGAAEAAAAjAA0AAAAGAAEAAAAjAAwAAAAGAAEAAAAjAAsAAAAGAAEAAAAjAAoAAAAGAAEAAAAjAAkAAAAGAAEAAAAjAAgAAAAGAAEAAAAjAAcAAAAGAAEAAAAjAAYAAAAGAAEAAAAjAAUAAAAGAAEAAAAkAAkAAAAHAAEAAAAkAAgAAAAHAAEAAAAkAAcAAAAHAAEAAAAkAAYAAAAHAAEAAAAkAAUAAAAHAAEAAAAkAA0AAAAHAAEAAAAkAA4AAAAHAAEAAAAkAA8AAAAHAAEAAAAkABAAAAAHAAEAAAAkABEAAAAHAAEAAAAkABIAAAAHAAEAAAAkABMAAAAHAAEAAAAkABQAAAAHAAEAAAAiABMAAAAHAAAAAAA=")
+position = Vector2(0, -2)
+scale = Vector2(1.75, 1.75)
+tile_map_data = PackedByteArray("AAAAAA0AAAAIAAEAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAAAAAQAAAAIAAEAAAAAAAUAAAAIAAEAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAEAAAAAAAgAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAoAAAAIAAEAAAAAAAsAAAAIAAEAAAAAAAwAAAAIAAEAAAAAAAAAAAAJAAAAAAABAAAAAAAHAAIAAAACAAAAAAAHAAIAAAADAAAAAAAHAAIAAAAEAAAAAAAHAAIAAAAFAAAAAAAHAAIAAAAGAAAAAAAHAAIAAAAHAAAAAAAHAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAAHAAIAAAAKAAAAAAAHAAIAAAALAAAAAAAHAAIAAAAMAAAAAAAHAAIAAAANAAAAAAAHAAIAAAAOAAAAAAAHAAIAAAAPAAAAAAAHAAIAAAAQAAAAAAAHAAIAAAARAAAAAAAHAAIAAAASAAAAAAAHAAIAAAATAAAAAAAHAAIAAAAUAAAAAAAHAAIAAAAVAAAAAAAHAAIAAAAWAAAAAAAHAAIAAAAAAA4AAAAIAAEAAAAAAA8AAAAHAAEAAAAAABEAAAAHAAEAAAAAABIAAAAHAAEAAAAAABQAAAAHAAEAAAAAABMAAAAHAAEAAAAjAAAAAAAHAAIAAAAiAAAAAAAHAAIAAAAhAAAAAAAHAAIAAAAgAAAAAAAHAAIAAAAfAAAAAAAHAAIAAAAeAAAAAAAHAAIAAAAdAAAAAAAHAAIAAAAcAAAAAAAHAAIAAAAbAAAAAAAHAAIAAAAaAAAAAAAHAAIAAAAZAAAAAAAHAAIAAAAYAAAAAAAHAAIAAAAXAAAAAAAHAAIAAAAAABAAAAAHAAEAAAAkAAAAAAAHAAIAAAAlAAAAAAAHAAIAAAAmAAAAAAAHAAIAAAAAABYAAAAHAAEAAAABABYAAAAHAAEAAAACABYAAAAIAAEAAAAFABYAAAAGAAAAAAAGABYAAAAHAAAAAAAHABYAAAAHAAAAAAAIABYAAAAHAAAAAAAJABYAAAAHAAAAAAAKABYAAAAHAAAAAAALABYAAAAHAAAAAAAMABYAAAAHAAAAAAANABYAAAAHAAAAAAASABYAAAAHAAAAAAATABYAAAAHAAAAAAAUABYAAAAHAAAAAAAVABYAAAAHAAAAAAAWABYAAAAHAAAAAAAXABYAAAAHAAAAAAAYABYAAAAHAAAAAAAZABYAAAAHAAAAAAAaABYAAAAHAAAAAAAbABYAAAAHAAAAAAAcABYAAAAHAAAAAAAdABYAAAAHAAAAAAAeABYAAAAHAAAAAAAfABYAAAAHAAAAAAAgABYAAAAHAAAAAAAhABYAAAAHAAAAAAAiABYAAAAIAAAAAAAlABYAAAAGAAEAAAAmABYAAAAHAAEAAAAnABYAAAAHAAEAAAAoABYAAAAHAAEAAAAAABcAAAAHAAEAAAABABcAAAAHAAEAAAACABcAAAAIAAEAAAADABcAAAAHAAAAAAAEABcAAAAHAAAAAAAFABcAAAAGAAEAAAAGABcAAAAHAAEAAAAHABcAAAAHAAEAAAAIABcAAAAHAAEAAAAJABcAAAAHAAEAAAAKABcAAAAHAAEAAAALABcAAAAHAAEAAAAMABcAAAAHAAEAAAANABcAAAAHAAEAAAAOABcAAAAHAAEAAAAPABcAAAAHAAEAAAAQABcAAAAHAAEAAAARABcAAAAHAAEAAAASABcAAAAHAAEAAAATABcAAAAHAAEAAAAUABcAAAAHAAEAAAAVABcAAAAHAAEAAAAWABcAAAAHAAEAAAAXABcAAAAHAAEAAAAYABcAAAAHAAEAAAAZABcAAAAHAAEAAAAaABcAAAAHAAEAAAAbABcAAAAHAAEAAAAcABcAAAAHAAEAAAAdABcAAAAHAAEAAAAeABcAAAAHAAEAAAAfABcAAAAHAAEAAAAgABcAAAAHAAEAAAAhABcAAAAHAAEAAAAiABcAAAAIAAEAAAAjABcAAAAHAAAAAAAkABcAAAAHAAAAAAAlABcAAAAGAAEAAAAmABcAAAAHAAEAAAAnABcAAAAHAAEAAAAoABcAAAAHAAEAAAApABcAAAAHAAEAAAApABYAAAAHAAEAAAAOABYAAAAHAAAAAAAPABYAAAAHAAAAAAAQABYAAAAHAAAAAAARABYAAAAHAAAAAAAoABUAAAAHAAEAAAAoABQAAAAHAAEAAAAoABMAAAAHAAEAAAAoABIAAAAHAAEAAAAoABEAAAAHAAEAAAAoABAAAAAHAAEAAAAoAA8AAAAHAAEAAAAoAA4AAAAHAAEAAAAoAA0AAAAHAAEAAAAAABUAAAAHAAEAAAAnAAEAAAAGAAEAAAAnAAIAAAAGAAEAAAAnAAMAAAAGAAEAAAAnAAQAAAAGAAEAAAAoAAQAAAAHAAEAAAApAA0AAAAHAAEAAAApAA4AAAAHAAEAAAApAA8AAAAHAAEAAAApABAAAAAHAAEAAAApABEAAAAHAAEAAAApABIAAAAHAAEAAAApABMAAAAHAAEAAAApABQAAAAHAAEAAAApABUAAAAHAAEAAAAnABUAAAAHAAEAAAAnABQAAAAHAAEAAAAnABMAAAAHAAEAAAAnABIAAAAHAAEAAAAnABEAAAAHAAEAAAAnABAAAAAHAAEAAAAnAA8AAAAHAAEAAAAnAA4AAAAGAAEAAAAnAA0AAAAGAAEAAAAoAAwAAAAHAAEAAAAnAAwAAAAGAAEAAAApAAwAAAAHAAEAAAApAAQAAAAHAAEAAAAnAAkAAAAGAAEAAAAoAAkAAAAHAAEAAAApAAkAAAAHAAEAAAApAAoAAAAHAAEAAAApAAsAAAAHAAEAAAAoAAsAAAAHAAEAAAAoAAoAAAAHAAEAAAAnAAsAAAAGAAEAAAAnAAoAAAAGAAEAAAAoAAMAAAAHAAEAAAApAAMAAAAHAAEAAAApAAIAAAAHAAEAAAAoAAIAAAAHAAEAAAAoAAEAAAAHAAEAAAApAAEAAAAHAAEAAAApAAAAAAAHAAEAAAAoAAAAAAAHAAEAAAAnAAAAAAAHAAEAAAApAAgAAAAHAAEAAAApAAcAAAAHAAEAAAApAAYAAAAHAAEAAAApAAUAAAAHAAEAAAAoAAUAAAAHAAEAAAAoAAYAAAAHAAEAAAAoAAcAAAAHAAEAAAAoAAgAAAAHAAEAAAAnAAgAAAAGAAEAAAAnAAcAAAAGAAEAAAAnAAYAAAAGAAEAAAAnAAUAAAAGAAEAAAACABUAAAAIAAEAAAACABQAAAAIAAEAAAACABMAAAAHAAEAAAACABIAAAAHAAEAAAACABEAAAAHAAEAAAACABAAAAAHAAEAAAACAA8AAAAHAAEAAAACAA4AAAAHAAAAAAABAA4AAAAHAAAAAAABAA8AAAAHAAEAAAABABAAAAAHAAEAAAABABEAAAAHAAEAAAABABIAAAAHAAEAAAABABMAAAAHAAEAAAABABQAAAAHAAEAAAABABUAAAAHAAEAAAAEAA4AAAAIAAAAAAADAA4AAAAHAAAAAAADAA8AAAAHAAEAAAADABAAAAAHAAEAAAADABEAAAAHAAEAAAADABIAAAAHAAEAAAADABMAAAAHAAIAAAAEAA8AAAAIAAEAAAAEABAAAAAIAAEAAAAEABEAAAAIAAEAAAAEABIAAAAIAAEAAAAEABMAAAAIAAIAAAAjABMAAAAGAAIAAAAjABIAAAAGAAEAAAAjABEAAAAGAAEAAAAjABAAAAAGAAEAAAAjAA8AAAAGAAEAAAAjAA4AAAAGAAAAAAAlABUAAAAGAAEAAAAmABUAAAAHAAEAAAAmABQAAAAHAAEAAAAmAA4AAAAHAAAAAAAlAA4AAAAHAAAAAAAkAA4AAAAHAAAAAAAkAA8AAAAHAAEAAAAlAA8AAAAHAAEAAAAmAA8AAAAHAAEAAAAmABAAAAAHAAEAAAAmABEAAAAHAAEAAAAlABEAAAAHAAEAAAAlABAAAAAHAAEAAAAkABAAAAAHAAEAAAAkABEAAAAHAAEAAAAlABIAAAAHAAEAAAAmABIAAAAHAAEAAAAmABMAAAAHAAEAAAAlABMAAAAHAAEAAAAlABQAAAAGAAEAAAAkABMAAAAHAAIAAAAkABIAAAAHAAEAAAA=")
 tile_set = SubResource("TileSet_q13hu")
 
-[node name="Player" parent="." instance=ExtResource("3_6qdaj")]
-position = Vector2(85, 560)
-scale = Vector2(2, 2)
+[node name="Player" parent="." instance=ExtResource("3_ml4hd")]
+position = Vector2(63, 361)
+scale = Vector2(1.75, 1.75)
 
 [node name="InfoText" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="InfoPanel" type="Panel" parent="InfoText"]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 190.0
 offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xvip8")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rgdyi")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel"]
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("4_2ly1w")
+theme_override_fonts/font = ExtResource("4_yj80n")
 theme_override_font_sizes/font_size = 15
-text = "Good job on defeating
-Bee Good for good!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="WarningPanel" type="Panel" parent="InfoText"]
-visible = false
-offset_left = 837.0
-offset_top = 472.0
-offset_right = 1137.0
-offset_bottom = 592.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xvip8")
-
-[node name="WarningLabel" type="Label" parent="InfoText/WarningPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 15
-text = "WARNING:
-The upcoming story segment dives deep
-into the idea of existence and people's
-actions. Don't enter if you aren't ready."
+text = "Bee Good will serve to
+you a good challenge."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -398,165 +382,46 @@ offset_left = 20.0
 offset_top = 62.0
 offset_right = 170.0
 offset_bottom = 107.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2mkp7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_n0iav")
 
 [node name="InfoLabel" type="Label" parent="InfoText/InfoPanel2"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("4_2ly1w")
+theme_override_fonts/font = ExtResource("4_yj80n")
 theme_override_font_sizes/font_size = 12
-text = "Congrats on completing
-Natural Plains!"
+text = "But she isn't morally
+good herself, though..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DemoPanel" type="Panel" parent="InfoText"]
-offset_left = 336.0
-offset_top = 175.0
-offset_right = 816.0
-offset_bottom = 475.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xvip8")
-script = ExtResource("5_e4lgy")
+[node name="NormalGunUp" parent="." instance=ExtResource("5_rxmq0")]
+position = Vector2(287, 596)
+scale = Vector2(1.75, 1.75)
 
-[node name="TitleLabel" type="Label" parent="InfoText/DemoPanel"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 22.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 30
-text = "Thanks for playing the demo!"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("6_5t6ek")
+metadata/Enemy_Count = 0
+metadata/Enemies_Left = 63
 
-[node name="TitleLabel2" type="Label" parent="InfoText/DemoPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.133333
-anchor_right = 1.0
-anchor_bottom = 0.206667
-offset_bottom = 22.0
-grow_horizontal = 2
-theme_override_constants/line_spacing = -4
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 24
-text = "Full version coming out soon!
-Check out your stats:"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Bee Good" parent="Enemies" instance=ExtResource("6_o66js")]
+position = Vector2(357, 142)
+scale = Vector2(7, 7)
 
-[node name="LeftVBoxContainer" type="VBoxContainer" parent="InfoText/DemoPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 111.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="PoisonPlant" parent="Enemies" instance=ExtResource("7_78p5u")]
+position = Vector2(1009, 612)
+scale = Vector2(1.75, 1.75)
 
-[node name="DiffLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Difficulty: ???"
-vertical_alignment = 1
+[node name="PoisonPlant2Flip" parent="Enemies" instance=ExtResource("7_78p5u")]
+position = Vector2(113, 612)
+scale = Vector2(1.75, 1.75)
 
-[node name="ApplesLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Apples: ???"
-vertical_alignment = 1
+[node name="BossBounds" type="Area2D" parent="."]
 
-[node name="MelonsLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Melons: ???"
-vertical_alignment = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossBounds"]
+position = Vector2(92, 211)
+shape = SubResource("RectangleShape2D_gku3i")
 
-[node name="TimeLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Time: ???"
-vertical_alignment = 1
-
-[node name="SpikeLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Spike Deaths: ???"
-vertical_alignment = 1
-
-[node name="SnailLabel" type="Label" parent="InfoText/DemoPanel/LeftVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Snail Deaths: ???    "
-vertical_alignment = 1
-
-[node name="RightVBoxContainer" type="VBoxContainer" parent="InfoText/DemoPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 112.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="MushroomLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Mushroom Deaths: ???    "
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="TrunkLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Trunkwalker Deaths: ???    "
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="PlantLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Plant Deaths: ???    "
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="BeeLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Bee Deaths: ???    "
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="BeeGoodLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Bee Good Deaths: ???    "
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="DeathLabel" type="Label" parent="InfoText/DemoPanel/RightVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ly1w")
-theme_override_font_sizes/font_size = 18
-text = "    Total Deaths: ???    "
-horizontal_alignment = 2
-vertical_alignment = 1
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BossBounds"]
+position = Vector2(1069, 211.5)
+shape = SubResource("RectangleShape2D_gku3i")
