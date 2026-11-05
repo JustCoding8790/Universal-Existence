@@ -102,10 +102,10 @@ func _load_level(world_number: int, level_number: int, first_load: bool, reset_s
 		elif world_number == 1 and level_number == 10:
 			voiceline_queue.append(["A friend of mine said plants won't hurt you.", 2])
 			voiceline_queue.append(["That's mostly true, it's just that these ones will.", 2.5])
-		elif world_number == 1 and level_number == 11:
+		elif world_number == 1 and level_number == 12:
 			voiceline_queue.append(["You better defeat all those plants and bees.", 2])
 			voiceline_queue.append(["Or just use a mushroom. Bee careful out there!", 2.5])
-		elif world_number == 1 and level_number == 12:
+		elif world_number == 1 and level_number == 13:
 			bgm_player.stream = load("res://assets/audio/music/boss_bee_good.ogg")
 			bgm_player.volume_db = -27
 			bgm_player.play()
