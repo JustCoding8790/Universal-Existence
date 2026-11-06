@@ -27,6 +27,8 @@ extends Control
 @onready var description_player: AnimationPlayer = $PauseLayer/DescriptionPlayer
 @onready var settings_player: AnimationPlayer = $PauseLayer/SettingsPlayer
 
+@onready var speedrun_panel: Panel = $"../../../HUD/SpeedrunPanel"
+
 var paused = false
 var diff_menu_on = false
 var settings_menu_on = false
@@ -51,6 +53,7 @@ func _process(_delta: float) -> void:
 
 func _on_resume_pressed() -> void:
 	if paused and pause_safe:
+		speedrun_panel.start_timer()
 		pause.hide()
 		get_tree().paused = false
 		difficulty_selection.hide()
@@ -126,6 +129,7 @@ func _on_exit_pressed() -> void:
 func pause_menu() -> void:
 	pause_safe = false
 	if paused:
+		speedrun_panel.start_timer()
 		pause.hide()
 		get_tree().paused = false
 		difficulty_selection.hide()
@@ -137,11 +141,13 @@ func pause_menu() -> void:
 		controller_settings._on_settings_back_pressed()
 		assist_settings._on_assist_back_pressed()
 		credits._on_credits_back_pressed()
-		# speedrun_panel.start_timer()
+		Global.speedrun_timer_running = true
 		if Global.difficulty != previous_difficulty:
 			difficulty_changed.emit(Global.world, Global.level, false, true)
 	else:
-		# speedrun_panel.stop_timer()
+		speedrun_panel.stop_timer()
+		while Global.speedrun_timer_running:
+			await get_tree().process_frame
 		pause.show()
 		get_tree().paused = true
 		main_player.play("open")

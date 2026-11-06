@@ -103,6 +103,9 @@ func _physics_process(delta: float) -> void:
 		direction = Input.get_axis("left", "right")
 		if direction:
 			velocity.x = min(direction * SPEED * self.scale.x, direction * SPEED * self.scale.x * Global.sensitivity_multi)
+			if not Global.player_moved:
+				Global.player_moved = true
+				Global.speedrun_timer_running = true
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED * self.scale.x)
 		move_and_slide()

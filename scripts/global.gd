@@ -3,10 +3,10 @@ extends Node
 # --------------------
 # GLOBAL STATS
 # --------------------
-var difficulty = 3
+var difficulty = 2
 var can_pause = false
 var world: int = 1	# implement different worlds later
-var level: int = 11
+var level: int = 10
 
 var bee_good_diff
 var demo_time
@@ -20,7 +20,9 @@ var flawless_levels = 0
 # --------------------
 # GLOBAL SETTINGS
 # --------------------
+var player_moved = false
 var speedrun_timer_on = false
-var speedrun_timer_running = true
+var speedrun_timer_running = false
+var speedrun_off_time = 0
 var training = false
 var sensitivity_multi = 1
