@@ -797,7 +797,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 28
-text = "V1"
+text = "V1.1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
