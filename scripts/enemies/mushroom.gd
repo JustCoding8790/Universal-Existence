@@ -41,6 +41,11 @@ func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int
 				voicelines.append(["Is this what you call being careful?", 2])
 			elif Global.deaths["mushrooms"] == 3:
 				voicelines.append(["You know you can just bounce on top of them to avoid being killed, right?", 4])
+			elif Global.deaths["mushrooms"] == 5:
+				voicelines.append(["You know, I remember hiding The Invasive One somewhere in the UPC.", 2.5])
+				voicelines.append(["It kept spreading into the other levels.", 1.5])
+				voicelines.append(["I forgot where I hid it.", 1.5])
+				voicelines.append(["Definitely not in Natural Fields, though, that's for sure.", 2.5])
 			player_died.emit(body, voicelines)
 		elif body.name == "TileMapLayer":
 			direction *= -1

@@ -3,6 +3,7 @@ extends Control
 @onready var pause_main: Panel = $PauseLayer/PauseMain
 @onready var fade: ColorRect = $PauseLayer/Fade
 
+@onready var resume: Button = $PauseLayer/PauseMain/MarginContainer/VBoxContainer/Resume
 @onready var difficulty: Button = $PauseLayer/PauseMain/MarginContainer/VBoxContainer/Difficulty
 @onready var settings: Button = $PauseLayer/PauseMain/MarginContainer/VBoxContainer/Settings
 
@@ -10,6 +11,7 @@ extends Control
 @onready var difficulty_description: Panel = $PauseLayer/DifficultyDescription
 @onready var difficulty_title: Label = $PauseLayer/DifficultyDescription/DifficultyTitle
 @onready var difficulty_text: Label = $PauseLayer/DifficultyDescription/DifficultyText
+@onready var extreme: Button = $PauseLayer/DifficultySelection/MarginContainer/VBoxContainer/Extreme
 
 @onready var settings_menu: Panel = $PauseLayer/Settings
 @onready var settings_exit: Button = $PauseLayer/Settings/Exit
@@ -72,6 +74,7 @@ func _on_resume_pressed() -> void:
 func _on_difficulty_pressed() -> void:
 	difficulty.disabled = true
 	if diff_menu_on:
+		resume.grab_focus()
 		main_player.play("diff_right")
 		difficulty_player.play("difficulties_hide")
 		description_player.play("description_hide")
@@ -84,6 +87,7 @@ func _on_difficulty_pressed() -> void:
 		main_player.play("move_up")
 		await main_player.animation_finished
 		difficulty_selection.show()
+		extreme.grab_focus()
 		difficulty_description.show()
 		set_difficulty_description()
 		main_player.play("diff_left")
@@ -96,6 +100,7 @@ func _on_difficulty_pressed() -> void:
 func _on_settings_pressed() -> void:
 	settings.disabled = true
 	settings_menu.visible = true
+	master_slider.grab_focus()
 	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
 	sound_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
@@ -108,6 +113,7 @@ func _on_settings_pressed() -> void:
 
 func _on_settings_exit_pressed() -> void:
 	settings_exit.disabled = true
+	resume.grab_focus()
 	settings_player.play("close")
 	main_player.play("open")
 	await main_player.animation_finished
@@ -148,6 +154,8 @@ func pause_menu() -> void:
 		speedrun_panel.stop_timer()
 		while Global.speedrun_timer_running:
 			await get_tree().process_frame
+		# Controller focus on Resume button on pause menu by default
+		resume.grab_focus()
 		pause.show()
 		get_tree().paused = true
 		main_player.play("open")

@@ -1,5 +1,7 @@
 extends Panel
 @onready var assist_settings: Panel = $"."
+@onready var features_button: Button = $"../Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Features"
+
 @onready var game_speed_slider: HSlider = $ControllerContainer/VBoxContainer/GameSpeedVBox/GameSpeedSlider
 @onready var speedrun_button: Button = $ControllerContainer/VBoxContainer/SpeedrunningVBox/Speedrun
 @onready var training_button: Button = $ControllerContainer/VBoxContainer/TrainingVBox/Training
@@ -38,6 +40,7 @@ func assist_open() -> void:
 	controller_button.disabled = true
 	settings_exit.disabled = true
 	assist_settings.visible = true
+	game_speed_slider.grab_focus()
 	game_speed_slider.value = Engine.time_scale
 	if Global.speedrun_timer_on:
 		speedrun_button.text = "Speedrun Timers - ON"
@@ -53,6 +56,7 @@ func assist_open() -> void:
 
 func _on_assist_back_pressed() -> void:
 	back_button.disabled = true
+	features_button.grab_focus()
 	assist_settings_player.play("close")
 	await assist_settings_player.animation_finished
 	assist_settings.visible = false

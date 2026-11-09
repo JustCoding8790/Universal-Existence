@@ -148,7 +148,7 @@ func take_damage(damage: int) -> void:
 			Engine.time_scale = former_speed
 		# print(enemies.get_meta("Enemies_Left"))
 		Global.bee_good_diff = Global.difficulty
-		Global.demo_time = Time.get_ticks_msec()
+		Global.demo_time = Time.get_ticks_msec() - Global.speedrun_off_time
 		queue_free()
 
 func bullet_shot_player(body) -> void:

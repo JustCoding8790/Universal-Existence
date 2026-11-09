@@ -1,6 +1,7 @@
 extends Panel
 @onready var controller_settings: Panel = $"."
 @onready var controller_settings_player: AnimationPlayer = $ControllerSettingsPlayer
+@onready var controller_button: Button = $"../Settings/RightMarginContainer/VBoxContainer/GameplayVBox/Controller"
 
 @onready var sensitivity_slider: HSlider = $ControllerContainer/ControlVBox/SensitivityVBox/SensitivitySlider
 @onready var deadzone_slider: HSlider = $ControllerContainer/ControlVBox/DeadzoneVBox/DeadzoneSlider
@@ -29,12 +30,14 @@ func settings_open() -> void:
 	settings_exit.disabled = true
 	deadzone_slider.value = InputMap.action_get_deadzone("left")
 	controller_settings.visible = true
+	sensitivity_slider.grab_focus()
 	controller_settings_player.play("open")
 	await controller_settings_player.animation_finished
 	back_button.disabled = false
 
 func _on_settings_back_pressed() -> void:
 	back_button.disabled = true
+	controller_button.grab_focus()
 	controller_settings_player.play("close")
 	await controller_settings_player.animation_finished
 	controller_settings.visible = false

@@ -106,4 +106,14 @@ func bullet_shot_player(body) -> void:
 		voicelines.append(["Just gonna mention something...", 1.5])
 		voicelines.append(["Please don't go and rip out plants outside of the UPC.", 2])
 		voicelines.append(["Or, at least, the non-harmful plants.", 2])
+	elif Global.deaths["plants"] == 18:
+		voicelines.append(["It looks like you're about to rage quit...", 2])
+		voicelines.append(["Maybe have a short meditation break or something.", 2])
+		voicelines.append(["You could play Tower Offense Simulator, watch the latest episode of Two Piece...", 3.5])
+		voicelines.append(["Walk at a local park...", 1.5])
+		voicelines.append(["No, that won't work, a park has plants in it.", 2.5])
+	elif Global.deaths["plants"] == 20:
+		voicelines.append(["AND THE PLANT VICTIM OF THE YEAR GOES TO...", 2.5])
+		voicelines.append(["THE JUMPER!", 1])
+		voicelines.append(["Or, well, whatever your name is.", 2])
 	player_died.emit(body, voicelines)

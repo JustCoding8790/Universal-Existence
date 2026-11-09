@@ -419,6 +419,12 @@ horizontal_alignment = 1
 [node name="Resume" type="Button" parent="PauseLayer/PauseMain/MarginContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Difficulty")
+focus_next = NodePath("../Difficulty")
+focus_previous = NodePath(".")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -437,6 +443,12 @@ text = "Resume"
 [node name="Difficulty" type="Button" parent="PauseLayer/PauseMain/MarginContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Resume")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -455,6 +467,12 @@ text = "Difficulty"
 [node name="Settings" type="Button" parent="PauseLayer/PauseMain/MarginContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Difficulty")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Difficulty")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -473,6 +491,12 @@ text = "Settings"
 [node name="Exit" type="Button" parent="PauseLayer/PauseMain/MarginContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Settings")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -538,6 +562,10 @@ text = "MASTER"
 
 [node name="MasterSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox"]
 layout_mode = 2
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../../MusicVBox/MusicSlider")
+focus_next = NodePath("../../../../../RightMarginContainer/VBoxContainer/GameplayVBox/Language")
+focus_previous = NodePath(".")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0mc3m")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh1y8")
 max_value = 1.0
@@ -555,6 +583,10 @@ text = "MUSIC"
 
 [node name="MusicSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../MasterVBox/MasterSlider")
+focus_neighbor_bottom = NodePath("../../SoundVBox/SoundSlider")
+focus_next = NodePath("../../../../../RightMarginContainer/VBoxContainer/GameplayVBox/Rebinding")
+focus_previous = NodePath(".")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_se5qn")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mqybx")
 max_value = 1.0
@@ -572,6 +604,10 @@ text = "SOUND"
 
 [node name="SoundSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../MusicVBox/MusicSlider")
+focus_neighbor_bottom = NodePath("../../VoiceVBox/VoiceSlider")
+focus_next = NodePath("../../../../../RightMarginContainer/VBoxContainer/GameplayVBox/Controller")
+focus_previous = NodePath(".")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_dwhrk")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jpgpn")
 max_value = 1.0
@@ -589,6 +625,10 @@ text = "VOICE"
 
 [node name="VoiceSlider" type="HSlider" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../SoundVBox/SoundSlider")
+focus_neighbor_bottom = NodePath("../../../Credits")
+focus_next = NodePath("../../../../../RightMarginContainer/VBoxContainer/GameplayVBox/Features")
+focus_previous = NodePath(".")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_y0e4a")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_sdx5j")
 max_value = 1.0
@@ -598,6 +638,11 @@ value = 0.5
 [node name="Credits" type="Button" parent="PauseLayer/Settings/LeftMarginContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_top = NodePath("../AudioVBox/VoiceVBox/VoiceSlider")
+focus_neighbor_right = NodePath("../../../RightMarginContainer/VBoxContainer/ResetSettings")
+focus_neighbor_bottom = NodePath("../../../Exit")
+focus_next = NodePath("../../../RightMarginContainer/VBoxContainer/ResetSettings")
+focus_previous = NodePath(".")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -641,6 +686,12 @@ theme_override_constants/separation = 35
 [node name="Language" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox/MasterSlider")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Rebinding")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/MasterVBox/MasterSlider")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -660,6 +711,12 @@ text = "[LANGUAGES COMING IN V2]"
 [node name="Rebinding" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox/MusicSlider")
+focus_neighbor_top = NodePath("../Language")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Controller")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/MusicVBox/MusicSlider")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -679,6 +736,12 @@ text = "[REBINDING COMING IN V2]"
 [node name="Controller" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox/SoundSlider")
+focus_neighbor_top = NodePath("../Rebinding")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Features")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/SoundVBox/SoundSlider")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -697,6 +760,12 @@ text = "Controller Settings"
 [node name="Features" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer/GameplayVBox"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox/VoiceSlider")
+focus_neighbor_top = NodePath("../Controller")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../ResetSettings")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../../../LeftMarginContainer/VBoxContainer/AudioVBox/VoiceVBox/VoiceSlider")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -715,6 +784,12 @@ text = "Speedrun/Assist Features"
 [node name="ResetSettings" type="Button" parent="PauseLayer/Settings/RightMarginContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../LeftMarginContainer/VBoxContainer/Credits")
+focus_neighbor_top = NodePath("../GameplayVBox/Features")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../Exit")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../../LeftMarginContainer/VBoxContainer/Credits")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
@@ -760,6 +835,12 @@ offset_right = 187.5
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_left = NodePath("../LeftMarginContainer/VBoxContainer/Credits")
+focus_neighbor_top = NodePath("../LeftMarginContainer/VBoxContainer/Credits")
+focus_neighbor_right = NodePath("../RightMarginContainer/VBoxContainer/ResetSettings")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../RightMarginContainer/VBoxContainer/ResetSettings")
+focus_previous = NodePath("../LeftMarginContainer/VBoxContainer/Credits")
 theme_override_fonts/font = ExtResource("3_lvbp7")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_2uumm")
